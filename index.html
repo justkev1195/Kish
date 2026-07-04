@@ -1335,8 +1335,6 @@ function openForm(existing, walkin){
     <label class="vkRow"><span class="vkTxt"><i class="vkDot"></i>Extra verkocht arrangement</span><input type="checkbox" id="fVerkocht" ${r.verkocht?'checked':''}><span class="vkSwitch"></span></label>
     ${(existing&&existing.id)?`
     <div class="formFoot">
-      <button type="button" class="btn ghost wide" id="fCopy">Reservering kopi\u00ebren</button>
-      <button type="button" class="btn annul wide" id="fAnnul">Reservering annuleren</button>
       <button type="button" class="btn danger wide" id="fDel">Definitief verwijderen</button>
       ${r.aangemaakt?`<div class="fMeta">Gemaakt op ${fmtStamp(r.aangemaakt)}${r.bewerkt?' &middot; laatst bewerkt '+fmtStamp(r.bewerkt):''}</div>`:''}
     </div>`:''}`;
@@ -1429,14 +1427,43 @@ function openForm(existing, walkin){
     });
     return set;
   }
+  // Welke tafel(s) zou het systeem automatisch pakken bij dit aantal personen en tijdslot?
+  function autoTafel(){
+    const paxN = Math.max(1, +paxInput.value || 1);
+    const conf = conflictSet();
+    const vrij = tafelsVoor(locSel.value).filter(t=>!conf.has(t.nr));
+    const past = vrij.filter(t=>(t.cap||2) >= paxN)
+      .sort((a,b)=>((a.cap||2)-(b.cap||2)) || ((+a.nr||0)-(+b.nr||0)));
+    if(past.length) return [past[0].nr];
+    let beste = null;
+    for(let i=0; i<vrij.length; i++){
+      let som = 0; const groep = [];
+      for(let j=i; j<vrij.length; j++){
+        if(groep.length && Math.abs((+vrij[j].nr) - (+groep[groep.length-1].nr)) !== 1) break;
+        groep.push(vrij[j]); som += (vrij[j].cap||2);
+        if(som >= paxN){ if(!beste || groep.length < beste.length) beste = groep.slice(); break; }
+      }
+    }
+    return beste ? beste.map(t=>t.nr) : [];
+  }
   function updateTafelBtn(){
     const conf = conflictSet();
     const dubbel = [...selTafels].some(nr=>conf.has(nr));
-    tafelBtn.textContent = selTafels.size ? [...selTafels].join(', ') : 'Automatisch';
-    tafelBtn.style.color = dubbel ? '#e5304d' : '';
+    if(selTafels.size){
+      tafelBtn.textContent = [...selTafels].join(', ');
+      tafelBtn.style.color = dubbel ? '#e5304d' : '';
+    } else {
+      // Alvast tonen welke tafel automatisch gepakt wordt
+      const auto = autoTafel();
+      tafelBtn.innerHTML = auto.length
+        ? auto.map(esc).join(' + ')
+        : `<span style="color:#e5304d">Geen vrije tafel</span>`;
+      tafelBtn.style.color = '';
+    }
     const warn = sheet.querySelector('#tafelWarn');
     if(warn) warn.style.display = dubbel ? 'block' : 'none';
   }
+  paxInput.addEventListener('change', ()=>updateTafelBtn());
   function openTafelPop(){
     const conf = conflictSet();
     const ov = document.createElement('div');
@@ -1513,10 +1540,18 @@ function openForm(existing, walkin){
     if(!naam){ toast('Vul een naam in'); return; }
     let duur = tijdNaarMin(eindInp.value) - tijdNaarMin(tijdInp.value);
     if(duur <= 0) duur += 1440;
-    const tfs = [...selTafels];
+    let tfs = [...selTafels];
     const conf = conflictSet();
+    // Geen tafel gekozen? Dan pakt het systeem de beste vrije tafel in het tijdslot
+    let autoMelding = '';
+    if(!tfs.length){
+      tfs = autoTafel();
+      if(tfs.length) autoMelding = 'Tafel '+tfs.join(' + ')+' automatisch toegewezen';
+      else autoMelding = 'Geen vrije tafel gevonden, reservering staat bij Zonder tafel';
+    }
     const dubbel = tfs.filter(nr=>conf.has(nr));
     const doorgaan = ()=>{
+    if(autoMelding) toast(autoMelding);
     const nieuw = {
       id: (existing && existing.id) ? existing.id : Date.now()+''+Math.floor(Math.random()*999),
       naam,
