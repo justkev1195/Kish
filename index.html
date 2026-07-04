@@ -109,6 +109,24 @@ label{font-size:12px;color:var(--muted);display:block;margin:12px 0 5px;font-wei
 #fabAdd{bottom:20px;background:var(--accent)}
 
 /* Minikalender datumveld */
+.instPage{position:fixed;inset:0;background:var(--bg);z-index:80;display:flex;flex-direction:column}
+.instTop{background:var(--accent);color:#fff;display:flex;align-items:center;gap:6px;padding:12px 14px;font-weight:800;font-size:17px;letter-spacing:.02em}
+.instTop button{color:#fff;font-size:24px;width:38px;height:38px;line-height:1;border-radius:10px}
+.instTop button:active{background:rgba(0,0,0,.18)}
+.instCrumb{padding:14px 18px 4px;font-size:13px;color:var(--muted)}
+.instCrumb a{color:var(--accent2);font-weight:700;cursor:pointer}
+.instCrumb em{font-style:normal;margin:0 7px;color:var(--muted)}
+.instCrumb b{color:#fff}
+.instWrap{flex:1;overflow-y:auto;padding:12px 14px 30px}
+.instCard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 16px;max-width:760px;margin:0 auto}
+.instH{font-size:18px;font-weight:800;color:var(--accent2)}
+.instSub{color:var(--muted);font-size:13px;margin:5px 0 12px}
+.instKopRij{display:flex;gap:12px;color:var(--muted);font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;padding:10px 4px 8px;border-bottom:1px solid var(--line)}
+.instRow{display:flex;align-items:center;gap:12px;padding:13px 4px;border-bottom:1px solid var(--line);cursor:pointer;font-size:14.5px}
+.instRow:last-child{border-bottom:none}
+.instRow:active{background:var(--panel2)}
+.instRow .instChev{color:var(--muted);font-size:20px}
+.instRow .instMove{color:var(--muted);font-size:15px}
 .mcalOv{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:95;display:flex;align-items:center;justify-content:center}
 .mcalBox{background:#2f3340;border-radius:14px;padding:16px 14px;width:320px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
 .mcalHead{display:flex;align-items:center;margin-bottom:12px}
@@ -184,21 +202,41 @@ label{font-size:12px;color:var(--muted);display:block;margin:12px 0 5px;font-wei
 .tbl.in small{color:#a9f0d3;background:none}
 
 /* DISH-stijl formulier: onderstreepte velden */
-#sheet label{text-transform:none;letter-spacing:0;font-size:11.5px;margin:16px 0 1px}
-#sheet input,#sheet select,#sheet textarea{background:transparent;border:none;border-bottom:1px solid #4a5163;border-radius:0;padding:7px 0;font-size:15px}
+#sheet label{text-transform:none;letter-spacing:0;font-size:11.5px;margin:22px 0 5px}
+#sheet input,#sheet select,#sheet textarea{background:transparent;border:none;border-bottom:1px solid #4a5163;border-radius:0;padding:10px 0;font-size:15px}
 #sheet input:focus,#sheet select:focus,#sheet textarea:focus{outline:none;border-bottom:2px solid var(--accent);padding-bottom:6px}
 #sheet input[type="checkbox"]{border:none;padding:0}
-#sheet .tafelPickBtn{background:transparent;border:none;border-bottom:1px solid #4a5163;border-radius:0;padding:7px 0;width:100%;text-align:left;font-size:15px}
+#sheet .tafelPickBtn{background:transparent;border:none;border-bottom:1px solid #4a5163;border-radius:0;padding:10px 0;width:100%;text-align:left;font-size:15px}
 #sheet .tafelList{background:var(--panel2);border:1px solid var(--line);border-radius:8px}
-.topChip{display:flex;justify-content:center;margin:0 0 2px}
+.aantalPop{position:fixed;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:6px 12px;z-index:95;box-shadow:0 14px 44px rgba(0,0,0,.55);width:min(320px,92vw);max-height:70vh;overflow:auto}
+.aantalPop .kop{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800;padding:10px 2px 4px}
+.aantalRow{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.aantalRow:last-child{border-bottom:none}
+.aantalRow .nm{flex:1;display:flex;align-items:center;gap:9px;font-weight:700;font-size:14px}
+.aantalRow .nm i{width:12px;height:12px;border-radius:4px;flex:0 0 auto}
+.stepper{display:flex;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stepper button{width:38px;height:34px;font-size:19px;font-weight:800;color:var(--muted);line-height:1}
+.stepper button:active{background:var(--line);color:#fff}
+.stepper b{width:32px;text-align:center;font-size:15px;color:var(--muted)}
+.stepper.actief b{color:var(--accent2)}
+.stepper.actief{border-color:var(--accent)}
+.vkRow{display:flex;align-items:center;gap:10px;margin:22px 0 4px;padding:11px 14px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;text-transform:none;font-size:14px;font-weight:600;letter-spacing:0;color:inherit;cursor:pointer}
+.vkRow .vkTxt{flex:1;display:flex;align-items:center;gap:9px}
+.vkRow .vkDot{width:12px;height:12px;border-radius:4px;background:#8b5cf6;flex:0 0 auto}
+.vkRow input{position:absolute;opacity:0;pointer-events:none}
+.vkRow .vkSwitch{width:44px;height:26px;border-radius:13px;background:var(--line);position:relative;transition:background .18s;flex:0 0 auto}
+.vkRow .vkSwitch::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .18s}
+.vkRow input:checked + .vkSwitch{background:#8b5cf6}
+.vkRow input:checked + .vkSwitch::after{left:21px}
+.topChip{display:flex;justify-content:center;margin:2px 0 14px}
 .topChip .chip{margin-left:0;font-size:11px;padding:3px 10px}
 .overboekt{display:none;color:#e5304d;font-size:11px;margin-top:5px;font-weight:600}
-.paxBtn{flex:1;padding:10px 0;border-radius:4px;background:transparent;border:1px solid #cfd3de;font-size:14px;font-weight:700;color:var(--txt)}
+.paxBtn{flex:1;padding:13px 0;border-radius:9px;background:transparent;border:1px solid #cfd3de;font-size:14px;font-weight:700;color:var(--txt)}
 .paxBtn.on{background:#fff;border-color:#fff;color:#14161d}
 .shSave{font-size:20px;padding:8px 22px;border-radius:8px;background:#3a3f4d;color:#8b92a5;font-weight:800;transition:background .15s}
 .shSave.actief{background:var(--green);color:#fff}
 
-.ddBtn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:transparent;border:none;border-bottom:1px solid #4a5163;padding:7px 0;font-size:15px;color:var(--txt)}
+.ddBtn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:transparent;border:none;border-bottom:1px solid #4a5163;padding:10px 0;font-size:15px;color:var(--txt);min-height:43px}
 .ddBtn .ddArr{color:var(--muted);font-size:12px;margin-left:6px}
 .ddBtn span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
@@ -290,7 +328,11 @@ label{font-size:12px;color:var(--muted);display:block;margin:12px 0 5px;font-wei
 #drawer .head .who{font-size:12px;color:var(--muted);margin-top:4px}
 #drawer nav{flex:1;overflow-y:auto;padding:8px 0}
 #drawer nav button{display:flex;align-items:center;gap:14px;width:100%;padding:15px 20px;font-size:15.5px;font-weight:600;text-align:left}
-#drawer nav button .mi{width:24px;text-align:center;font-size:18px}
+#drawer nav button .mi{width:24px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+#drawer nav button .mi svg{width:20px;height:20px;display:block}
+#drawer nav button{border-left:3px solid transparent}
+#drawer nav button.on{border-left-color:var(--accent)}
+#drawer nav button.on .mi{color:var(--accent2)}
 #drawer nav button.on{background:var(--panel2);color:var(--accent2)}
 #drawer nav hr{border:none;border-top:1px solid var(--line);margin:6px 0}
 
@@ -298,7 +340,7 @@ label{font-size:12px;color:var(--muted);display:block;margin:12px 0 5px;font-wei
 #sheetWrap{position:fixed;inset:0;z-index:70;display:none}
 #sheetWrap.open{display:block}
 #sheetWrap .bg{position:absolute;inset:0;background:rgba(0,0,0,.6)}
-#sheet{position:absolute;left:0;right:0;bottom:0;background:var(--panel);border-radius:18px 18px 0 0;padding:16px 18px 24px;max-height:88vh;overflow-y:auto}
+#sheet{position:absolute;left:0;right:0;bottom:0;background:var(--panel);border-radius:18px 18px 0 0;padding:18px 20px 30px;max-height:88vh;overflow-y:auto}
 @media (min-width:700px){
   #sheet{left:auto;top:0;right:0;bottom:0;width:420px;max-height:none;border-radius:0;border-left:1px solid var(--line)}
 }
@@ -312,7 +354,7 @@ label{font-size:12px;color:var(--muted);display:block;margin:12px 0 5px;font-wei
 .tafelList label.tRow.conflict input{accent-color:#e5304d}
 input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
-.formFoot{margin-top:22px;border-top:1px solid var(--line);padding-top:16px}
+.formFoot{margin-top:28px;border-top:1px solid var(--line);padding-top:18px}
 .formFoot .btn{display:block;width:100%;margin-top:10px;padding:10px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-radius:5px;background:transparent}
 .formFoot #fCopy{border:1px solid #cfd3de;color:var(--txt)}
 .formFoot #fCopy:active{background:rgba(255,255,255,.08)}
@@ -321,16 +363,18 @@ input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
 .formFoot #fDel{border:1px solid #e5304d;color:#e5304d}
 .formFoot #fDel:active{background:rgba(229,48,77,.12)}
 .fMeta{text-align:center;font-size:11.5px;color:var(--muted);margin-top:12px}
-.sheetHead{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.sheetHead{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .sheetHead h2{flex:1;text-align:center;font-size:17px}
 .shBack{font-size:26px;padding:4px 14px;border-radius:8px;background:var(--panel2)}
-.paxRow{display:flex;gap:8px}
+.paxRow{display:flex;gap:10px;margin-top:8px}
 .card.st-no{opacity:.55}
 .card.st-no .tnr{box-shadow:inset 0 0 0 2px var(--red)}
 .tlBlock.no{background:#3a3f4e;border-left-color:var(--red);color:#aab;opacity:.7}
 .tbl.no{border-color:var(--red);opacity:.6}
 #sheet h2{font-size:17px;margin-bottom:4px}
-.row2{display:flex;gap:10px}
+.row2{display:flex;gap:16px}
+.row2>div{display:flex;flex-direction:column;justify-content:flex-end}
+#sheet .tafelPickBtn,#sheet select,#sheet input{min-height:43px}
 .row2>div{flex:1}
 .sheetBtns{display:flex;gap:10px;margin-top:20px}
 .btn{flex:1;padding:13px;border-radius:10px;font-size:15px;font-weight:700;text-align:center}
@@ -341,12 +385,15 @@ input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
 
 /* Tijdlijn */
 .tlScroll{overflow-x:auto;margin:0;padding:0 0 8px;-webkit-overflow-scrolling:touch}
-.tlHead{display:flex;position:sticky;top:0;background:var(--bg);z-index:5}
+.tlHead{display:flex;position:sticky;top:0;background:var(--bg);z-index:5;width:max-content;min-width:100%}
 .tlHours{position:relative;height:34px;flex:0 0 auto}
 .tlHour{position:absolute;top:8px;font-size:13px;font-weight:700;color:var(--muted);transform:translateX(-50%)}
 .tlLoc{display:none}
 .tlLocRow{position:sticky;left:0;padding:16px 6px 8px;font-size:14px;font-weight:800;width:max-content}
-.tlRow{display:flex;border-top:1px solid var(--line)}
+.tlRow{display:flex;border-top:1px solid var(--line);width:max-content;min-width:100%}
+.tlRow.sleepDoel{background:rgba(34,192,138,.14)}
+.tlBlock.sleepbaar{touch-action:none;cursor:grab}
+.tlLocRow{position:sticky;left:0;max-width:100vw}
 .tlLabel{flex:0 0 62px;min-height:46px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:var(--bg);border-right:1px solid var(--line);position:sticky;left:0;z-index:3;gap:2px}
 .tlLabel sup{font-size:10px;color:var(--muted);font-weight:700;margin-top:-8px}
 .tlTrack{position:relative;flex:0 0 auto;min-height:46px}
@@ -467,10 +514,12 @@ input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
     <div class="who">Tafelreservering &middot; AFAS Circustheater</div>
   </div>
   <nav>
-    <button data-view="dag"><span class="mi">&#128203;</span>Dagoverzicht</button>
-    <button data-view="tafels"><span class="mi">&#128290;</span>Tafels (tijdlijn)</button>
-    <button data-view="az"><span class="mi">&#128100;</span>Namen A-Z</button>
-    <button data-view="map"><span class="mi">&#128506;</span>Plattegrond</button>
+    <button data-view="dag"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.6" cy="6" r="1.1" fill="currentColor" stroke="none"/><circle cx="3.6" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="3.6" cy="18" r="1.1" fill="currentColor" stroke="none"/></svg></span>Dagoverzicht</button>
+    <button data-view="tafels"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 5h9M8 12h13M5 19h9"/><path d="M3 3v18" opacity=".45"/></svg></span>Tafels (tijdlijn)</button>
+    <button data-view="az"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.3-3.2 4-4.8 7-4.8s5.7 1.6 7 4.8"/></svg></span>Namen A-Z</button>
+    <button data-view="map"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span>Plattegrond</button>
+    <hr>
+    <button type="button" id="btnInst"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.5v2.8M12 18.7v2.8M2.5 12h2.8M18.7 12h2.8M5.2 5.2l2 2M16.8 16.8l2 2M18.8 5.2l-2 2M7.2 16.8l-2 2"/><circle cx="12" cy="12" r="3.6"/></svg></span>Instellingen</button>
 
   </nav>
 </div>
@@ -493,12 +542,14 @@ const ARRS = [
   {n:'Luxe', c:'#f5a623'},
   {n:'Koffie arrangement', c:'#a05a3a'},
   {n:'Na Borrel', c:'#b8e022'},
-  {n:'Kind', c:'#e04ad6'}
+  {n:'Kind', c:'#e04ad6'},
+  {n:'SETA', c:'#e5304d'}
 ];
 const arrKleur = naam => (ARRS.find(a=>a.n===naam)||{}).c || '#8b92a5';
 // Statussen zoals in DISH
 const STATUS = {
   res:{naam:'Verwacht', kort:'verwacht', c:'#9aa1b4'},
+  nm:{naam:'Niet gemeld', kort:'niet gemeld', c:'#5b9dff'},
   in:{naam:'Aan tafel', kort:'aan tafel', c:'#22c08a'},
   arr:{naam:'Gearriveerd', kort:'gearriveerd', c:'#ff6b4a'},
   weg:{naam:'Vertrokken', kort:'vertrokken', c:'#6b7186'},
@@ -575,6 +626,13 @@ function todayStr(){ const d=new Date(); return d.toISOString().slice(0,10); }
 function dayKey(){ return 'ct_res_'+curDate; }
 function getRes(){ return store.get(dayKey(), []); }
 function setRes(list){ store.set(dayKey(), list); render(); }
+
+// Tafels per zaal: aangepaste lijst uit instellingen gaat voor op de vaste config
+function tafelsVoor(loc){
+  const eigen = store.get('ct_tafels', null);
+  if(eigen && Array.isArray(eigen[loc]) && eigen[loc].length) return eigen[loc];
+  return parseTafels(tafelConfig[loc]||'');
+}
 
 function parseTafels(rangeStr){
   // Ondersteunt: "201", "201:4", "201-204", "201-204:4". Volgorde blijft zoals ingevoerd.
@@ -667,6 +725,8 @@ const drawer = document.getElementById('drawer'), scrim = document.getElementByI
 function openDrawer(){ drawer.classList.add('open'); scrim.classList.add('open'); }
 function closeDrawer(){ drawer.classList.remove('open'); scrim.classList.remove('open'); }
 document.getElementById('btnMenu').onclick = openDrawer;
+const btnInst = document.getElementById('btnInst');
+if(btnInst) btnInst.onclick = ()=>openInstellingen();
 scrim.onclick = closeDrawer;
 drawer.querySelectorAll('nav button[data-view]').forEach(b=>{
   b.onclick = ()=>{ curView = b.dataset.view; store.set('ct_view',curView); if(curView==='map') mapUserZoom = false; if(curView==='tafels') tlZoom = 1.6; closeDrawer(); render(); };
@@ -739,6 +799,14 @@ function startSync(){
         const v = sn.val();
         if(v){ layout = v; store.set('ct_layout', layout); if(curView==='map' && !editMode) render(); }
       });
+      db.ref(syncPad + '/tafels').on('value', sn=>{
+        const v = sn.val();
+        if(v){ store.set('ct_tafels', v); if(!sheetWrap.classList.contains('open')) render(); }
+      });
+      db.ref(syncPad + '/pins').on('value', sn=>{
+        const v = sn.val();
+        if(v) store.set('ct_pins', v);
+      });
       db.ref('.info/connected').on('value', sn=> syncStatus(sn.val() ? '#22c08a' : '#e5304d'));
       syncSubDatum = null;
       render();
@@ -760,6 +828,8 @@ function abonneerDatum(){
 function syncSetRes(datum, r){ if(db && r && r.id) db.ref(syncPad+'/res/'+datum+'/'+r.id).set(r); }
 function syncDelRes(datum, id){ if(db && id) db.ref(syncPad+'/res/'+datum+'/'+id).remove(); }
 function syncLayout(){ if(db) db.ref(syncPad+'/layout').set(layout); }
+function syncTafels(){ if(db) db.ref(syncPad+'/tafels').set(store.get('ct_tafels', {})); }
+function syncPins(){ if(db) db.ref(syncPad+'/pins').set(store.get('ct_pins', [])); }
 
 function openSyncSetup(){
   const cur = store.get('ct_sync', SYNC_STANDAARD);
@@ -829,7 +899,9 @@ function openScanner(){
     if(timer) clearInterval(timer);
     try{ if(stream) stream.getTracks().forEach(t=>t.stop()); }catch(e){}
     ov.remove();
+    window.sluitScanner = null;
   };
+  window.sluitScanner = stop;
   ov.querySelector('#scanX').onclick = stop;
 
   let laatste = '', pauzeTot = 0, tik = 0;
@@ -1057,14 +1129,15 @@ function toonScanResultaat(ov, tekst){
       <div class="scanNaam">${esc(r.naam)}<span class="chip" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span></div>
       <div class="scanTafel">${esc(r.loc)} &middot; tafel <b>${tfs.length ? tfs.map(esc).join(', ') : 'nog niet toegewezen'}</b> &middot; ${r.pax} pers. &middot; ${esc(r.tijd)}</div>
       <div class="sheetBtns">
-        <button class="btn ghost" onclick="openFormById('${r.id}')">Details</button>
+        <button class="btn ghost" onclick="if(window.sluitScanner)window.sluitScanner();openFormById('${r.id}')">Details</button>
         <button class="btn green" onclick="scanAanTafel('${r.id}', this)">${r.status==='in' ? '\u2713 Zit aan tafel' : 'Aan tafel zetten'}</button>
       </div>
     </div>`;
   }).join('');
 
-  // Eenduidige treffer: meteen openen zodat drankjes ingevoerd kunnen worden
+  // Eenduidige treffer: camera sluiten en meteen het formulier openen zodat drankjes ingevoerd kunnen worden
   if(matches.length === 1){
+    if(window.sluitScanner) window.sluitScanner();
     openFormById(matches[0].id);
   }
 }
@@ -1150,6 +1223,7 @@ window.ctImport = function(data){
         arr,
         orders: Array.isArray(x.orders) ? x.orders.map(String) : [],
         notitie: String(x.notitie || ''),
+        combi: (x.combi && typeof x.combi==='object') ? x.combi : (arr==='Combi' ? parseCombiUitTekst((x.combi_tekst||'')+' '+(x.notitie||'')+' '+(x.arrangementen||'')) : {}),
         status: STATUS[x.status] ? x.status : 'res',
         walkin: false, bron: 'pa',
         aangemaakt: Date.now(), bewerkt: Date.now()
@@ -1198,6 +1272,10 @@ function openPAImport(){
   };
 }
 const MANAGER_PIN = '5555';
+function geldigePin(code){
+  if(code === MANAGER_PIN) return true;
+  return (store.get('ct_pins', []) || []).some(p => p && String(p.code) === code);
+}
 document.getElementById('btnWisPA').onclick = ()=>{
   const pas = getRes().filter(r=>r.bron==='pa');
   if(!pas.length){ toast('Geen PA-reserveringen op deze dag'); return; }
@@ -1243,11 +1321,18 @@ function openForm(existing, walkin){
       <div style="flex:1"><label>Tafel</label><button type="button" class="tafelPickBtn" id="fTafelBtn"></button><div class="overboekt" id="tafelWarn">Tafel is overgeboekt</div></div>
     </div>
     <label>Naam</label><input id="fNaam" value="${esc(r.naam)}" autocomplete="off">
-    <label>Notities</label><textarea id="fNot" rows="4">${esc(r.notitie)}</textarea>
+    <label>Drankkeuze gasten</label><textarea id="fNot" rows="4">${esc(r.notitie)}</textarea>
     <div class="row2">
-      <div><label>Status</label><select id="fStatus">${Object.entries(STATUS).map(([k,s])=>`<option value="${k}" ${k===r.status?'selected':''}>${s.naam}</option>`).join('')}</select></div>
+      <div><label>Status</label><select id="fStatus">${(['res','arr','nm','no'].includes(r.status)?['res','arr','nm','no']:[r.status,'res','arr','nm','no']).map(k=>`<option value="${k}" ${k===r.status?'selected':''}>${(STATUS[k]||STATUS.res).naam}</option>`).join('')}</select></div>
       <div><label>Label</label><select id="fArr">${ARRS.map(a=>`<option ${a.n===r.arr?'selected':''}>${a.n}</option>`).join('')}</select></div>
     </div>
+    <div id="fCombiWrap" style="display:${r.arr==='Combi'?'block':'none'}">
+      <label>Samenstelling combi</label>
+      <button type="button" class="tafelPickBtn" id="fCombiBtn"></button>
+    </div>
+    <label>Allergenen</label>
+    <button type="button" class="tafelPickBtn" id="fAllBtn"></button>
+    <label class="vkRow"><span class="vkTxt"><i class="vkDot"></i>Extra verkocht arrangement</span><input type="checkbox" id="fVerkocht" ${r.verkocht?'checked':''}><span class="vkSwitch"></span></label>
     ${(existing&&existing.id)?`
     <div class="formFoot">
       <button type="button" class="btn ghost wide" id="fCopy">Reservering kopi\u00ebren</button>
@@ -1298,6 +1383,30 @@ function openForm(existing, walkin){
     };
   });
 
+  // Allergenenkiezer: opties met aantal, in de nette gedeelde kiezer
+  let selAllergie = Object.assign({}, r.allergie || {});
+  const allBtn = sheet.querySelector('#fAllBtn');
+  function updateAllBtn(){
+    const t = Object.entries(selAllergie).filter(([,n])=>n>0).map(([k,n])=>n+'x '+k).join(', ');
+    allBtn.textContent = t || 'Geen';
+    allBtn.style.color = t ? '#e5304d' : '';
+  }
+  updateAllBtn();
+  allBtn.onclick = ()=> aantalPop(allBtn, 'Allergenen (aantal personen)', ALLERGIE_OPTIES, selAllergie, ()=>{ updateAllBtn(); markeer(); });
+
+  // Combikiezer: welke arrangementen wil deze tafel, met aantallen
+  let selCombi = Object.assign({}, r.combi || {});
+  const combiWrap = sheet.querySelector('#fCombiWrap');
+  const combiBtn = sheet.querySelector('#fCombiBtn');
+  function updateCombiBtn(){
+    const t = Object.entries(selCombi).filter(([,n])=>n>0).map(([k,n])=>n+'x '+k).join(', ');
+    combiBtn.textContent = t || 'Kies arrangementen';
+    combiBtn.style.color = t ? '' : 'var(--muted)';
+  }
+  updateCombiBtn();
+  const openCombiPop = ()=> aantalPop(combiBtn, 'Samenstelling combi (aantal per arrangement)', COMBI_OPTIES(), selCombi, ()=>{ updateCombiBtn(); markeer(); });
+  combiBtn.onclick = openCombiPop;
+
   // Tafelkeuze: meerdere tafels met zitplaatsen, zoals in DISH
   const tafelBtn = sheet.querySelector('#fTafelBtn');
   const locSel = sheet.querySelector('#fLoc');
@@ -1335,7 +1444,7 @@ function openForm(existing, walkin){
     const pop = document.createElement('div');
     pop.className = 'tafelPop';
     pop.innerHTML = `<label class="tRow"><input type="checkbox" id="tafAuto" ${selTafels.size?'':'checked'}><b style="min-width:auto">Automatisch</b></label>` +
-      parseTafels(tafelConfig[locSel.value]||'').map(t=>`
+      tafelsVoor(locSel.value).map(t=>`
       <label class="tRow ${conf.has(t.nr)?'conflict':''}"><input type="checkbox" value="${t.nr}" ${selTafels.has(t.nr)?'checked':''}><b>${t.nr}</b><span>${t.cap ? t.cap+' zitplaatsen' : ''}${conf.has(t.nr)?' &middot; bezet':''}</span></label>`).join('');
     ov.appendChild(pop);
     document.body.appendChild(ov);
@@ -1374,6 +1483,9 @@ function openForm(existing, walkin){
     const chip = sheet.querySelector('#topChip');
     chip.textContent = e.target.value;
     chip.style.background = arrKleur(e.target.value);
+    const isCombi = e.target.value === 'Combi';
+    combiWrap.style.display = isCombi ? 'block' : 'none';
+    if(isCombi) openCombiPop();
   });
   // Vink wordt groen zodra er iets gewijzigd is
   const markeer = ()=>sheet.querySelector('#fSave').classList.add('actief');
@@ -1417,7 +1529,12 @@ function openForm(existing, walkin){
       arr: sheet.querySelector('#fArr').value,
       notitie: sheet.querySelector('#fNot').value.trim(),
       status: sheet.querySelector('#fStatus').value,
+      allergie: Object.fromEntries(Object.entries(selAllergie).filter(([,n])=>n>0)),
+      verkocht: !!(sheet.querySelector('#fVerkocht') && sheet.querySelector('#fVerkocht').checked),
+      combi: sheet.querySelector('#fArr').value === 'Combi' ? Object.fromEntries(Object.entries(selCombi).filter(([,n])=>n>0)) : {},
       walkin: r.walkin,
+      bron: (existing && existing.bron) || r.bron || 'handmatig',
+      orders: (existing && existing.orders) || r.orders || [],
       aangemaakt: (existing && existing.aangemaakt) || Date.now(),
       bewerkt: Date.now()
     };
@@ -1474,8 +1591,8 @@ window.openStatusMenu = (id, ev)=>{
   ov.className = 'stOv';
   const menu = document.createElement('div');
   menu.className = 'stMenu';
-  menu.innerHTML = Object.entries(STATUS).map(([k,s])=>
-    `<button data-k="${k}" class="${k===r.status?'on':''}"><span>${s.naam}</span><i style="background:${s.c}"></i></button>`).join('');
+  const keuzes = ['res','arr','nm','no'].includes(r.status) ? ['res','arr','nm','no'] : [r.status,'res','arr','nm','no'];
+  menu.innerHTML = keuzes.map(k=>{ const s = STATUS[k]||STATUS.res; return `<button data-k="${k}" class="${k===r.status?'on':''}"><span>${s.naam}</span><i style="background:${s.c}"></i></button>`; }).join('');
   ov.appendChild(menu);
   document.body.appendChild(ov);
   const b = ev.target.closest('button').getBoundingClientRect();
@@ -1585,6 +1702,189 @@ function verankerBijVeld(ov, box, veld){
 }
 
 /* ============ BEVESTIGINGSDIALOOG ============ */
+const instInp = 'background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px;color:inherit';
+
+window.openInstellingen = ()=>{ closeDrawer(); vraagPin(()=> toonInstellingen()); };
+
+// Paginaraamwerk zoals de DISH-instellingen: oranje kop, kruimelpad, inhoudskaart
+function instPagina(kruimels, inhoud){
+  const oude = document.querySelector('.instPage'); if(oude) oude.remove();
+  const pg = document.createElement('div');
+  pg.className = 'instPage';
+  pg.innerHTML = `
+    <div class="instTop">
+      <button id="instTerug">${kruimels.length>1 ? '&#8249;' : '&#10005;'}</button>
+      <span>Instellingen</span>
+    </div>
+    <div class="instCrumb">${kruimels.map((k,i)=> i<kruimels.length-1 ? `<a data-i="${i}">${esc(k.n)}</a><em>/</em>` : `<b>${esc(k.n)}</b>`).join('')}</div>
+    <div class="instWrap"><div class="instCard">${inhoud}</div></div>`;
+  document.body.appendChild(pg);
+  pg.querySelector('#instTerug').onclick = ()=>{
+    if(kruimels.length>1) kruimels[kruimels.length-2].ga(); else pg.remove();
+  };
+  pg.querySelectorAll('.instCrumb a').forEach(a=> a.onclick = ()=> kruimels[+a.dataset.i].ga());
+  return pg;
+}
+window.sluitInstellingen = ()=>{ const p = document.querySelector('.instPage'); if(p) p.remove(); };
+
+function toonInstellingen(){
+  const pg = instPagina([{n:'Instellingen', ga:toonInstellingen}], `
+    <div class="instH">Instellingen</div>
+    <div class="instSub">Beheer van zalen, tafels en managercodes.</div>
+    <div class="instRow" id="rZalen"><b style="flex:1">Zalen &amp; Tafels</b><span class="instChev">&#8250;</span></div>
+    <div class="instRow" id="rManagers"><b style="flex:1">Managers</b><span class="instChev">&#8250;</span></div>`);
+  pg.querySelector('#rZalen').onclick = instZalen;
+  pg.querySelector('#rManagers').onclick = instManagers;
+}
+
+function instZalen(){
+  const pg = instPagina([{n:'Instellingen', ga:toonInstellingen},{n:'Zalen & Tafels', ga:instZalen}], `
+    <div class="instH">Zalen &amp; Tafels</div>
+    <div class="instSub">Beheer de zalen volgens de indeling van het theater. Tik op een zaal om de tafels te beheren.</div>
+    <div class="instKopRij"><span style="flex:1">Naam</span><span>Tafels</span></div>
+    ${LOCS.map(l=>`<div class="instRow" data-loc="${esc(l)}">
+      <span class="instMove">&#8597;</span>
+      <b style="flex:1">${esc(l)}</b>
+      <span class="chip" style="background:#2ec08a">${tafelsVoor(l).length} tafels</span>
+      <span class="instChev">&#8250;</span>
+    </div>`).join('')}`);
+  pg.querySelectorAll('.instRow[data-loc]').forEach(rw=> rw.onclick = ()=> instTafels(rw.dataset.loc));
+}
+
+function zetTafels(loc, lijst){
+  const alle = store.get('ct_tafels', {}) || {};
+  alle[loc] = lijst;
+  store.set('ct_tafels', alle);
+  syncTafels();
+  render();
+}
+
+function instTafels(loc){
+  const lijst = tafelsVoor(loc).map(t=>({nr:t.nr, cap:t.cap||2}));
+  const pg = instPagina(
+    [{n:'Instellingen', ga:toonInstellingen},{n:'Zalen & Tafels', ga:instZalen},{n:loc, ga:()=>instTafels(loc)}], `
+    <div style="display:flex;align-items:flex-start;gap:12px">
+      <div style="flex:1">
+        <div class="instH">${esc(loc)}</div>
+        <div class="instSub">Zitplaatsen aanpassen, tafels verwijderen of toevoegen. Geldt direct op alle apparaten.</div>
+      </div>
+      <button class="btn primary" id="instAdd" style="white-space:nowrap">+ Toevoegen</button>
+    </div>
+    <div class="instKopRij"><span style="flex:1">Tafel</span><span style="width:132px">Zitplaatsen</span><span style="width:100px"></span></div>
+    ${lijst.map((t,i)=>`<div class="instRow" style="cursor:default">
+      <b style="flex:1">Tafel ${esc(t.nr)}</b>
+      <span class="stepper" data-i="${i}" style="width:112px;justify-content:space-between"><button data-d="-1">&minus;</button><b>${t.cap}</b><button data-d="1">+</button></span>
+      <button class="btn danger" data-del="${i}" style="width:100px">Verwijderen</button>
+    </div>`).join('') || '<div class="instSub">Nog geen tafels in deze zaal.</div>'}`);
+
+  pg.querySelectorAll('.stepper[data-i]').forEach(st=>{
+    st.querySelectorAll('button').forEach(bt=> bt.onclick = ()=>{
+      const i = +st.dataset.i;
+      lijst[i].cap = Math.max(1, Math.min(40, lijst[i].cap + (+bt.dataset.d)));
+      st.querySelector('b').textContent = lijst[i].cap;
+      zetTafels(loc, lijst);
+    });
+  });
+  pg.querySelectorAll('button[data-del]').forEach(bt=> bt.onclick = ()=>{
+    const i = +bt.dataset.del;
+    vraag('Tafel <b>'+esc(lijst[i].nr)+'</b> verwijderen uit '+esc(loc)+'?', ()=>{
+      lijst.splice(i,1);
+      zetTafels(loc, lijst);
+      instTafels(loc);
+    });
+  });
+  pg.querySelector('#instAdd').onclick = ()=>{
+    const ov = document.createElement('div');
+    ov.className = 'mcalOv';
+    ov.innerHTML = `<div class="vraagBox" style="text-align:left;width:min(340px,92vw)">
+      <p style="margin-bottom:10px"><b>Tafel toevoegen aan ${esc(loc)}</b></p>
+      <label>Tafelnummer</label>
+      <input id="nNr" style="${instInp};width:100%" autocomplete="off" inputmode="numeric">
+      <label style="margin-top:10px;display:block">Zitplaatsen</label>
+      <input id="nCap" type="number" min="1" max="40" value="2" style="${instInp};width:100%">
+      <div class="sheetBtns" style="margin-top:16px">
+        <button class="btn ghost" id="nX">Annuleren</button>
+        <button class="btn primary" id="nOk">Toevoegen</button>
+      </div>
+    </div>`;
+    document.body.appendChild(ov);
+    setTimeout(()=>ov.querySelector('#nNr').focus(), 50);
+    ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+    ov.querySelector('#nX').onclick = ()=>ov.remove();
+    ov.querySelector('#nOk').onclick = ()=>{
+      const nr = ov.querySelector('#nNr').value.trim();
+      const cap = Math.max(1, Math.min(40, +ov.querySelector('#nCap').value || 2));
+      if(!nr){ toast('Vul een tafelnummer in'); return; }
+      if(lijst.some(t=>t.nr===nr)){ toast('Tafel '+nr+' bestaat al'); return; }
+      lijst.push({nr, cap});
+      zetTafels(loc, lijst);
+      ov.remove();
+      instTafels(loc);
+      toast('Tafel '+nr+' toegevoegd');
+    };
+  };
+}
+
+function instManagers(){
+  const pins = store.get('ct_pins', []) || [];
+  const pg = instPagina([{n:'Instellingen', ga:toonInstellingen},{n:'Managers', ga:instManagers}], `
+    <div style="display:flex;align-items:flex-start;gap:12px">
+      <div style="flex:1">
+        <div class="instH">Managers</div>
+        <div class="instSub">De hoofdcode blijft altijd werken. Geef collega's hier een eigen managercode.</div>
+      </div>
+      <button class="btn primary" id="pinAdd" style="white-space:nowrap">+ Toevoegen</button>
+    </div>
+    <div class="instKopRij"><span style="flex:1">Naam</span><span style="width:80px">Code</span><span style="width:100px"></span></div>
+    ${pins.length ? pins.map((p,i)=>`<div class="instRow" style="cursor:default">
+      <b style="flex:1">${esc(p.naam||'Manager')}</b>
+      <span style="width:80px;letter-spacing:4px;color:var(--muted)">\u2022\u2022\u2022\u2022</span>
+      <button class="btn danger" data-del="${i}" style="width:100px">Verwijderen</button>
+    </div>`).join('') : '<div class="instSub" style="padding:10px 0">Nog geen extra managercodes.</div>'}`);
+
+  pg.querySelectorAll('button[data-del]').forEach(bt=> bt.onclick = ()=>{
+    const i = +bt.dataset.del;
+    vraag('Managercode van <b>'+esc(pins[i].naam||'deze manager')+'</b> verwijderen?', ()=>{
+      pins.splice(i,1);
+      store.set('ct_pins', pins);
+      syncPins();
+      instManagers();
+    });
+  });
+  pg.querySelector('#pinAdd').onclick = ()=>{
+    const ov = document.createElement('div');
+    ov.className = 'mcalOv';
+    ov.innerHTML = `<div class="vraagBox" style="text-align:left;width:min(340px,92vw)">
+      <p style="margin-bottom:10px"><b>Managercode toevoegen</b></p>
+      <label>Naam</label>
+      <input id="mNaam" style="${instInp};width:100%" autocomplete="off">
+      <label style="margin-top:10px;display:block">Code (4 tot 8 cijfers)</label>
+      <input id="mCode" style="${instInp};width:100%" inputmode="numeric" maxlength="8" autocomplete="off">
+      <div class="sheetBtns" style="margin-top:16px">
+        <button class="btn ghost" id="mX">Annuleren</button>
+        <button class="btn primary" id="mOk">Toevoegen</button>
+      </div>
+    </div>`;
+    document.body.appendChild(ov);
+    setTimeout(()=>ov.querySelector('#mNaam').focus(), 50);
+    ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+    ov.querySelector('#mX').onclick = ()=>ov.remove();
+    ov.querySelector('#mOk').onclick = ()=>{
+      const naam = ov.querySelector('#mNaam').value.trim();
+      const code = ov.querySelector('#mCode').value.trim();
+      if(!naam){ toast('Vul een naam in'); return; }
+      if(!/^\d{4,8}$/.test(code)){ toast('Code moet 4 tot 8 cijfers zijn'); return; }
+      if(code === MANAGER_PIN || pins.some(p=>String(p.code)===code)){ toast('Deze code bestaat al'); return; }
+      pins.push({naam, code});
+      store.set('ct_pins', pins);
+      syncPins();
+      ov.remove();
+      instManagers();
+      toast('Managercode voor '+naam+' toegevoegd');
+    };
+  };
+}
+
 function vraagPin(cb){
   const ov = document.createElement('div');
   ov.className = 'mcalOv';
@@ -1604,7 +1904,7 @@ function vraagPin(cb){
   const fout = ov.querySelector('#pinFout');
   setTimeout(()=>veld.focus(), 50);
   const check = ()=>{
-    if(veld.value.trim() === MANAGER_PIN){ ov.remove(); cb(); }
+    if(geldigePin(veld.value.trim())){ ov.remove(); cb(); }
     else{
       fout.textContent = 'Onjuiste code';
       veld.value = '';
@@ -1809,6 +2109,83 @@ const locTabs = document.getElementById('locTabs');
 
 function esc(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
+// Allergenen: per optie een aantal (meestal 1 of 2 personen, niet de hele tafel)
+const ALLERGIE_OPTIES = [
+  {n:'Lactosevrij', c:'#4d8dff'},
+  {n:'Glutenvrij', c:'#f5a623'},
+  {n:'Notenallergie', c:'#e5304d'},
+  {n:'Vegetarisch', c:'#2ec08a'},
+  {n:'Veganistisch', c:'#b8e022'},
+  {n:'Anders', c:'#8b92a5'}
+];
+// Bij een combi kies je uit de andere labels welke gasten wat willen
+const COMBI_OPTIES = ()=> ARRS.filter(a=>a.n!=='Combi' && a.n!=='SETA');
+// Herkent "1x Kind, 2x Normaal" in geimporteerde tekst en zet het om naar het combi-veld.
+// Matcht alleen echte arrangementnamen, dus drankjes zoals "2x koffie" blijven met rust.
+function parseCombiUitTekst(txt){
+  const uit = {};
+  const namen = { 'Kind':'Kind', 'Normaal':'Normaal', 'Luxe':'Luxe', 'Koffie arrangement':'Koffie arrangement', 'Koffie-arrangement':'Koffie arrangement', 'Na Borrel':'Na Borrel', 'Naborrel':'Na Borrel' };
+  Object.entries(namen).forEach(([zoek, doel])=>{
+    const re = new RegExp('(\\d+)\\s*x\\s*' + zoek.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '(?![a-z\u00e9])', 'gi');
+    let m;
+    while((m = re.exec(String(txt||''))) !== null){
+      uit[doel] = (uit[doel]||0) + (+m[1]);
+    }
+  });
+  return uit;
+}
+
+function combiTekst(r){
+  const c = (r && r.combi) || {};
+  return Object.entries(c).filter(([,n])=>n>0).map(([k,n])=>n+'x '+k).join(', ');
+}
+// Kleine gekleurde labels voor de samenstelling van een combi
+function combiTags(r){
+  const c = (r && r.combi) || {};
+  return Object.entries(c).filter(([,n])=>n>0)
+    .map(([k,n])=>`<span class="tlTag" style="background:${arrKleur(k)}">${n}x ${esc(k)}</span>`).join('');
+}
+
+// Gedeelde kiezer: opties met plus en min, netjes in het thema
+function aantalPop(anchor, titel, opties, sel, klaar){
+  const ov = document.createElement('div');
+  ov.className = 'stOv';
+  const pop = document.createElement('div');
+  pop.className = 'aantalPop';
+  pop.innerHTML = `<div class="kop">${esc(titel)}</div>` + opties.map(o=>`
+    <div class="aantalRow">
+      <span class="nm"><i style="background:${o.c}"></i>${esc(o.n)}</span>
+      <span class="stepper ${(sel[o.n]||0)>0?'actief':''}" data-o="${esc(o.n)}">
+        <button type="button" data-d="-1">&minus;</button>
+        <b>${sel[o.n]||0}</b>
+        <button type="button" data-d="1">+</button>
+      </span>
+    </div>`).join('');
+  ov.appendChild(pop);
+  document.body.appendChild(ov);
+  const b = anchor.getBoundingClientRect();
+  pop.style.left = Math.max(8, Math.min(window.innerWidth - pop.offsetWidth - 8, b.left))+'px';
+  pop.style.top = Math.max(8, Math.min(window.innerHeight - pop.offsetHeight - 8, b.bottom + 6))+'px';
+  ov.onclick = (e)=>{ if(e.target===ov){ ov.remove(); if(klaar) klaar(); } };
+  pop.querySelectorAll('.stepper').forEach(st=>{
+    const o = st.dataset.o;
+    st.querySelectorAll('button').forEach(bt=>{
+      bt.onclick = ()=>{
+        sel[o] = Math.max(0, Math.min(30, (sel[o]||0) + (+bt.dataset.d)));
+        st.querySelector('b').textContent = sel[o];
+        st.classList.toggle('actief', sel[o] > 0);
+      };
+    });
+  });
+}
+function allergieTekst(r){
+  const a = (r && r.allergie) || {};
+  return Object.entries(a).filter(([,n])=>n>0).map(([k,n])=>n+'x '+k).join(', ');
+}
+
+// Verkocht vink je zelf aan in het formulier (extra verkocht aan de deur)
+function isVerkocht(r){ return !!(r && r.verkocht); }
+
 function cardHTML(r, metTijd){
   const st = STATUS[r.status]||STATUS.res;
   const tfs = getTafels(r);
@@ -1817,14 +2194,15 @@ function cardHTML(r, metTijd){
     <div class="cpax">${r.pax}<small>p.</small></div>
     <div class="cnaam">${esc(r.naam)}</div>
     <div class="cmid">
-      <div><span class="chip" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>${r.walkin?'<span class="chip" style="background:#5ad0a5">Walk-in</span>':''}</div>
+      <div><span class="chip" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>${Object.entries((r.combi)||{}).filter(([,n])=>n>0).map(([k,n])=>`<span class="chip" style="background:${arrKleur(k)}">${n}x ${esc(k)}</span>`).join('')}${r.walkin?'<span class="chip" style="background:#5ad0a5">Walk-in</span>':''}${isVerkocht(r)?'<span class="chip" style="background:#8b5cf6">Verkocht</span>':''}</div>
       ${(metTijd||r.notitie)?`<div class="cnote">${metTijd?esc(r.tijd):''}${metTijd&&r.notitie?' &middot; ':''}${r.notitie?esc(r.notitie):''}</div>`:''}
+      ${allergieTekst(r)?`<div class="cnote" style="color:#e5304d">\u26a0 ${esc(allergieTekst(r))}</div>`:''}
     </div>
     <div class="ctafel"${dayConflicts.has(r.id)?' style="color:#e5304d"':''}>${tfs.length?tfs.map(esc).join(', '):'-'}<small>${esc(r.loc)}</small></div>
     <button class="stBtn" style="background:${st.c}" onclick="openStatusMenu('${r.id}',event)">${st.naam.toUpperCase()}</button>
   </div>`;
 }
-window.openFormById = (id)=>{ const r = getRes().find(x=>x.id===id); if(r) openForm(r,false); };
+window.openFormById = (id)=>{ if(Date.now() - (window._sleepklik||0) < 400) return; const r = getRes().find(x=>x.id===id); if(r) openForm(r,false); };
 
 function render(){
   document.getElementById('dateLabel').textContent = fmtDate(curDate);
@@ -1869,15 +2247,23 @@ const SHIFTS = {
 };
 let tlShift = store.get('ct_shift','avond');
 let tlZoom = 1.6;  // Standaard 160% zodat dranknotities goed leesbaar zijn
+let tlLock = true; // Rood slotje: blokken kunnen niet per ongeluk versleept worden
 
 function renderTafels(all){
   const sh = SHIFTS[tlShift] || SHIFTS.avond;
   locTabs.innerHTML =
     Object.entries(SHIFTS).map(([k,v])=>`<button class="${k===tlShift?'on':''}" data-s="${k}">${v.n}</button>`).join('') +
     `<span style="flex:1"></span>
+     <button data-lock="1" title="${tlLock?'Verplaatsen vergrendeld':'Verplaatsen aan: sleep een blok naar een andere tafel'}" style="color:${tlLock?'#e5304d':'#22c08a'};font-size:15px">${tlLock?'\u{1F512}':'\u{1F513}'}</button>
      <button data-z="out">&minus;</button>
      <button data-z="reset">${Math.round(tlZoom*100)}%</button>
      <button data-z="in">+</button>`;
+  const lockBtn = locTabs.querySelector('button[data-lock]');
+  if(lockBtn) lockBtn.onclick = ()=>{
+    if(tlLock){ tlLock = false; toast('Verplaatsen aan: sleep een blok omhoog of omlaag naar een andere tafel'); }
+    else { tlLock = true; toast('Verplaatsen vergrendeld'); }
+    render();
+  };
   locTabs.querySelectorAll('button[data-s]').forEach(b=>b.onclick=()=>{ tlShift=b.dataset.s; store.set('ct_shift',tlShift); render(); });
   locTabs.querySelectorAll('button[data-z]').forEach(b=>b.onclick=()=>{
     if(b.dataset.z==='in') tlZoom = Math.min(2.4, +(tlZoom+0.2).toFixed(1));
@@ -1910,7 +2296,7 @@ function renderTafels(all){
 
   let rows = '';
   LOCS.forEach(loc=>{
-    const tafels = parseTafels(tafelConfig[loc]||'');
+    const tafels = tafelsVoor(loc);
     if(!tafels.length) return;
     rows += `<div class="tlLocRow">${esc(loc)}</div>`;
     const byTafel = {};
@@ -1926,11 +2312,11 @@ function renderTafels(all){
         const s = px(eff);
         const w = Math.max(56, (dur/60)*PXH - 4);
         const kls = r.status==='in' ? 'in' : (r.status==='arr' ? '' : 'verwacht');
-        blocks += `<div class="tlBlock ${kls}${dim?' no':''}" style="left:${s}px;width:${w}px;border-left-color:${st.c}" onclick="openFormById('${r.id}')">
-          <b>${r.pax}</b><span class="tlNaam">${esc(r.naam)}</span><span class="tlTag" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>${r.notitie?`<span class="tlNote">${esc(r.notitie)}</span>`:''}
+        blocks += `<div class="tlBlock ${kls}${dim?' no':''}${tlLock?'':' sleepbaar'}" data-rid="${r.id}" style="left:${s}px;width:${w}px;border-left-color:${st.c}" onclick="openFormById('${r.id}')">
+          <b>${r.pax}</b><span class="tlNaam">${esc(r.naam)}</span><span class="tlTag" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>${combiTags(r)}${isVerkocht(r)?'<span class="tlTag" style="background:#8b5cf6">Verkocht</span>':''}${r.notitie?`<span class="tlNote">${esc(r.notitie)}</span>`:''}${allergieTekst(r)?`<span class="tlTag" style="background:#e5304d">\u26a0 ${esc(allergieTekst(r))}</span>`:''}
         </div>`;
       });
-      rows += `<div class="tlRow">
+      rows += `<div class="tlRow" data-loc="${esc(loc)}" data-tafel="${esc(t.nr)}">
         <div class="tlLabel" onclick="nieuwOpTafel('${esc(loc)}','${esc(t.nr)}')">${esc(t.nr)}<sup>${t.cap??''}</sup></div>
         <div class="tlTrack" style="width:${totalW}px">${gridHTML(start,end,px,nowX)}${blocks}</div>
       </div>`;
@@ -1946,6 +2332,61 @@ function renderTafels(all){
   content.innerHTML = rows
     ? `<div class="tlScroll"><div class="tlHead"><div class="tlLabel"></div><div class="tlHours" style="width:${totalW}px">${hoursHTML}</div></div>${rows}</div>${zonderHTML}`
     : '<div class="empty">Geen tafels gevonden.</div>';
+
+  // Slepen: blok verticaal naar een andere tafelrij trekken
+  if(!tlLock) content.querySelectorAll('.tlBlock.sleepbaar').forEach(blok=>{
+    blok.addEventListener('pointerdown', (e)=>{
+      if(e.button && e.button !== 0) return;
+      e.preventDefault();
+      blok.setPointerCapture(e.pointerId);
+      const startY = e.clientY;
+      let bewogen = false;
+      let doelRij = null;
+      const move = (ev)=>{
+        const dy = ev.clientY - startY;
+        if(Math.abs(dy) > 8) bewogen = true;
+        if(!bewogen) return;
+        blok.style.transform = 'translateY('+dy+'px)';
+        blok.style.zIndex = 50;
+        blok.style.opacity = .85;
+        // Doelrij markeren
+        blok.style.pointerEvents = 'none';
+        const onder = document.elementFromPoint(ev.clientX, ev.clientY);
+        blok.style.pointerEvents = '';
+        const rij = onder && onder.closest ? onder.closest('.tlRow') : null;
+        if(doelRij && doelRij !== rij) doelRij.classList.remove('sleepDoel');
+        doelRij = rij;
+        if(doelRij) doelRij.classList.add('sleepDoel');
+      };
+      const up = (ev)=>{
+        blok.removeEventListener('pointermove', move);
+        blok.removeEventListener('pointerup', up);
+        blok.removeEventListener('pointercancel', up);
+        if(doelRij) doelRij.classList.remove('sleepDoel');
+        blok.style.transform = ''; blok.style.zIndex = ''; blok.style.opacity = '';
+        if(!bewogen) return;
+        window._sleepklik = Date.now();
+        const rid = blok.dataset.rid;
+        if(!doelRij || !rid) { render(); return; }
+        const nieuwLoc = doelRij.dataset.loc, nieuwNr = doelRij.dataset.tafel;
+        const list = getRes();
+        const r2 = list.find(x=>x.id===rid);
+        if(!r2){ render(); return; }
+        const oude = getTafels(r2);
+        if(r2.loc === nieuwLoc && oude.length === 1 && oude[0] === nieuwNr){ render(); return; }
+        r2.loc = nieuwLoc;
+        r2.tafels = [nieuwNr];
+        r2.tafel = nieuwNr;
+        r2.bewerkt = Date.now();
+        syncSetRes(curDate, r2);
+        setRes(list);
+        toast(esc(r2.naam)+' verplaatst naar tafel '+nieuwNr);
+      };
+      blok.addEventListener('pointermove', move);
+      blok.addEventListener('pointerup', up);
+      blok.addEventListener('pointercancel', up);
+    });
+  });
 }
 function gridHTML(start,end,px,nowX){
   let g = '';
@@ -2000,7 +2441,7 @@ function shapeClass(loc, nr){
 function renderMap(all){
   locTabs.innerHTML = '';
   if(!LOCS.includes(curLoc)) curLoc = LOCS[0];
-  const tafels = parseTafels(tafelConfig[curLoc]||'');
+  const tafels = tafelsVoor(curLoc);
   if(mapTijd === null){
     if(curDate === todayStr()){ const n = new Date(); mapTijd = n.getHours()*60 + n.getMinutes(); }
     else mapTijd = 19*60+30;
