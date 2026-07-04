@@ -836,7 +836,12 @@ function openScanner(){
     laatste = data;
     pauzeTot = Date.now() + 2000;
     if(navigator.vibrate) navigator.vibrate(60);
-    toonScanResultaat(ov, data);
+    try{
+      toonScanResultaat(ov, data);
+    }catch(e){
+      const box = ov.querySelector('#scanRes');
+      if(box) box.innerHTML = '<div class="scanGeen">Code gelezen, maar tonen mislukt</div><small style="color:var(--muted);word-break:break-all">'+String(e && e.message || e).slice(0,200)+'<br>Code: '+String(data).slice(0,80)+'</small>';
+    }
   };
 
   const probeer = ()=>{
@@ -860,9 +865,14 @@ function openScanner(){
       ctx.drawImage(video, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
       const bron = new ZXing.HTMLCanvasElementLuminanceSource(canvas);
       const bitmap = new ZXing.BinaryBitmap(new ZXing.HybridBinarizer(bron));
-      const result = reader.decodeWithState(bitmap);
+      let result = null;
+      try{ result = reader.decodeWithState(bitmap); }
+      catch(e){ /* NotFound is normaal zolang er geen code in beeld is */ }
       if(result) gevonden(result.getText());
-    }catch(e){ /* NotFound is normaal zolang er geen code in beeld is */ }
+    }catch(e){
+      const box = ov.querySelector('#scanRes');
+      if(box) box.innerHTML = '<div class="scanGeen">Fout in scanner</div><small style="color:var(--muted);word-break:break-all">'+String(e && e.message || e).slice(0,200)+'</small>';
+    }
     bezig = false;
   };
 
