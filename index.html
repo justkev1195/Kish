@@ -851,13 +851,15 @@ function openScanner(){
       window._scanNummers.add(String(data).trim()); window._scanCodeNummers.add(String(data).trim());
       // Al een match op de code zelf (bijv. eerder gekoppeld kaartnummer)? Dan meteen tonen
       if(vindScanMatches().length){ toonScanResultaat(ov, data); return; }
-      // Geen match: het ticket staat nu scherp in beeld, dus stil een foto pakken en de tekst eronder lezen
-      const foto = document.createElement('canvas');
-      foto.width = video.videoWidth; foto.height = video.videoHeight;
-      foto.getContext('2d').drawImage(video, 0, 0);
+      // Geen match: het ticket staat nu scherp in beeld, dus stil foto's pakken en de tekst eronder lezen
       const box = ov.querySelector('#scanRes');
-      if(box) box.innerHTML = '<div class="scanGeen" style="color:var(--tekst,#fff)">Code gelezen, ticket controleren...</div>';
-      try{ await ocrNummers(foto); }catch(e){ /* tekstlezer niet beschikbaar, val terug op gewone weergave */ }
+      for(let poging = 1; poging <= 3; poging++){
+        if(box) box.innerHTML = '<div class="scanGeen" style="color:var(--tekst,#fff)">Code gelezen, ticket controleren' + (poging>1 ? ' (poging '+poging+')' : '') + '...</div>';
+        const foto = pakFrame(video, poging > 1);
+        try{ await ocrNummers(foto); }catch(e){ break; /* tekstlezer niet beschikbaar */ }
+        if(vindScanMatches().length) break;
+        if(poging < 3) await new Promise(r=>setTimeout(r, 500));
+      }
       toonScanResultaat(ov, data);
     }catch(e){
       const box = ov.querySelector('#scanRes');
@@ -939,12 +941,26 @@ function vindScanMatches(){
   );
 }
 
+function pakFrame(video, verbeter){
+  const c = document.createElement('canvas');
+  const sch = verbeter ? Math.min(2, 2600 / Math.max(1, video.videoWidth)) : 1;
+  c.width = Math.floor(video.videoWidth * sch);
+  c.height = Math.floor(video.videoHeight * sch);
+  const ctx = c.getContext('2d');
+  if(verbeter){ try{ ctx.filter = 'grayscale(1) contrast(1.7) brightness(1.05)'; }catch(e){} }
+  ctx.drawImage(video, 0, 0, c.width, c.height);
+  return c;
+}
+
 async function ocrNummers(canvas){
   await laadTesseract();
   const worker = window._tessWorker || (window._tessWorker = await Tesseract.createWorker('eng'));
   await worker.setParameters({ tessedit_char_whitelist: '0123456789:aeiKkmnNOrdstu ' });
   const { data } = await worker.recognize(canvas);
-  const gevonden = (String(data.text||'').match(/\d{4,}/g) || []);
+  // Veelgemaakte leesfouten rechtzetten: O als 0, en spaties midden in een nummer weghalen
+  let tekst = String(data.text||'').replace(/O/g, '0');
+  tekst = tekst.replace(/(\d) (?=\d)/g, '$1');
+  const gevonden = (tekst.match(/\d{4,}/g) || []);
   if(!window._scanNummers) window._scanNummers = new Set();
   gevonden.forEach(n => window._scanNummers.add(n));
   return gevonden;
@@ -969,9 +985,7 @@ window.leesTekstScan = async ()=>{
   const box = ov && ov.querySelector('#scanRes');
   const video = ov && ov.querySelector('#scanVideo');
   if(!box || !video || !video.videoWidth){ if(box) box.innerHTML = '<div class="scanGeen">Geen camerabeeld</div>'; return; }
-  const c = document.createElement('canvas');
-  c.width = video.videoWidth; c.height = video.videoHeight;
-  c.getContext('2d').drawImage(video, 0, 0);
+  const c = pakFrame(video, true);
   box.innerHTML = '<div class="scanGeen" style="color:var(--tekst,#fff)">Ticket controleren...</div>';
   try{
     await ocrNummers(c);
