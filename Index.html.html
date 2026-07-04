@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="KISH">
+<meta name="theme-color" content="#f26722">
+<title>KISH &middot; CT Tafels</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAOuElEQVR4nO2de7BV1X3Hv7+19zl7n3vvuVweSWcaZ5LpH7WTNmOT2ow1iYgKUaSKIhEDIm9QQERBUYhPUEsVQgFBngJB8TX4CmjG+mCcatrYprWdtkkz7bQzadpBQe69+zz23uvXP/Y5pAgb8e51c/Y++/eZ++e9664557N/v99aez3o2NzfgSCcCtXqDgjpReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWkUOIReQQYhE5hFhEDiEWu9UdOC1EICtpIxyC2URvYlDK5DPGGqyNtZaMFMtBhDDgypGkzbidsIuD5YeyuNoHv2amNdZU7IBTGlybz5i0ykGEwKee3ypcOGXgjTBACD94Sx/+z0HxQ1ncf9T+/ZHqrN8DaxANsB1uPAnkdob//tPwZz9GwUmDH+mVg/2a9bkvud9dmbClymNzw1/+jAouODTStQaWzcc+LJw3vjRvE6yCkSb1f//Cf/8AVOJMaoi0yoHoYfIRBo0IMAC0hlII6gN/puOwbD52uHD+xNKcDbAshAEIGPCjrkMUnPBf3vXWTeVqP7mdKSk7UiwHACJY9sDlIA2lBsuMb04qzV4HssAMK8HHGAYoOMG/vltdPw1BjUpd0EYjXALSLUcKUTYfO1wcOdmd+X1E4YISDFXCAJYd/vM7lfUz4FdRcNNjBkSOz4ayufdwcdRUd8YaMIyYEfzTocqGGQj8tJkBmQT7DERmXDTdnbG2UV4kMUMHsOzggzcr66cj8FFw0mYGRI4zxbK493Bx9Gx3+iONajFJKRMGUHbwD39Z2TATYQi7mEIzIHKcEcriYx8Wvz3PnfowWAOU1AzLDn76WmXDTLBGoZCSscnJiByfhrK498Pi2PnulFXGzHj/YGXjHACwC9ApNQMix2khKIt7PyqOu9m97n4DZkR1xk9eqWyeC1IpNwMyWomFCKS49yPnisXOxOXQGpTYDGUHf/2it2UBKRuWnXIzIHLEQCDivo+c8UucCcugQ1CyybQwgGX77+2vbl1IdhHKSm2d8f8ROU6GoIj7jjhX3+GMX2rMjL96trrtFhScrJgBkeMkophx1LlmuXPFYugQSg1w8j4iMuOdfZUdt1LRBWXGDIgcJ0AEEHtHne+scMYtMmCGDmDZ/tt7K7uWULEDpDJkBkSOX9Mw42P32nuKYxeYMCOEsutv7a7uuoOc7JkBkaMBEQD2Pnavu7946TzoMOmiCh1CWf4bT1R3LyO3E0SZMwMiB3DcjF53yoPF0bOiMWeiBsMAll1/fVvtB8vJLYOQhmVdAyD3chCBwdU+d+rDxYunm4kZll1/bUv1yRXU0Q1k1QzkXQ5SYM21fveG1cVRUxObwdAayqoffKy6796sm4Fcy9Ewo1Ka9mhh5GRjZvxwffWZB9rADORXDlLQIfvV0ow1hW9NiqqEgbfGDNZQVu3ldbVnV1JnD8BZNwM5lYMUdAi/Vpr1F4XzrzFmxotras8/1DZmII9ykIIOEPjunA2F866K6scEzTXN2L+6tn81dQ0D6/YwA7mTQymEAcLAnbux8PUrE49am2Y8/3DtxUeoa2g7mYF8yaEUggAcluZtts+93EA2AYOs2rOrai+tpfJQaE6wdyWN5EYOpVCvAijduMX+2qUm6gyGUtWn76u/sp7Kw6B1m5mBvMihFHwfoNL8LfY5o42Z8dTd9QMbqTw8ncuDk5ODZYJKwa/DUqUF2+1zRkdvSgfeWpRNlKruXV4/sJHKI9rVDOQicvg1WHZpwXb7yxckrUAbdYaq7llW/9FWKg+HDsx1NHW0tRxEAMPp7Fi02/7yBSYqUIBUddfS+us72jibHKfd5WB2J6+k7hFgbcAMoLrz1vobu/JgBtpcDgBEDTOSbF1smMHV7bfW395D3SMQtnM2OU67ywGAk213jrarsK5sX+Qfeio/ZiAXciRZOB6JpcPK1oX+O0/nygzkQo4BEyWjMKg8Pt9/97m8mQGRI5bIjKBeefwm/70XcmgGRI5TE5nh17xN84K/eZm6h+fQDIgcp4AZpLheqW6aG7x/ILdmQOT4JMwgQr1a2Tg7+LtXqZxfMyBynAgD4JpXWXdD8I9vUXkEQr/VXWolOXjx9hkgAGTZ6gtnN7chmT6mMlOIHCdCgF10J68sjruZez9KuiMy44gcn4AAhg7diSucKxfn3A+R42QomhV1rlnujL+N+/Lrh8hxKqjpx4Q7nfFLc+uHjFZiOO7H1XeAqLZ/NXUObZxanBskcpwGglLQoXPV7c7Vy7j/CBTlKn6IHKen6cf4Je6EO7nvKFSyMwUzhcjxqTT8KF55mzPxLu47mvQ00uyQAzkMbEFrxo8/Xex8ZwX3H82JHzmQw8yRS00/xi1yr72bvaN58KPd5WDWv/qFocPamvnl8oXutfewdxRItsws9bS1HFqDqLbvvvqbu6M1XYlbbPoxdoEz6T72jgHt7EdbyxGhVGXrQv+9/bBsE3uQmvnlspvc69rcD5vTeWQAMzOziRknVhbsYmXrQoRB4RsTDRwJB4KyoMPipTcCVHnye+1xyNPJ5CByaA1loehWtt3sv7MPyjKzfifKL5fOK01Z1a7xIwdyoLkmtOh6227xDz0FyzZZf4yZU5ryIFd6GxdLtxH5kAPR+j+LnA5vx+L623th2Sb2Mzbzy5jZpSkPcbUXaCs/7NTmSVPH5Py6nSh+OB3eztvAunjh9SbqDzT8GD2TiSp7lpFbjvboJm02BeQmckSwBilyOrydS2tv7oq+VwPNKgs6cC6Z0XHDaq72NVYpZx87pa+g2Vzo+ERrrEFETmd15+2kuXjxNEPxw0YYFC+aBlLezqXNw/DT+eGeKTmLHBHMIMDt8nbdXnt9h7Hxi2VDh8VRUzumP8K1fs5+/Eh1zTGITUXfXKns7VoGHTpjZpusP0Zdz0p5O25DNq9ZOU4uI0cEMwDqKHt77qq+tsVw/TFycufMNVzzkh4N0lKy2m8zNPzorvxgee3Vzeb8sBEGxQu+2znr+1yvZNePVKcVY0PZ0zTEDBA6uvv3fo+Z3ctuNHCBFxDNsxW/NQlE/VtvQdHN0KWQx8nBaIU/tTUGiErd3t67obV7+XyTfnzzWpDq33IzCtnzI5PhzjyN/DLEe/Ke6ivroSwz10VH45dvTOyYu579WuOK2uyQpb4OLswAU1eP99R9lZfXNeuPxLErqk/Pv6Zz7noO6tnyIx81x5n+KgNAZ4+37wFoXbrSxKXDaNSnzvkTQKr/8QXIznXlmbH4N0QUPzp7vGdWVV5Y08wviS21bISB8ydXdc3byEEdOshE/JCC9OTfZxCos8d75kFoXbp6iYHr7NGsT88bX1aq97GbyIoqklTHD0krp/wbBgNdPf3PPcSsOybcDh0Chvz4+hVlUr0bbwSDLJtTnF8yENxaBIOZuoZ5z/2Z99zDzSrBRH7RQfGPx3Ut2Mwccpjq/JLenrUe1uCQykO951d7z6yCsszcxaRs6MA59/Lu+Y+DQ2gfSqVzf7Y6MSen7ccICf47M7Sm8lBv/6Pe0w9AKWgTNz9G8+vnji0v2AKtEdabfqTrR7W+Cym2gwEGs9YoD+t/YW3/vvuhVOOmpoRE9ccfXVZeuI0ZHPisUvddqNZ3IfV2gAGtqWuY98LavifvhVJmboGM/Pjat7sXbgMT+z4oXV+H1BxnBjN0SOXhlZfW9e29G8oyGT++OqZ70XYiQuCnqj5NUVcygA6pe4T38vq+PSsaVYIRP3RQ/MNLuhftACkOovo0FaQuzxnPKoa7FAZUHu79cGPf7rtAhvyI6tNzLu5etAOWYr/Oymr5J88SOQaCDqk83DuwqXfXncb8iPLLORcNueUJWAUEtTTEj9b3IJNE9cfBzb1P3GHYj69cOGTxTlgF9ust9yPd71bAzfdeA5q3jt5cRHPhprLUccKQukZ4B7dA6/KMPwdr6MTHYZNCUC/+wcghi3Z8vHYaVytULLXw/W2q361AWYmeHqUAsLKN7NY/BTqg7hHeq9tY6+5Zj5o5Z1AVARS/cmHP8v1H107jviOw7Fbtf0nxOaRKsdfr/9vfDjxysAYp7jsCZZuOG03CgIYMr/xoB1iXRl1vbC2xDsjt6hgzq//51QZaGyj0P9O/1MJ//ymwZr+WsA2ynUFP3kpxpd/wCaVak9PRmJBtEelNKwBACk5nwjZ+E+/EtUap03hsYiPzsAlIcVqJSPFyhxNI97KdgZHW0YqQAmSeQ4gl3TWH0FIkcgixiBxCLCKHEEtaD6kVUoBEDiEWkUOIRYayQiypnz4/Q6LLHFMx3UvNZSiZJ/tyMKAUgrqueZT8OEAD/WGQolIZOsz6TZLZf7eiFNcq1pDPDZm60v7C7wItPH2cweBqX9/BrdW/f0N1Dsl6/Mh4zUHEga+6eoYvf7Zw1tmt7k0D96uXHH7khspPXlUd3WaOJ2wRGU8ryuLeI10TlhTOOht+DVah1WUHQYewCz1T7q19cAg6zPQh1xmXAwDY/vwXG+ertHq5NgAQQYfWkM+T28WVXlgpKIMGSgo+zSQww3a8Q09DWbAL0CFYt/hHh1BW/3svhUd+BbuQ3bABgP7r+i+2ug/JUEr3H+seO2fIpLuo1NXq3gBA5cevfLhpIYchRVtqM0v25QBASvd/XDjrbHvEb7f8rhNdq9R//j7ZhRZuKTBFG9QcAGvV1RP8738Ev/x5q7sCEJHbZWYPXKvJ+FD2ODqkgoNiaeCbXIzBnPHpjeO0ReQAADAzOMOTCikk46MVYTDJ/vS5MGi0S80hDAKSVoRYBm37uZB9JHIIsUjNIcQioxUhFkkrQiwihxCL1BxCLBI5hFhEDiEWO/urDoTBQiKHEIvIIcQicgixyFBWiEWmz4VYJK0IsUhaEWKRyCHEInIIsYgcQiz/B6sDlObS8gI7AAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="kish-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f26722'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='42' font-weight='900' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#12141a;--panel:#1a1d26;--panel2:#222633;--line:#2e3342;
+  --txt:#e8eaf0;--muted:#8b92a5;
+  --accent:#f26722;--accent2:#ff8a4d;
+  --green:#22a06b;--red:#e5484d;--blue:#4d8dff;--yellow:#fbbf24;
+  --radius:12px;
+  font-size:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;min-height:100vh;overflow-x:hidden}
+button{font-family:inherit;border:none;cursor:pointer;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:15px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+label{font-size:12px;color:var(--muted);display:block;margin:12px 0 5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+
+/* Icoonbalk links (desktop) */
+#sideRail{display:none;position:fixed;left:0;top:0;bottom:0;width:54px;background:#14161d;border-right:1px solid var(--line);z-index:45;flex-direction:column;align-items:center;padding:10px 0}
+.railAvatar{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex:0 0 auto;font-family:Arial,sans-serif}
+#sideRail button{width:100%;padding:14px 0;color:#8b92a5;display:flex;justify-content:center;position:relative}
+#sideRail button:active{color:#fff}
+#sideRail button.on{color:#fff;background:var(--panel2)}
+#sideRail button.on::before{content:'';position:absolute;left:0;top:9px;bottom:9px;width:3px;background:var(--accent);border-radius:0 3px 3px 0}
+.railSpacer{flex:1}
+@media (min-width:1000px){
+  #sideRail{display:flex}
+  body{padding-left:54px}
+}
+
+/* Merk */
+#brand{display:none;align-items:center;gap:9px;margin:0 6px 0 4px}
+.brandIcon{width:28px;height:28px;border-radius:7px;background:#fff;color:var(--accent);font-weight:900;font-size:18px;display:inline-flex;align-items:center;justify-content:center;font-family:Arial,sans-serif}
+.brandTxt{color:#fff;font-weight:900;font-size:17px;letter-spacing:.22em}
+@media (min-width:1000px){ #brand{display:flex} }
+#drawer .head .logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;letter-spacing:.2em}
+#drawer .head .logo .brandIcon{background:var(--accent);color:#fff}
+
+/* Topbar */
+#topbar{background:var(--accent);display:flex;align-items:center;gap:4px;padding:10px 8px;position:sticky;top:0;z-index:40}
+#topbar button{padding:10px;border-radius:8px;color:#fff;font-size:20px;line-height:1}
+#topbar button:active{background:rgba(255,255,255,.15)}
+#dateLabel{flex:1;text-align:center;font-size:19px;font-weight:700;color:#fff}
+#dateInput{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+
+#syncDot{display:none;width:9px;height:9px;border-radius:50%;background:#777;margin:0 2px;flex:0 0 auto;align-self:center}
+
+/* Countbar */
+#countbar{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);gap:16px}
+#countbar .nums{flex:1;font-size:14px;line-height:1.6}
+#countbar .nums b{font-size:15px}
+#countbar .ic{font-size:20px;padding:9px;border-radius:9px;color:#e2e6f0;display:flex;align-items:center;justify-content:center}
+#countbar .ic:active{background:var(--panel2);transform:scale(.94)}
+#countbar .ic.actief{color:#fff;background:var(--accent)}
+#countbar #btnWisPA{color:#e5484d}
+#filterbar{display:flex;gap:10px;align-items:flex-end;padding:10px 16px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+#filterbar[hidden]{display:none}
+.fltGroup label{margin:0 0 4px;font-size:10.5px}
+.fltGroup input,.fltGroup select{padding:7px 9px;font-size:13.5px;width:auto;min-width:86px}
+.fltGroup.grow{flex:1;min-width:120px}
+.fltGroup.grow select{width:100%}
+.fltDash{color:var(--muted);padding-bottom:10px}
+.fltReset{padding:8px 12px;border-radius:8px;background:var(--panel2);font-size:12.5px;font-weight:700;color:var(--muted)}
+
+/* View tabs (locaties) */
+#locTabs{display:flex;gap:8px;padding:10px 16px;overflow-x:auto;border-bottom:1px solid var(--line)}
+#locTabs:empty{display:none}
+#locTabs button{white-space:nowrap;padding:8px 14px;border-radius:20px;background:var(--panel2);font-size:13px;font-weight:600;color:var(--muted)}
+#locTabs button.on{background:var(--accent);color:#fff}
+
+/* Content */
+#content{padding:0 0 140px}
+.empty{text-align:center;color:var(--muted);padding:80px 20px;font-size:16px}
+
+.card{background:#15181f;border:none;border-bottom:1px solid #22273a;border-radius:0;padding:12px 14px;margin:0;display:flex;gap:14px;align-items:center;cursor:pointer}
+.card:active{background:#1b1f2a}
+.cpax{font-size:16px;font-weight:800;min-width:32px;white-space:nowrap}
+.cpax small{font-size:10px;color:var(--muted);margin-left:2px;font-weight:600}
+.cnaam{font-weight:700;font-size:15px;flex:0 1 200px;min-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cmid{flex:1;min-width:0}
+.cnote{font-size:12.5px;color:#c6cbd8;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip{display:inline-block;font-size:10px;font-weight:800;padding:2px 8px;border-radius:5px;color:#16110b;margin-right:6px;white-space:nowrap}
+.ctafel{text-align:right;font-weight:800;font-size:14px;min-width:58px;display:flex;flex-direction:column;line-height:1.25}
+.ctafel small{font-size:10px;color:var(--muted);font-weight:600}
+.stBtn{font-size:9px;font-weight:800;letter-spacing:.05em;padding:9px 6px;border-radius:7px;color:#17120c;min-width:86px;text-align:center}
+
+.vrijRow{display:flex;gap:12px;align-items:center;padding:7px 14px;color:var(--muted);font-size:13px;border-left:3px solid var(--line);margin:0 0 6px 6px}
+.vrijRow b{min-width:44px;font-size:14px;color:var(--txt);opacity:.55}
+
+.sectionH{background:#000;color:#fff;font-size:14px;font-weight:800;padding:6px 14px;margin:14px 0 0}
+.sectionH:first-child{margin-top:0}
+.azLetter{font-size:15px;font-weight:800;color:var(--accent2);margin:16px 14px 6px}
+
+/* FABs */
+.fab{position:fixed;right:18px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.45);z-index:30}
+#fabAdd{bottom:20px;background:var(--accent)}
+
+/* Minikalender datumveld */
+.mcalOv{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:95;display:flex;align-items:center;justify-content:center}
+.mcalBox{background:#2f3340;border-radius:14px;padding:16px 14px;width:320px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.mcalHead{display:flex;align-items:center;margin-bottom:12px}
+.mcalHead h3{flex:1;text-align:center;color:var(--accent2);font-size:16px}
+.mcalHead button{font-size:22px;padding:4px 14px;border-radius:8px}
+.mcalHead button:active{background:var(--panel2)}
+.mcalGrid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:6px;justify-items:center;align-items:center}
+.mcHd{font-size:11px;color:var(--muted);font-weight:700}
+.mcDay{width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;border-radius:50%;cursor:pointer}
+.mcDay:active{background:var(--panel2)}
+.mcDay.sel{background:var(--accent);color:#fff}
+.mcDay.today{box-shadow:inset 0 0 0 2px var(--accent)}
+#fNot{resize:vertical;min-height:88px;line-height:1.45}
+
+/* Touch-apparaten: 16px voorkomt automatisch inzoomen op iOS */
+@media (pointer:coarse){
+  input,select,textarea,.ddBtn,.tafelPickBtn{font-size:16px}
+}
+/* Veilige randen (notch/thuisbalk) in beginscherm-modus */
+#topbar{padding-top:calc(10px + env(safe-area-inset-top))}
+#fabAdd{bottom:calc(20px + env(safe-area-inset-bottom))}
+#sideRail{padding-top:calc(10px + env(safe-area-inset-top))}
+
+/* Mobiel: gestapelde rij zoals DISH, tellerbalk compact */
+@media (max-width:640px){
+  #countbar .nums{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #countbar .nums b{font-size:13px}
+  .card{flex-wrap:wrap;row-gap:5px;column-gap:10px}
+  .cpax{order:1}
+  .ctafel{order:2;margin-left:auto;flex-direction:row;align-items:baseline;gap:6px;min-width:0}
+  .ctafel small{order:-1;font-size:12px}
+  .ctafel small::after{content:' -'}
+  .cnaam{order:3;flex:1 1 55%;min-width:0}
+  .stBtn{order:4;margin-left:auto;min-width:96px}
+  .cmid{order:5;flex:1 1 100%}
+}
+
+/* Smalle lijst naast de plattegrond: gestapelde rij zoals DISH */
+.mapList .card{flex-wrap:wrap;row-gap:5px;column-gap:10px}
+.mapList .cpax{order:1}
+.mapList .ctafel{order:2;margin-left:auto;flex-direction:row;align-items:baseline;gap:6px;min-width:0}
+.mapList .ctafel small{order:-1;font-size:12px}
+.mapList .ctafel small::after{content:' -'}
+.mapList .cnaam{order:3;flex:1 1 55%;min-width:0}
+.mapList .stBtn{order:4;margin-left:auto}
+.mapList .cmid{order:5;flex:1 1 100%}
+
+/* Plattegrond splitview */
+.mapSplit{display:flex;gap:0;padding:0}
+.mapLeft{flex:0 0 340px;display:flex;flex-direction:column;border-right:1px solid var(--line);min-height:76vh}
+.mapLocWrap{padding:10px 14px;border-bottom:1px solid var(--line)}
+.mapList{flex:1;overflow-y:auto;max-height:76vh}
+.mapMain{flex:1;min-width:0;padding:10px 12px 0}
+@media (max-width:999px){
+  .mapSplit{flex-direction:column}
+  .mapLeft{flex:none;border-right:none;min-height:0}
+  .mapList{display:none}
+}
+.mapLocWrap .ddBtn{border-bottom:1px solid #4a5163;padding:8px 0;font-size:14.5px;font-weight:700}
+.mapBar input[type="range"]{flex:1;min-width:70px;accent-color:var(--accent);height:4px}
+.tijdBox{border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:13px;font-weight:800;background:var(--panel)}
+.tbl{flex-direction:column;gap:0}
+.tbl .tnr2{font-size:13px;font-weight:800;line-height:1.1}
+.tbl .tijdje{font-size:8px;font-weight:800;line-height:1.2;letter-spacing:.02em}
+.tbl.res{background:var(--accent2);border-color:var(--accent);color:#2b1105}
+.tbl.res .chair{background:var(--accent)}
+.tbl.res small{color:#ffd9c4;background:none}
+.tbl.in{background:#3ecf8e;border-color:var(--green);color:#06281a}
+.tbl.in .chair{background:var(--green)}
+.tbl.in small{color:#a9f0d3;background:none}
+
+/* DISH-stijl formulier: onderstreepte velden */
+#sheet label{text-transform:none;letter-spacing:0;font-size:11.5px;margin:16px 0 1px}
+#sheet input,#sheet select,#sheet textarea{background:transparent;border:none;border-bottom:1px solid #4a5163;border-radius:0;padding:7px 0;font-size:15px}
+#sheet input:focus,#sheet select:focus,#sheet textarea:focus{outline:none;border-bottom:2px solid var(--accent);padding-bottom:6px}
+#sheet input[type="checkbox"]{border:none;padding:0}
+#sheet .tafelPickBtn{background:transparent;border:none;border-bottom:1px solid #4a5163;border-radius:0;padding:7px 0;width:100%;text-align:left;font-size:15px}
+#sheet .tafelList{background:var(--panel2);border:1px solid var(--line);border-radius:8px}
+.topChip{display:flex;justify-content:center;margin:0 0 2px}
+.topChip .chip{margin-left:0;font-size:11px;padding:3px 10px}
+.overboekt{display:none;color:#e5304d;font-size:11px;margin-top:5px;font-weight:600}
+.paxBtn{flex:1;padding:10px 0;border-radius:4px;background:transparent;border:1px solid #cfd3de;font-size:14px;font-weight:700;color:var(--txt)}
+.paxBtn.on{background:#fff;border-color:#fff;color:#14161d}
+.shSave{font-size:20px;padding:8px 22px;border-radius:8px;background:#3a3f4d;color:#8b92a5;font-weight:800;transition:background .15s}
+.shSave.actief{background:var(--green);color:#fff}
+
+.ddBtn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:transparent;border:none;border-bottom:1px solid #4a5163;padding:7px 0;font-size:15px;color:var(--txt)}
+.ddBtn .ddArr{color:var(--muted);font-size:12px;margin-left:6px}
+.ddBtn span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.tafelPop{position:fixed;width:280px;max-height:64vh;overflow-y:auto;background:#262a35;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.55)}
+.tafelPop label.tRow{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:14px;margin:0;text-transform:none;letter-spacing:0;color:var(--txt);font-weight:600}
+.tafelPop label.tRow:last-child{border-bottom:none}
+.tafelPop label.tRow.conflict b, .tafelPop label.tRow.conflict span{color:#e5304d}
+.tafelPop label.tRow.conflict input{accent-color:#e5304d}
+.tafelPop input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent);border:none;padding:0}
+
+/* Ticket scanner */
+#btnScan{padding:9px;border-radius:8px;color:#fff;display:flex;align-items:center}
+#btnScan:active{background:rgba(255,255,255,.15)}
+.scanOv{position:fixed;inset:0;background:#0c0e13;z-index:65;display:flex;flex-direction:column}
+.scanTop{display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;background:var(--accent)}
+.scanTop h2{flex:1;text-align:center;color:#fff;font-size:17px}
+.scanVid{position:relative;flex:1;min-height:0;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.scanVid video{width:100%;height:100%;object-fit:cover}
+.scanKader{position:absolute;width:min(62vw,320px);aspect-ratio:1;border:3px solid rgba(255,255,255,.85);border-radius:18px;box-shadow:0 0 0 2000px rgba(0,0,0,.35)}
+.scanRes{padding:16px 16px calc(20px + env(safe-area-inset-bottom));background:var(--panel);text-align:center;font-size:14.5px;max-height:46vh;overflow-y:auto}
+.scanGeen{font-weight:700;color:#e5484d;margin-bottom:6px}
+.scanHit{text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.scanNaam{font-size:17px;font-weight:800}
+.scanNaam .chip{margin-left:8px;vertical-align:2px}
+.scanTafel{font-size:14px;color:#c6cbd8;margin:7px 0 4px}
+.scanTafel b{color:#fff;font-size:16px}
+.btn.green{background:var(--green);color:#fff}
+
+.kopRij{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-bottom:7px}
+.kopRij:active{background:#2a2f3d}
+.kopRij b{font-size:15px}
+.kopRij span{font-size:12px;color:var(--muted)}
+#kopLijst{max-height:32vh;overflow-y:auto}
+
+/* Statusmenu */
+.stOv{position:fixed;inset:0;z-index:96}
+.stMenu{position:fixed;width:230px;max-height:64vh;overflow-y:auto;background:#262a35;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.55)}
+.stMenu button{display:flex;align-items:center;width:100%;padding:12px 16px;font-size:14px;font-weight:600;border-bottom:1px solid var(--line);text-align:left}
+.stMenu button:last-child{border-bottom:none}
+.stMenu button.on{background:var(--panel2)}
+.stMenu button:active{background:var(--panel2)}
+.stMenu button i{margin-left:auto;width:11px;height:11px;border-radius:50%}
+
+.vraagBox{background:#2b2f3b;border-radius:14px;padding:20px 18px;width:300px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.vraagBox p{font-size:14.5px;line-height:1.5;margin-bottom:14px}
+
+/* Klok tijdkiezer */
+.clockOv{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:95;display:flex;align-items:center;justify-content:center}
+.clockBox{background:#2b2f3b;border-radius:16px;overflow:hidden;width:308px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.clockHead{background:var(--accent);color:#fff;font-size:46px;font-weight:300;text-align:center;padding:12px;letter-spacing:1px}
+.clockHead span{opacity:.55;cursor:pointer}
+.clockHead span.on{opacity:1;font-weight:600}
+.clockDial{position:relative;width:264px;height:264px;border-radius:50%;background:#3a3f4d;margin:20px auto 14px;touch-action:none}
+.ckNum{position:absolute;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:600;color:var(--txt);background:none;z-index:2;pointer-events:none}
+.ckNum.inner{font-size:12px;color:var(--muted)}
+.ckNum.on{background:var(--accent);color:#fff}
+.ckHand{position:absolute;left:50%;top:50%;height:2px;background:var(--accent);transform-origin:left center;z-index:1}
+.ckDot{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--accent);z-index:1}
+.clockBtns{display:flex;gap:10px;padding:0 16px 16px}
+
+/* Kalender */
+#calScrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .2s}
+#calScrim.open{opacity:1;pointer-events:auto}
+#calPanel{position:fixed;top:0;right:0;bottom:0;width:86%;max-width:310px;background:var(--panel);border-left:1px solid var(--line);z-index:60;transform:translateX(102%);transition:transform .22s;overflow-y:auto;padding:16px 14px}
+#calPanel.open{transform:none}
+.calNav{display:flex;gap:10px;align-items:center;margin-bottom:16px}
+.calNav button{padding:9px 12px;border-radius:8px;font-size:18px}
+.calNav button:active{background:var(--panel2)}
+#calToday{flex:1;border:1px solid var(--txt);font-size:12px;font-weight:800;letter-spacing:.1em}
+.calMonth{margin-bottom:26px}
+.calMonth h3{text-align:center;font-size:16px;margin-bottom:12px}
+.calGrid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:4px;text-align:center;align-items:center;justify-items:center}
+.calHd{font-size:11px;color:var(--muted);font-weight:700;padding:2px 0}
+.calDay{position:relative;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;border-radius:50%;cursor:pointer}
+.calDay:active{background:var(--panel2)}
+.calDay.mut{color:#565d70}
+.calDay.today{background:var(--blue);color:#fff}
+.calDay.sel{box-shadow:inset 0 0 0 2px var(--txt)}
+.calDay .d{position:absolute;bottom:1px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--blue)}
+
+/* Drawer */
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}
+#scrim.open{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;left:0;bottom:0;width:78%;max-width:320px;background:var(--panel);z-index:60;transform:translateX(-102%);transition:transform .22s;display:flex;flex-direction:column;border-right:1px solid var(--line)}
+#drawer.open{transform:none}
+#drawer .head{padding:22px 20px 16px;border-bottom:1px solid var(--line)}
+#drawer .head .logo{font-size:21px;font-weight:900;letter-spacing:.12em}
+#drawer .head .logo span{color:var(--accent)}
+#drawer .head .who{font-size:12px;color:var(--muted);margin-top:4px}
+#drawer nav{flex:1;overflow-y:auto;padding:8px 0}
+#drawer nav button{display:flex;align-items:center;gap:14px;width:100%;padding:15px 20px;font-size:15.5px;font-weight:600;text-align:left}
+#drawer nav button .mi{width:24px;text-align:center;font-size:18px}
+#drawer nav button.on{background:var(--panel2);color:var(--accent2)}
+#drawer nav hr{border:none;border-top:1px solid var(--line);margin:6px 0}
+
+/* Sheet (formulier) */
+#sheetWrap{position:fixed;inset:0;z-index:70;display:none}
+#sheetWrap.open{display:block}
+#sheetWrap .bg{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+#sheet{position:absolute;left:0;right:0;bottom:0;background:var(--panel);border-radius:18px 18px 0 0;padding:16px 18px 24px;max-height:88vh;overflow-y:auto}
+@media (min-width:700px){
+  #sheet{left:auto;top:0;right:0;bottom:0;width:420px;max-height:none;border-radius:0;border-left:1px solid var(--line)}
+}
+.tafelPickBtn{width:100%;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:11px 12px;font-size:15px}
+.tafelList{max-height:230px;overflow-y:auto;border:1px solid var(--line);border-radius:8px;margin-top:6px;background:var(--panel2)}
+.tafelList label.tRow{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:14px;margin:0;text-transform:none;letter-spacing:0;color:var(--txt);font-weight:600}
+.tafelList label.tRow:last-child{border-bottom:none}
+.tRow b{min-width:36px;font-size:15px}
+.tRow span{margin-left:auto;color:var(--muted);font-size:12px;font-weight:500}
+.tafelList label.tRow.conflict b, .tafelList label.tRow.conflict span{color:#e5304d}
+.tafelList label.tRow.conflict input{accent-color:#e5304d}
+input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.formFoot{margin-top:22px;border-top:1px solid var(--line);padding-top:16px}
+.formFoot .btn{display:block;width:100%;margin-top:10px;padding:10px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-radius:5px;background:transparent}
+.formFoot #fCopy{border:1px solid #cfd3de;color:var(--txt)}
+.formFoot #fCopy:active{background:rgba(255,255,255,.08)}
+.formFoot #fAnnul{border:1px solid #e5304d;color:#e5304d}
+.formFoot #fAnnul:active{background:rgba(229,48,77,.12)}
+.formFoot #fDel{border:1px solid #e5304d;color:#e5304d}
+.formFoot #fDel:active{background:rgba(229,48,77,.12)}
+.fMeta{text-align:center;font-size:11.5px;color:var(--muted);margin-top:12px}
+.sheetHead{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.sheetHead h2{flex:1;text-align:center;font-size:17px}
+.shBack{font-size:26px;padding:4px 14px;border-radius:8px;background:var(--panel2)}
+.paxRow{display:flex;gap:8px}
+.card.st-no{opacity:.55}
+.card.st-no .tnr{box-shadow:inset 0 0 0 2px var(--red)}
+.tlBlock.no{background:#3a3f4e;border-left-color:var(--red);color:#aab;opacity:.7}
+.tbl.no{border-color:var(--red);opacity:.6}
+#sheet h2{font-size:17px;margin-bottom:4px}
+.row2{display:flex;gap:10px}
+.row2>div{flex:1}
+.sheetBtns{display:flex;gap:10px;margin-top:20px}
+.btn{flex:1;padding:13px;border-radius:10px;font-size:15px;font-weight:700;text-align:center}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:var(--panel2)}
+.btn.danger{background:transparent;color:var(--red);flex:0 0 auto;padding:13px 16px}
+.btn.green{background:var(--green);color:#fff}
+
+/* Tijdlijn */
+.tlScroll{overflow-x:auto;margin:0;padding:0 0 8px;-webkit-overflow-scrolling:touch}
+.tlHead{display:flex;position:sticky;top:0;background:var(--bg);z-index:5}
+.tlHours{position:relative;height:34px;flex:0 0 auto}
+.tlHour{position:absolute;top:8px;font-size:13px;font-weight:700;color:var(--muted);transform:translateX(-50%)}
+.tlLoc{display:none}
+.tlLocRow{position:sticky;left:0;padding:16px 6px 8px;font-size:14px;font-weight:800;width:max-content}
+.tlRow{display:flex;border-top:1px solid var(--line)}
+.tlLabel{flex:0 0 62px;min-height:46px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:var(--bg);border-right:1px solid var(--line);position:sticky;left:0;z-index:3;gap:2px}
+.tlLabel sup{font-size:10px;color:var(--muted);font-weight:700;margin-top:-8px}
+.tlTrack{position:relative;flex:0 0 auto;min-height:46px}
+.tlGrid{position:absolute;top:0;bottom:0;width:1px;background:var(--line);opacity:.7}
+.tlGrid.q{opacity:.22}
+.tlNow{position:absolute;top:0;bottom:0;width:2px;background:#e5304d;z-index:2;pointer-events:none}
+.tlNowDot{position:absolute;top:2px;width:10px;height:10px;border-radius:50%;background:#e5304d;transform:translateX(-50%)}
+.tlBlock{position:absolute;top:4px;bottom:4px;background:var(--accent2);border-left:8px solid var(--accent);border-radius:6px;color:#1a0d05;display:flex;align-items:center;gap:7px;padding:0 8px;overflow:hidden;white-space:nowrap;font-size:13.5px;cursor:pointer}
+.tlBlock.in{background:#3ecf8e;border-left-color:var(--green);color:#06281a}
+.tlBlock b{font-size:15px}
+.tlNaam{font-weight:700;overflow:hidden;text-overflow:ellipsis}
+.tlTag{font-size:10px;font-weight:800;padding:2px 6px;border-radius:5px;background:rgba(0,0,0,.25);color:#fff}
+.tlTag.Luxe{background:#b48a10}
+.tlTag.Kind{background:#2a63c9}
+.tlTag.Koffie{background:#6b4226}
+.tlNote{font-size:11.5px;opacity:.75;overflow:hidden;text-overflow:ellipsis}
+
+/* Plattegrond */
+#mapWrap{position:relative;height:74vh;overflow:auto;-webkit-overflow-scrolling:touch}
+#mapWrap.editMode{outline:2px dashed var(--accent);border-radius:8px}
+#mapSizer{position:relative;overflow:hidden}
+#mapCanvas{position:relative}
+#mapCanvas.editGrid{background:
+  linear-gradient(var(--line) 1px, transparent 1px),
+  linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:50px 50px;background-position:-1px -1px}
+.tbl{position:absolute;width:56px;height:56px;border-radius:10px;background:var(--panel2);border:2px solid #8b92a5;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;user-select:none;touch-action:none;transform:translate(-50%,-50%)}
+.tbl.round{border-radius:50%}
+.tbl.wide{width:86px}
+.chair{position:absolute;width:15px;height:5px;background:#4a5164;border-radius:3px;pointer-events:none}
+.tbl small{position:absolute;bottom:-24px;font-size:9px;color:var(--muted);font-weight:600;white-space:nowrap;background:var(--bg);padding:0 3px;border-radius:3px}
+.mapBar{display:flex;gap:8px;margin-bottom:10px;align-items:center}
+.mapBar .btn{flex:0 0 auto;padding:9px 14px;font-size:13px}
+.legend{display:flex;gap:14px;font-size:11.5px;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* Instellingen */
+.setCard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-bottom:12px}
+.setCard h3{font-size:14px;margin-bottom:4px}
+.setCard p{font-size:12px;color:var(--muted)}
+
+.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:var(--panel2);border:1px solid var(--line);padding:11px 18px;border-radius:10px;font-size:14px;font-weight:600;z-index:90;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+</style>
+</head>
+<body>
+
+<div id="sideRail">
+  <div class="railAvatar">K</div>
+  <button data-view="dag" title="Dagoverzicht">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+  </button>
+  <button data-view="tafels" title="Tafels (tijdlijn)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="14" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="11" y2="18"/></svg>
+  </button>
+  <button data-view="az" title="Namen A-Z">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+  </button>
+  <button data-view="map" title="Plattegrond">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 12h9"/><path d="M12 3v18"/></svg>
+  </button>
+</div>
+
+<div id="topbar">
+  <button id="btnMenu" aria-label="Menu">&#9776;</button>
+  <div id="brand"><span class="brandIcon">K</span><span class="brandTxt">KISH</span></div>
+  <button id="btnPrev">&#8249;</button>
+  <div id="dateLabel">Vandaag</div>
+  <button id="btnNext">&#8250;</button>
+  <button id="btnScan" title="Ticket scannen">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>
+  </button>
+  <span id="syncDot" title="Sync status"></span>
+  <button id="btnCal">&#128197;</button>
+</div>
+
+<div id="calScrim"></div>
+<div id="calPanel">
+  <div class="calNav">
+    <button id="calPrev">&#8249;</button>
+    <button id="calToday">VANDAAG</button>
+    <button id="calNext">&#8250;</button>
+  </div>
+  <div id="calMonths"></div>
+</div>
+
+<div id="countbar">
+  <div class="nums">Reserveringen: <b id="cRes">0</b> / Tafels: <b id="cTaf">0</b> / Gasten: <b id="cGast">0</b></div>
+  <button class="ic" id="btnWisPA" title="PA's wissen (deze dag)">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+  </button>
+  <button class="ic" id="btnFilter" title="Filter">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.5 10 19 14 21 14 12.5 22 3"/></svg>
+  </button>
+  <button class="ic" id="btnPrint" title="Printen">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  </button>
+</div>
+<div id="filterbar" hidden>
+  <div class="fltGroup"><label>Begin</label><input type="text" id="fltBegin" readonly inputmode="none" placeholder="--:--"></div>
+  <span class="fltDash">-</span>
+  <div class="fltGroup"><label>Einde</label><input type="text" id="fltEind" readonly inputmode="none" placeholder="--:--"></div>
+  <div class="fltGroup grow"><label>Zaal</label><select id="fltZaal"></select></div>
+  <div class="fltGroup grow"><label>Status</label><select id="fltStatus"></select></div>
+  <button class="fltReset" id="fltReset">Wissen</button>
+</div>
+
+<div id="locTabs"></div>
+<div id="content"></div>
+
+<button class="fab" id="fabAdd" title="Reservering toevoegen">+</button>
+
+<div id="scrim"></div>
+<div id="drawer">
+  <div class="head">
+    <div class="logo"><span class="brandIcon">K</span>KISH</div>
+    <div class="who">Tafelreservering &middot; AFAS Circustheater</div>
+  </div>
+  <nav>
+    <button data-view="dag"><span class="mi">&#128203;</span>Dagoverzicht</button>
+    <button data-view="tafels"><span class="mi">&#128290;</span>Tafels (tijdlijn)</button>
+    <button data-view="az"><span class="mi">&#128100;</span>Namen A-Z</button>
+    <button data-view="map"><span class="mi">&#128506;</span>Plattegrond</button>
+
+  </nav>
+</div>
+
+<div id="sheetWrap">
+  <div class="bg" onclick="closeSheet()"></div>
+  <div id="sheet"></div>
+</div>
+
+<script>
+/* ============ DATA ============ */
+const LOCS = ['Theaterrestaurant','Le Cirque','Circusbar'];
+// Labels met kleuren zoals in DISH
+const ARRS = [
+  {n:'Combi', c:'#2ec08a'},
+  {n:'Normaal', c:'#fb7185'},
+  {n:'Luxe', c:'#f5a623'},
+  {n:'Koffie arrangement', c:'#a05a3a'},
+  {n:'Na Borrel', c:'#b8e022'},
+  {n:'Kind', c:'#e04ad6'}
+];
+const arrKleur = naam => (ARRS.find(a=>a.n===naam)||{}).c || '#8b92a5';
+// Statussen zoals in DISH
+const STATUS = {
+  res:{naam:'Verwacht', kort:'verwacht', c:'#9aa1b4'},
+  in:{naam:'Aan tafel', kort:'aan tafel', c:'#22c08a'},
+  arr:{naam:'Gearriveerd', kort:'gearriveerd', c:'#ff6b4a'},
+  weg:{naam:'Vertrokken', kort:'vertrokken', c:'#6b7186'},
+  bev:{naam:'Bevestigd', kort:'bevestigd', c:'#4d8dff'},
+  opt:{naam:'In optie', kort:'optie', c:'#e04ad6'},
+  wacht:{naam:'Wachtlijst', kort:'wachtlijst', c:'#6b2d8f'},
+  ann:{naam:'Geannuleerd', kort:'geannuleerd', c:'#e5304d'},
+  no:{naam:'No-show', kort:'no-show', c:'#e5304d'},
+  spam:{naam:'Spam', kort:'spam', c:'#e5304d'},
+  del:{naam:'Verwijderd', kort:'verwijderd', c:'#e5304d'}
+};
+// Statussen die de tafel vrijgeven en gedimd worden
+const INACTIVE = new Set(['weg','ann','no','spam','del']);
+// Een reservering kan op meerdere tafels staan
+const getTafels = r => r.tafels || (r.tafel ? [r.tafel] : []);
+
+const store = {
+  get(k,d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k,v){ localStorage.setItem(k, JSON.stringify(v)); }
+};
+
+// Tafelconfig: per locatie een lijst tafelnummers (via ranges in instellingen)
+// Vaste tafelindeling Circustheater
+const tafelConfig = {
+  'Theaterrestaurant':'101-105:2, 106:4, 107:3, 108-109:2, 110:4, 111:2, 112:4, 113:2, 114:4, 115-116:2, 117-118:4, 119:2, 120:4, 121:2, 122:4, 123-124:2, 125-126:3, 127:2, 128-129:4, 130-131:2, 132:4, 133-134:2, 135:4, 136-137:2, 138:4, 139-140:2, 141:6, 142:4, 143-146:2, 147-148:4, 149:6, 150-151:2, 152:7',
+  'Le Cirque':'1-6:2, 7:4, 8:2, 10-11:4, 9:2, 12:4, 13-23:2, 24-27:4, 28-33:2, 34-36:4, 37-39:2, 40:4',
+  'Circusbar':'201-204:4, 205:3, 206-207:4, 208-211:3, 212:4, 214-215:3, 216:4, 217:3'
+};
+
+// Standaardposities overgenomen van de DISH plattegronden (x/y in procenten)
+const DEFAULT_LAYOUT = {
+  'Theaterrestaurant':{
+    '101':{x:62.7,y:39.3},'102':{x:62.7,y:32.9},'103':{x:62.7,y:26.5},'104':{x:62.7,y:20.1},
+    '105':{x:62.7,y:13.7},'106':{x:60,y:6},'107':{x:66,y:2.5},'108':{x:87.5,y:2.3},
+    '109':{x:82.5,y:5},'110':{x:90,y:11.3},'111':{x:84.1,y:15},'112':{x:92.4,y:22.8},
+    '113':{x:87.5,y:26.6},'114':{x:95.8,y:33},'115':{x:90,y:37},'116':{x:75.8,y:30.5},
+    '117':{x:75.8,y:40.6},'118':{x:97.3,y:48.3},'119':{x:90,y:48.3},'120':{x:95.8,y:65},
+    '121':{x:90,y:61.2},'122':{x:88.4,y:79.1},'123':{x:85.9,y:70.2},'124':{x:75.8,y:49.6},
+    '125':{x:74.7,y:59.2},'126':{x:71.3,y:65.4},'127':{x:78.4,y:72.7},'128':{x:80.8,y:83},
+    '129':{x:68.4,y:89.2},'130':{x:68.4,y:81.6},'131':{x:68.4,y:75.2},'132':{x:61.7,y:89.2},
+    '133':{x:61.7,y:81.6},'134':{x:61.7,y:75.2},'135':{x:55.1,y:89.2},'136':{x:55.1,y:81.6},
+    '137':{x:55.1,y:75.2},'138':{x:48.5,y:89.2},'139':{x:48.5,y:81.6},'140':{x:48.5,y:75.2},
+    '141':{x:41.8,y:80.2},'142':{x:43.4,y:62.4},'143':{x:32.6,y:64.9},'144':{x:26.9,y:64.9},
+    '145':{x:32.6,y:75.2},'146':{x:26.9,y:75.2},'147':{x:21,y:82.8},'148':{x:21,y:93.1},
+    '149':{x:11.9,y:93.1},'150':{x:12.7,y:81.6},'151':{x:5.2,y:66.1},'152':{x:14.9,y:68.1}
+  },
+  'Le Cirque':{
+    '37':{x:3.5,y:5.7},'38':{x:8.5,y:5.7},'39':{x:13.5,y:5.7},'40':{x:20.4,y:11.6},'28':{x:3.5,y:17.6},'29':{x:8.5,y:17.6},
+    '34':{x:39,y:6.4},'35':{x:46.9,y:6.4},'36':{x:54.8,y:6.4},
+    '33':{x:40.4,y:17.6},'32':{x:45.4,y:17.6},'31':{x:52.3,y:17.6},'30':{x:57.3,y:17.6},
+    '27':{x:4.5,y:29.4},'26':{x:13,y:34.8},'25':{x:17.9,y:40.7},'24':{x:23.9,y:45.2},
+    '23':{x:34.4,y:29.6},'20':{x:44.4,y:29.6},
+    '22':{x:34.4,y:37},'19':{x:44.4,y:37},'17':{x:54.4,y:37},'15':{x:62.4,y:37},
+    '21':{x:34.4,y:44.5},'18':{x:44.4,y:44.5},'16':{x:54.4,y:44.5},'14':{x:62.4,y:44.5},
+    '9':{x:34.4,y:60.9},'10':{x:44.9,y:60.1},'11':{x:55.8,y:60},'12':{x:65.8,y:60},
+    '8':{x:26.4,y:72.8},'13':{x:84.3,y:77.3},'7':{x:29.9,y:86.7},
+    '6':{x:38.3,y:87.8},'5':{x:46.3,y:87.8},'4':{x:54.2,y:87.8},'3':{x:62.2,y:87.8},'2':{x:70.2,y:87.8},'1':{x:78.2,y:87.8}
+  },
+  'Circusbar':{
+    '208':{x:42,y:10},'207':{x:32,y:16.7},'206':{x:23.5,y:27},'205':{x:16.8,y:40.4},
+    '204':{x:8.5,y:60.9},'203':{x:7,y:77.9},'202':{x:15.3,y:88},'201':{x:26.8,y:88},
+    '209':{x:68.9,y:16.7},'210':{x:78.7,y:27},'211':{x:85.5,y:40.4},'212':{x:90.5,y:60.9},
+    '214':{x:92,y:84.7},'215':{x:38.7,y:57.6},'216':{x:48.8,y:57.6},'217':{x:58.6,y:57.6}
+  }
+};
+// Plattegrond layout: per locatie {tafelnr: {x,y}} in procenten
+let layout = store.get('ct_layout', {});
+
+let curDate = todayStr();
+let curView = store.get('ct_view','dag');
+let curLoc = store.get('ct_loc','Theaterrestaurant');
+
+function todayStr(){ const d=new Date(); return d.toISOString().slice(0,10); }
+function dayKey(){ return 'ct_res_'+curDate; }
+function getRes(){ return store.get(dayKey(), []); }
+function setRes(list){ store.set(dayKey(), list); render(); }
+
+function parseTafels(rangeStr){
+  // Ondersteunt: "201", "201:4", "201-204", "201-204:4". Volgorde blijft zoals ingevoerd.
+  const out = [];
+  (rangeStr||'').split(',').forEach(part=>{
+    part = part.trim(); if(!part) return;
+    let cap = null;
+    const cm = part.match(/^(.*?):(\d+)$/);
+    if(cm){ part = cm[1].trim(); cap = +cm[2]; }
+    const m = part.match(/^(\d+)\s*-\s*(\d+)$/);
+    if(m){ for(let i=+m[1]; i<=+m[2]; i++) out.push({nr:String(i), cap}); }
+    else if(part) out.push({nr:part, cap});
+  });
+  return out;
+}
+
+/* ============ DATUM ============ */
+function fmtDate(iso){
+  const d = new Date(iso+'T12:00:00');
+  if(iso === todayStr()) return 'Vandaag';
+  return d.toLocaleDateString('nl-NL',{weekday:'short', day:'numeric', month:'short'});
+}
+function shiftDate(n){
+  const d = new Date(curDate+'T12:00:00'); d.setDate(d.getDate()+n);
+  curDate = d.toISOString().slice(0,10); render();
+}
+document.getElementById('btnPrev').onclick = ()=>shiftDate(-1);
+document.getElementById('btnNext').onclick = ()=>shiftDate(1);
+document.getElementById('dateLabel').onclick = ()=>{ curDate = todayStr(); render(); };
+
+/* --- DISH-achtige kalender --- */
+const calPanel = document.getElementById('calPanel');
+const calScrim = document.getElementById('calScrim');
+const calMonths = document.getElementById('calMonths');
+let calStart = null;
+
+function resDatesSet(){
+  const s = new Set();
+  for(let i=0;i<localStorage.length;i++){
+    const k = localStorage.key(i);
+    if(k.startsWith('ct_res_') && (store.get(k,[])||[]).length) s.add(k.slice(7));
+  }
+  return s;
+}
+function openCal(){
+  const d = new Date(curDate+'T12:00:00');
+  calStart = { y:d.getFullYear(), m:d.getMonth() };
+  renderCal();
+  calPanel.classList.add('open'); calScrim.classList.add('open');
+}
+function closeCal(){ calPanel.classList.remove('open'); calScrim.classList.remove('open'); }
+function renderCal(){
+  const dots = resDatesSet();
+  const today = todayStr();
+  let html = '';
+  for(let i=0;i<3;i++){
+    const y = calStart.y + Math.floor((calStart.m+i)/12);
+    const m = (calStart.m+i)%12;
+    const first = new Date(y,m,1);
+    let naam = first.toLocaleDateString('nl-NL',{month:'long',year:'numeric'});
+    naam = naam.charAt(0).toUpperCase()+naam.slice(1);
+    const dagen = new Date(y,m+1,0).getDate();
+    const offset = (first.getDay()+6)%7; // maandag eerst
+    html += `<div class="calMonth"><h3>${naam}</h3><div class="calGrid">`;
+    ['M','D','W','D','V','Z','Z'].forEach(h=>html+=`<span class="calHd">${h}</span>`);
+    for(let b=0;b<offset;b++) html += '<span></span>';
+    for(let dag=1;dag<=dagen;dag++){
+      const iso = y+'-'+String(m+1).padStart(2,'0')+'-'+String(dag).padStart(2,'0');
+      const cls = ['calDay'];
+      if(iso < today) cls.push('mut');
+      if(iso === today) cls.push('today');
+      if(iso === curDate && iso !== today) cls.push('sel');
+      html += `<span class="${cls.join(' ')}" data-d="${iso}">${dag}${dots.has(iso)?'<i class="d"></i>':''}</span>`;
+    }
+    html += '</div></div>';
+  }
+  calMonths.innerHTML = html;
+  calMonths.querySelectorAll('.calDay').forEach(el=>{
+    el.onclick = ()=>{ curDate = el.dataset.d; closeCal(); render(); };
+  });
+}
+document.getElementById('btnCal').onclick = openCal;
+calScrim.onclick = closeCal;
+document.getElementById('calPrev').onclick = ()=>{ calStart.m--; if(calStart.m<0){calStart.m=11;calStart.y--;} renderCal(); };
+document.getElementById('calNext').onclick = ()=>{ calStart.m++; if(calStart.m>11){calStart.m=0;calStart.y++;} renderCal(); };
+document.getElementById('calToday').onclick = ()=>{ curDate = todayStr(); closeCal(); render(); };
+
+/* ============ DRAWER ============ */
+const drawer = document.getElementById('drawer'), scrim = document.getElementById('scrim');
+function openDrawer(){ drawer.classList.add('open'); scrim.classList.add('open'); }
+function closeDrawer(){ drawer.classList.remove('open'); scrim.classList.remove('open'); }
+document.getElementById('btnMenu').onclick = openDrawer;
+scrim.onclick = closeDrawer;
+drawer.querySelectorAll('nav button[data-view]').forEach(b=>{
+  b.onclick = ()=>{ curView = b.dataset.view; store.set('ct_view',curView); closeDrawer(); render(); };
+});
+
+/* ============ ICOONBALK (desktop) ============ */
+document.querySelectorAll('#sideRail button[data-view]').forEach(b=>{
+  b.onclick = ()=>{ curView = b.dataset.view; store.set('ct_view',curView); render(); };
+});
+
+/* ============ EXPORT / IMPORT ============ */
+
+/* ============ SYNC (meerdere apparaten via Firebase) ============ */
+let db = null, syncPad = null, syncSubDatum = null, syncResRef = null;
+
+function syncStatus(kleur){
+  const d = document.getElementById('syncDot');
+  if(d){ d.style.display = 'inline-block'; d.style.background = kleur; }
+}
+
+function parseFirebaseConfig(txt){
+  const m = String(txt||'').match(/\{[\s\S]*\}/);
+  if(!m) return null;
+  let t = m[0]
+    .replace(/([,{]\s*)([A-Za-z0-9_]+)\s*:/g, '$1"$2":')
+    .replace(/'/g, '"')
+    .replace(/,\s*\}/g, '}');
+  try{ const o = JSON.parse(t); return o.apiKey ? o : null; }catch(e){ return null; }
+}
+
+// Ingebouwde teamconfiguratie: alle apparaten verbinden automatisch.
+// Aanpassen kan altijd via menu > Sync instellen.
+const SYNC_STANDAARD = {
+  config: {
+    apiKey: "AIzaSyCEAlelAnmnkedd_-SKD6IiLfSHsC9OIsk",
+    authDomain: "ct-tafels.firebaseapp.com",
+    databaseURL: "https://ct-tafels-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "ct-tafels",
+    storageBucket: "ct-tafels.firebasestorage.app",
+    messagingSenderId: "237004460332",
+    appId: "1:237004460332:web:2d8dfba78bcb5bfd73dc89"
+  },
+  sleutel: "circustheater"
+};
+
+function startSync(){
+  const cfg = store.get('ct_sync', SYNC_STANDAARD);
+  if(!cfg || !cfg.config) return;
+  syncStatus('#fbbf24');
+  const laden = src => new Promise((res,rej)=>{
+    const el = document.createElement('script');
+    el.src = src; el.onload = res; el.onerror = rej;
+    document.head.appendChild(el);
+  });
+  Promise.resolve()
+    .then(()=> window.firebase ? null : laden('https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js'))
+    .then(()=> (window.firebase && firebase.database) ? null : laden('https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js'))
+    .then(()=>{
+      if(!firebase.apps.length) firebase.initializeApp(cfg.config);
+      db = firebase.database();
+      syncPad = 'ct_' + (cfg.sleutel || 'team').replace(/[^A-Za-z0-9_-]/g,'');
+      return db.ref(syncPad + '/res').once('value');
+    })
+    .then(snap=>{
+      const alles = snap.val() || {};
+      Object.entries(alles).forEach(([datum, obj])=>{
+        store.set('ct_res_'+datum, Object.values(obj||{}));
+      });
+      db.ref(syncPad + '/layout').on('value', sn=>{
+        const v = sn.val();
+        if(v){ layout = v; store.set('ct_layout', layout); if(curView==='map' && !editMode) render(); }
+      });
+      db.ref('.info/connected').on('value', sn=> syncStatus(sn.val() ? '#22c08a' : '#e5304d'));
+      syncSubDatum = null;
+      render();
+    })
+    .catch(e=>{ console.error('Sync', e); syncStatus('#e5304d'); toast('Sync verbinden mislukt'); });
+}
+
+function abonneerDatum(){
+  if(!db || syncSubDatum === curDate) return;
+  if(syncResRef) syncResRef.off();
+  syncSubDatum = curDate;
+  const vasteDatum = curDate;
+  syncResRef = db.ref(syncPad + '/res/' + vasteDatum);
+  syncResRef.on('value', snap=>{
+    store.set('ct_res_'+vasteDatum, Object.values(snap.val() || {}));
+    if(vasteDatum === curDate && !sheetWrap.classList.contains('open')) render();
+  });
+}
+function syncSetRes(datum, r){ if(db && r && r.id) db.ref(syncPad+'/res/'+datum+'/'+r.id).set(r); }
+function syncDelRes(datum, id){ if(db && id) db.ref(syncPad+'/res/'+datum+'/'+id).remove(); }
+function syncLayout(){ if(db) db.ref(syncPad+'/layout').set(layout); }
+
+function openSyncSetup(){
+  const cur = store.get('ct_sync', SYNC_STANDAARD);
+  const ov = document.createElement('div');
+  ov.className = 'mcalOv';
+  ov.innerHTML = `<div class="vraagBox" style="width:min(500px,94vw)">
+    <p><b>Sync tussen apparaten</b><br>
+    Eenmalig: maak op console.firebase.google.com een gratis project, zet een <b>Realtime Database</b> aan (testmodus) en plak hier de firebaseConfig. Gebruik op elk apparaat dezelfde config en teamsleutel.</p>
+    <label style="text-transform:none;font-size:11.5px;color:var(--muted)">firebaseConfig</label>
+    <textarea id="syncCfgTxt" rows="6" style="width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:12px;font-family:monospace">${cur.config ? esc(JSON.stringify(cur.config, null, 1)) : ''}</textarea>
+    <label style="text-transform:none;font-size:11.5px;color:var(--muted);margin-top:10px;display:block">Teamsleutel (zelf verzinnen, op elk apparaat hetzelfde)</label>
+    <input id="syncSleutel" value="${esc(cur.sleutel||'')}" style="width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px" autocomplete="off">
+    <div class="sheetBtns">
+      ${cur.config?'<button class="btn danger" id="syncUit" style="flex:0 0 auto">Uitzetten</button>':''}
+      <button class="btn ghost" id="syncNee">Annuleren</button>
+      <button class="btn primary" id="syncJa">Opslaan &amp; verbinden</button>
+    </div>
+  </div>`;
+  document.body.appendChild(ov);
+  ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+  ov.querySelector('#syncNee').onclick = ()=>ov.remove();
+  const uit = ov.querySelector('#syncUit');
+  if(uit) uit.onclick = ()=>{
+    localStorage.removeItem('ct_sync');
+    ov.remove();
+    toast('Sync uitgezet, herlaad de pagina');
+  };
+  ov.querySelector('#syncJa').onclick = ()=>{
+    const config = parseFirebaseConfig(ov.querySelector('#syncCfgTxt').value);
+    if(!config){ toast('Config niet herkend, plak de hele firebaseConfig'); return; }
+    const sleutel = ov.querySelector('#syncSleutel').value.trim() || 'team';
+    store.set('ct_sync', {config, sleutel});
+    ov.remove();
+    startSync();
+  };
+}
+
+/* ============ TICKET SCANNER ============ */
+let scanStream = null, scanRAF = null;
+
+function openScanner(){
+  const ov = document.createElement('div');
+  ov.className = 'scanOv';
+  ov.innerHTML = `
+    <div class="scanTop"><button class="shBack" id="scanX">&#8249;</button><h2>Ticket scannen</h2><span style="width:52px"></span></div>
+    <div class="scanVid"><video id="scanVideo" playsinline muted></video><div class="scanKader"></div></div>
+    <div class="scanRes" id="scanRes">Richt de camera op de QR-code van het ticket</div>`;
+  document.body.appendChild(ov);
+  const stop = ()=>{
+    if(scanRAF) cancelAnimationFrame(scanRAF);
+    if(scanStream){ scanStream.getTracks().forEach(t=>t.stop()); scanStream = null; }
+    ov.remove();
+  };
+  ov.querySelector('#scanX').onclick = stop;
+
+  const laad = window.jsQR ? Promise.resolve() : new Promise((res,rej)=>{
+    const el = document.createElement('script');
+    el.src = 'https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js';
+    el.onload = res; el.onerror = rej;
+    document.head.appendChild(el);
+  });
+  laad
+    .then(()=> navigator.mediaDevices.getUserMedia({ video:{ facingMode:'environment' }, audio:false }))
+    .then(stream=>{
+      scanStream = stream;
+      const video = ov.querySelector('#scanVideo');
+      video.srcObject = stream;
+      video.play();
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d', { willReadFrequently:true });
+      let laatste = '', pauzeTot = 0;
+      const loop = ()=>{
+        scanRAF = requestAnimationFrame(loop);
+        if(video.readyState < 2 || Date.now() < pauzeTot) return;
+        canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+        if(!canvas.width) return;
+        ctx.drawImage(video, 0, 0);
+        const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const code = window.jsQR(img.data, img.width, img.height, { inversionAttempts:'dontInvert' });
+        if(code && code.data){
+          if(code.data === laatste && Date.now() < pauzeTot + 4000) return;
+          laatste = code.data;
+          pauzeTot = Date.now() + 2000;
+          if(navigator.vibrate) navigator.vibrate(60);
+          toonScanResultaat(ov, code.data);
+        }
+      };
+      loop();
+    })
+    .catch(()=>{
+      ov.querySelector('#scanRes').innerHTML = '<div class="scanGeen">Camera niet beschikbaar</div><small style="color:var(--muted)">Sta cameratoegang toe in de browserinstellingen.</small>';
+    });
+}
+
+// Matcht ook op naam: sommige tickets hebben de gastnaam in de QR staan
+function naamInTekst(r, tekstLower){
+  const delen = r.naam.toLowerCase().split(/[,\s-]+/).filter(w => w.length >= 4);
+  return delen.length > 0 && delen.some(w => tekstLower.includes(w));
+}
+
+function toonScanResultaat(ov, tekst){
+  const box = ov.querySelector('#scanRes');
+  const all = getRes();
+  window._scanTekst = String(tekst);
+  const tekstLower = String(tekst).toLowerCase();
+  // Alle langere cijferreeksen uit de QR halen + de hele tekst zelf
+  const nummers = (String(tekst).match(/\d{5,}/g) || []).concat(String(tekst).trim());
+  const matches = all.filter(r =>
+    (r.orders||[]).some(o => nummers.includes(String(o))) || naamInTekst(r, tekstLower)
+  );
+  if(!matches.length){
+    box.innerHTML = `<div class="scanGeen">Geen reservering gevonden voor deze code</div>
+      <small style="color:var(--muted);word-break:break-all">${esc(String(tekst).slice(0,140))}</small>
+      <div class="sheetBtns" style="margin-top:12px"><button class="btn primary" onclick="koppelScan()">Koppelen aan een gast</button></div>`;
+    return;
+  }
+  box.innerHTML = matches.map(r=>{
+    const tfs = getTafels(r);
+    return `<div class="scanHit">
+      <div class="scanNaam">${esc(r.naam)}<span class="chip" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span></div>
+      <div class="scanTafel">${esc(r.loc)} &middot; tafel <b>${tfs.length ? tfs.map(esc).join(', ') : 'nog niet toegewezen'}</b> &middot; ${r.pax} pers. &middot; ${esc(r.tijd)}</div>
+      <div class="sheetBtns">
+        <button class="btn ghost" onclick="openFormById('${r.id}')">Details</button>
+        <button class="btn green" onclick="scanAanTafel('${r.id}', this)">${r.status==='in' ? '\u2713 Zit aan tafel' : 'Aan tafel zetten'}</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Eenduidige treffer: meteen openen zodat drankjes ingevoerd kunnen worden
+  if(matches.length === 1){
+    openFormById(matches[0].id);
+  }
+}
+
+window.scanAanTafel = (id, btn)=>{
+  const list = getRes();
+  const r = list.find(x=>x.id===id); if(!r) return;
+  r.status = 'in'; r.bewerkt = Date.now();
+  syncSetRes(curDate, r);
+  setRes(list);
+  if(btn) btn.textContent = '\u2713 Zit aan tafel';
+};
+
+window.koppelScan = ()=>{
+  const box = document.querySelector('.scanOv #scanRes');
+  if(!box) return;
+  const all = getRes().slice().sort((a,b)=>a.naam.localeCompare(b.naam,'nl',{sensitivity:'base'}));
+  box.innerHTML = `<div style="text-align:left">
+    <b>Koppel deze code aan een gast</b>
+    <input id="kopZoek" placeholder="Zoek op naam..." autocomplete="off" style="margin:10px 0;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:11px;width:100%;font-size:16px">
+    <div id="kopLijst"></div>
+  </div>`;
+  const lijst = box.querySelector('#kopLijst');
+  const teken = (f)=>{
+    lijst.innerHTML = all
+      .filter(r => !f || r.naam.toLowerCase().includes(f))
+      .map(r => {
+        const tfs = getTafels(r);
+        return `<button class="kopRij" onclick="koppelAan('${r.id}')"><b>${esc(r.naam)}</b><span>${esc(r.loc)} &middot; ${tfs.length?tfs.map(esc).join(', '):'geen tafel'} &middot; ${r.pax}p</span></button>`;
+      }).join('') || '<div style="padding:14px;color:var(--muted)">Geen gasten gevonden</div>';
+  };
+  teken('');
+  box.querySelector('#kopZoek').oninput = e => teken(e.target.value.toLowerCase().trim());
+};
+
+window.koppelAan = (id)=>{
+  const list = getRes();
+  const r = list.find(x=>x.id===id); if(!r) return;
+  const tekst = window._scanTekst || '';
+  const nrs = (tekst.match(/\d{5,}/g) || [tekst.trim()]).filter(Boolean).map(String);
+  if(!nrs.length){ toast('Geen bruikbare code'); return; }
+  r.orders = [...new Set([...(r.orders||[]), ...nrs])];
+  r.bewerkt = Date.now();
+  syncSetRes(curDate, r);
+  setRes(list);
+  toast('Code gekoppeld aan '+r.naam);
+  const ov = document.querySelector('.scanOv');
+  if(ov) toonScanResultaat(ov, tekst);
+};
+
+document.getElementById('btnScan').onclick = openScanner;
+
+/* ============ PA IMPORT (vanuit PA Manager) ============ */
+// Formaat: { datum:'2026-07-04', reserveringen:[{naam, pax, tijd, duur, loc, tafels:['201','202'], arr, notitie, status}] }
+window.ctImport = function(data){
+  try{
+    if(typeof data === 'string') data = JSON.parse(data);
+    const datum = data.datum || todayStr();
+    const lijst = data.reserveringen || (Array.isArray(data) ? data : []);
+    if(!lijst.length){ toast('Geen reserveringen gevonden'); return; }
+    const key = 'ct_res_'+datum;
+    const bestaand = store.get(key, []);
+    const arrMap = {'Koffie':'Koffie arrangement', 'Naborrel':'Na Borrel', 'NaBorrel':'Na Borrel'};
+    let nieuw = 0, bijgewerkt = 0;
+    lijst.forEach(x=>{
+      const tafels = (x.tafels || (x.tafel ? [x.tafel] : []))
+        .flatMap(t => String(t).split(/[+,;\s]+/))
+        .map(t => t.trim()).filter(Boolean);
+      let arr = arrMap[x.arr] || x.arr || arrMap[x.label] || x.label || 'Normaal';
+      if(!ARRS.some(o=>o.n===arr)) arr = 'Normaal';
+      const r = {
+        id: null,
+        naam: String(x.naam || 'Onbekend'),
+        pax: Math.max(1, +x.pax || +x.personen || 1),
+        tijd: x.tijd || '19:30',
+        duur: Math.min(720, Math.max(15, +x.duur || 90)),
+        loc: LOCS.includes(x.loc) ? x.loc : (LOCS.includes(x.zaal) ? x.zaal : LOCS[0]),
+        tafels, tafel: tafels[0] || '',
+        arr,
+        orders: Array.isArray(x.orders) ? x.orders.map(String) : [],
+        notitie: String(x.notitie || ''),
+        status: STATUS[x.status] ? x.status : 'res',
+        walkin: false, bron: 'pa',
+        aangemaakt: Date.now(), bewerkt: Date.now()
+      };
+      // Herimport van dezelfde gast op dezelfde dag werkt bij, geen dubbelen
+      const sleutel = (r.naam+'|'+r.tijd+'|'+r.loc).toLowerCase();
+      const i = bestaand.findIndex(b => b.bron==='pa' && (b.naam+'|'+b.tijd+'|'+b.loc).toLowerCase() === sleutel);
+      if(i >= 0){
+        r.id = bestaand[i].id;
+        r.aangemaakt = bestaand[i].aangemaakt || r.aangemaakt;
+        r.status = bestaand[i].status;  // handmatig gezette status behouden
+        bestaand[i] = r; bijgewerkt++;
+      } else {
+        r.id = Date.now()+''+Math.floor(Math.random()*99999);
+        bestaand.push(r); nieuw++;
+      }
+    });
+    store.set(key, bestaand);
+    if(db) bestaand.forEach(r=>{ if(r.bron==='pa') syncSetRes(datum, r); });
+    curDate = datum;
+    render();
+    toast('PA import: '+nieuw+' nieuw, '+bijgewerkt+' bijgewerkt');
+    return {nieuw, bijgewerkt};
+  }catch(e){
+    console.error(e);
+    toast('Import mislukt: controleer het formaat');
+  }
+};
+
+function openPAImport(){
+  const ov = document.createElement('div');
+  ov.className = 'mcalOv';
+  ov.innerHTML = `<div class="vraagBox" style="width:min(480px,92vw)">
+    <p><b>PA import</b><br>Plak hier de export vanuit PA Manager.</p>
+    <textarea id="paData" rows="8" style="width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:12.5px;font-family:monospace"></textarea>
+    <div class="sheetBtns"><button class="btn ghost" id="paNee">Annuleren</button><button class="btn primary" id="paJa">Importeren</button></div>
+  </div>`;
+  document.body.appendChild(ov);
+  ov.querySelector('#paNee').onclick = ()=>ov.remove();
+  ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+  ov.querySelector('#paJa').onclick = ()=>{
+    const v = ov.querySelector('#paData').value.trim();
+    if(!v){ toast('Plak eerst de data'); return; }
+    ov.remove();
+    ctImport(v);
+  };
+}
+document.getElementById('btnWisPA').onclick = ()=>{
+  const pas = getRes().filter(r=>r.bron==='pa');
+  if(!pas.length){ toast('Geen PA-reserveringen op deze dag'); return; }
+  vraag('<b>'+pas.length+' PA-reserveringen</b> van '+fmtDate(curDate)+' verwijderen?<br><small style="color:var(--muted)">Handmatig toegevoegde reserveringen blijven staan.</small>', ()=>{
+    pas.forEach(r=>syncDelRes(curDate, r.id));
+    setRes(getRes().filter(r=>r.bron!=='pa'));
+    toast(pas.length+' PA-reserveringen verwijderd');
+  });
+};
+
+/* ============ FORMULIER ============ */
+const sheetWrap = document.getElementById('sheetWrap'), sheet = document.getElementById('sheet');
+function closeSheet(){ sheetWrap.classList.remove('open'); }
+
+function minNaarTijd(min){
+  min = ((min%1440)+1440)%1440;
+  return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0');
+}
+
+function openForm(existing, walkin){
+  const r = existing || { naam: walkin?'Walk-in':'', pax:2, tijd:'19:30', duur:90, loc:curLoc==='__alles'?'Theaterrestaurant':curLoc, tafels:[], arr:'Normaal', notitie:'', status: walkin?'in':'res', walkin:!!walkin };
+  const eind = minNaarTijd(tijdNaarMin(r.tijd)+(r.duur||90));
+  let selTafels = new Set(getTafels(r));
+  const paxBtn = n=>`<button class="paxBtn ${r.pax===n?'on':''}" data-p="${n}">${n}</button>`;
+  const meer = r.pax>5;
+  sheet.innerHTML = `
+    <div class="sheetHead">
+      <button class="shBack" onclick="closeSheet()">&#8249;</button>
+      <h2>${existing?'Reservering':(walkin?'Walk-in':'Reservering')}</h2>
+      <button class="shSave" id="fSave">&#10003;</button>
+    </div>
+    <div class="topChip"><span class="chip" id="topChip" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span></div>
+    <label>Aantal personen</label>
+    <div class="paxRow">${[1,2,3,4,5].map(paxBtn).join('')}<button class="paxBtn ${meer?'on':''}" data-p="meer">MEER</button></div>
+    <input id="fPax" type="number" min="1" value="${r.pax}" style="display:none">
+    <div class="row2">
+      <div style="flex:1.5"><label>Datum</label><input id="fDatum" type="text" readonly data-iso="${curDate}" value="${fmtLang(curDate)}"></div>
+      <div><label>Begin</label><input id="fTijd" type="text" inputmode="none" readonly value="${r.tijd}"></div>
+      <div><label>Einde</label><input id="fEind" type="text" inputmode="none" readonly value="${eind}"></div>
+    </div>
+    <div class="row2">
+      <div style="flex:1.2"><label>Zaal</label><select id="fLoc">${LOCS.map(l=>`<option ${l===r.loc?'selected':''}>${l}</option>`).join('')}</select></div>
+      <div style="flex:1"><label>Tafel</label><button type="button" class="tafelPickBtn" id="fTafelBtn"></button><div class="overboekt" id="tafelWarn">Tafel is overgeboekt</div></div>
+    </div>
+    <label>Naam</label><input id="fNaam" value="${esc(r.naam)}" autocomplete="off">
+    <label>Notities</label><textarea id="fNot" rows="4">${esc(r.notitie)}</textarea>
+    <div class="row2">
+      <div><label>Status</label><select id="fStatus">${Object.entries(STATUS).map(([k,s])=>`<option value="${k}" ${k===r.status?'selected':''}>${s.naam}</option>`).join('')}</select></div>
+      <div><label>Label</label><select id="fArr">${ARRS.map(a=>`<option ${a.n===r.arr?'selected':''}>${a.n}</option>`).join('')}</select></div>
+    </div>
+    ${(existing&&existing.id)?`
+    <div class="formFoot">
+      <button type="button" class="btn ghost wide" id="fCopy">Reservering kopi\u00ebren</button>
+      <button type="button" class="btn annul wide" id="fAnnul">Reservering annuleren</button>
+      <button type="button" class="btn danger wide" id="fDel">Definitief verwijderen</button>
+      ${r.aangemaakt?`<div class="fMeta">Gemaakt op ${fmtStamp(r.aangemaakt)}${r.bewerkt?' &middot; laatst bewerkt '+fmtStamp(r.bewerkt):''}</div>`:''}
+    </div>`:''}`;
+  sheetWrap.classList.add('open');
+
+  // Personenknoppen
+  const paxInput = sheet.querySelector('#fPax');
+  const meerBtn = sheet.querySelector('.paxBtn[data-p="meer"]');
+  if(+paxInput.value > 5) meerBtn.textContent = paxInput.value;
+  function openPaxMenu(){
+    const ov = document.createElement('div');
+    ov.className = 'stOv';
+    const menu = document.createElement('div');
+    menu.className = 'stMenu';
+    let items = '';
+    for(let n=6;n<=30;n++) items += `<button data-n="${n}" class="${+paxInput.value===n?'on':''}"><span>${n} personen</span></button>`;
+    menu.innerHTML = items;
+    ov.appendChild(menu);
+    document.body.appendChild(ov);
+    const b = meerBtn.getBoundingClientRect();
+    menu.style.width = '190px';
+    menu.style.left = Math.max(8, Math.min(window.innerWidth-198, b.right-190))+'px';
+    menu.style.top = Math.max(8, Math.min(window.innerHeight - menu.offsetHeight - 8, b.bottom + 4))+'px';
+    ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+    menu.querySelectorAll('button').forEach(bt=>{
+      bt.onclick = ()=>{
+        paxInput.value = bt.dataset.n;
+        sheet.querySelectorAll('.paxBtn').forEach(x=>x.classList.remove('on'));
+        meerBtn.classList.add('on');
+        meerBtn.textContent = bt.dataset.n;
+        ov.remove();
+        paxInput.dispatchEvent(new Event('change'));
+      };
+    });
+  }
+  sheet.querySelectorAll('.paxBtn').forEach(b=>{
+    b.onclick = ()=>{
+      if(b.dataset.p==='meer'){ openPaxMenu(); return; }
+      sheet.querySelectorAll('.paxBtn').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      meerBtn.textContent = 'MEER';
+      paxInput.value = b.dataset.p;
+      paxInput.dispatchEvent(new Event('change'));
+    };
+  });
+
+  // Tafelkeuze: meerdere tafels met zitplaatsen, zoals in DISH
+  const tafelBtn = sheet.querySelector('#fTafelBtn');
+  const locSel = sheet.querySelector('#fLoc');
+  function resVoorDatum(){
+    const d = (sheet.querySelector('#fDatum')||{}).dataset ? sheet.querySelector('#fDatum').dataset.iso : curDate;
+    return (d && d!==curDate) ? store.get('ct_res_'+d, []) : getRes();
+  }
+  // Tafels die in het gekozen tijdslot al bezet zijn
+  function conflictSet(){
+    const b = tijdNaarMin(sheet.querySelector('#fTijd').value);
+    let e2 = tijdNaarMin(sheet.querySelector('#fEind').value);
+    if(e2 <= b) e2 += 1440;
+    const set = new Set();
+    resVoorDatum().forEach(x=>{
+      if(existing && existing.id && x.id===existing.id) return;
+      if(x.loc !== locSel.value) return;
+      if(INACTIVE.has(x.status)) return;
+      const xs = tijdNaarMin(x.tijd), xe = xs+(x.duur||90);
+      if(xs < e2 && xe > b) getTafels(x).forEach(nr=>set.add(nr));
+    });
+    return set;
+  }
+  function updateTafelBtn(){
+    const conf = conflictSet();
+    const dubbel = [...selTafels].some(nr=>conf.has(nr));
+    tafelBtn.textContent = selTafels.size ? [...selTafels].join(', ') : 'Automatisch';
+    tafelBtn.style.color = dubbel ? '#e5304d' : '';
+    const warn = sheet.querySelector('#tafelWarn');
+    if(warn) warn.style.display = dubbel ? 'block' : 'none';
+  }
+  function openTafelPop(){
+    const conf = conflictSet();
+    const ov = document.createElement('div');
+    ov.className = 'stOv';
+    const pop = document.createElement('div');
+    pop.className = 'tafelPop';
+    pop.innerHTML = `<label class="tRow"><input type="checkbox" id="tafAuto" ${selTafels.size?'':'checked'}><b style="min-width:auto">Automatisch</b></label>` +
+      parseTafels(tafelConfig[locSel.value]||'').map(t=>`
+      <label class="tRow ${conf.has(t.nr)?'conflict':''}"><input type="checkbox" value="${t.nr}" ${selTafels.has(t.nr)?'checked':''}><b>${t.nr}</b><span>${t.cap ? t.cap+' zitplaatsen' : ''}${conf.has(t.nr)?' &middot; bezet':''}</span></label>`).join('');
+    ov.appendChild(pop);
+    document.body.appendChild(ov);
+    const b = tafelBtn.getBoundingClientRect();
+    const pw = 280;
+    pop.style.left = Math.max(8, Math.min(window.innerWidth - pw - 8, b.left - 130))+'px';
+    pop.style.top = Math.max(8, Math.min(window.innerHeight - pop.offsetHeight - 8, b.bottom + 4))+'px';
+    const auto = pop.querySelector('#tafAuto');
+    auto.onchange = ()=>{
+      if(auto.checked){
+        selTafels.clear();
+        pop.querySelectorAll('input[value]').forEach(cb=>cb.checked=false);
+      } else auto.checked = selTafels.size===0;
+      updateTafelBtn();
+    };
+    pop.querySelectorAll('input[value]').forEach(cb=>{
+      cb.onchange = ()=>{
+        cb.checked ? selTafels.add(cb.value) : selTafels.delete(cb.value);
+        auto.checked = selTafels.size===0;
+        updateTafelBtn();
+      };
+    });
+    ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+  }
+  tafelBtn.onclick = openTafelPop;
+  locSel.onchange = ()=>{ selTafels.clear(); updateTafelBtn(); };
+  updateTafelBtn();
+
+  // Donkere dropdowns voor Zaal, Status en Label
+  maakDropdown(sheet.querySelector('#fLoc'));
+  maakDropdown(sheet.querySelector('#fStatus'));
+  maakDropdown(sheet.querySelector('#fArr'));
+
+  // Labelchip bovenin volgt de keuze
+  sheet.querySelector('#fArr').addEventListener('change', (e)=>{
+    const chip = sheet.querySelector('#topChip');
+    chip.textContent = e.target.value;
+    chip.style.background = arrKleur(e.target.value);
+  });
+  // Vink wordt groen zodra er iets gewijzigd is
+  const markeer = ()=>sheet.querySelector('#fSave').classList.add('actief');
+  sheet.addEventListener('input', markeer);
+  sheet.addEventListener('change', markeer);
+  if(!existing || !existing.id) markeer();
+
+  // Datum via minikalender
+  const datumInp = sheet.querySelector('#fDatum');
+  datumInp.onclick = ()=>openMiniCal(datumInp);
+
+  // Eindtijd meeschuiven als begin verandert
+  const tijdInp = sheet.querySelector('#fTijd'), eindInp = sheet.querySelector('#fEind');
+  tijdInp.onclick = ()=>openClock(tijdInp);
+  eindInp.onclick = ()=>openClock(eindInp);
+  tijdInp.onchange = ()=>{
+    eindInp.value = minNaarTijd(tijdNaarMin(tijdInp.value)+(r.duur||90));
+    updateTafelBtn();
+  };
+  eindInp.onchange = ()=>{ updateTafelBtn(); };
+  datumInp.onchange = ()=>{ updateTafelBtn(); };
+
+  sheet.querySelector('#fSave').onclick = ()=>{
+    const naam = sheet.querySelector('#fNaam').value.trim();
+    if(!naam){ toast('Vul een naam in'); return; }
+    let duur = tijdNaarMin(eindInp.value) - tijdNaarMin(tijdInp.value);
+    if(duur <= 0) duur += 1440;
+    const tfs = [...selTafels];
+    const conf = conflictSet();
+    const dubbel = tfs.filter(nr=>conf.has(nr));
+    const doorgaan = ()=>{
+    const nieuw = {
+      id: (existing && existing.id) ? existing.id : Date.now()+''+Math.floor(Math.random()*999),
+      naam,
+      pax: Math.max(1, +paxInput.value || 1),
+      tijd: tijdInp.value || '19:30',
+      duur: Math.min(720, Math.max(15, duur)),
+      loc: locSel.value,
+      tafels: tfs,
+      tafel: tfs[0]||'',
+      arr: sheet.querySelector('#fArr').value,
+      notitie: sheet.querySelector('#fNot').value.trim(),
+      status: sheet.querySelector('#fStatus').value,
+      walkin: r.walkin,
+      aangemaakt: (existing && existing.aangemaakt) || Date.now(),
+      bewerkt: Date.now()
+    };
+    const list = getRes();
+    const idx = (existing && existing.id) ? list.findIndex(x=>x.id===existing.id) : -1;
+    const datum = sheet.querySelector('#fDatum').dataset.iso || curDate;
+    if(datum === curDate){
+      if(idx>=0) list[idx] = nieuw; else list.push(nieuw);
+      setRes(list); closeSheet();
+      syncSetRes(curDate, nieuw);
+    } else {
+      // Verplaatst naar een andere dag
+      if(idx>=0){ list.splice(idx,1); store.set(dayKey(), list); syncDelRes(curDate, nieuw.id); }
+      const key = 'ct_res_'+datum;
+      const doel = store.get(key, []);
+      const di = doel.findIndex(x=>x.id===nieuw.id);
+      if(di>=0) doel[di] = nieuw; else doel.push(nieuw);
+      store.set(key, doel);
+      syncSetRes(datum, nieuw);
+      curDate = datum;
+      closeSheet(); render();
+      toast('Opgeslagen op '+fmtDate(datum));
+    }
+    };
+    if(dubbel.length) vraag('Tafel '+dubbel.join(', ')+' is al bezet in dit tijdslot. Toch opslaan?', doorgaan);
+    else doorgaan();
+  };
+  const del = sheet.querySelector('#fDel');
+  if(del) del.onclick = ()=>{
+    vraag('Reservering definitief verwijderen?', ()=>{
+      setRes(getRes().filter(x=>x.id!==existing.id)); closeSheet();
+      syncDelRes(curDate, existing.id);
+    });
+  };
+  const annul = sheet.querySelector('#fAnnul');
+  if(annul) annul.onclick = ()=>{
+    const list = getRes();
+    const rr = list.find(x=>x.id===existing.id);
+    if(rr){ rr.status = 'ann'; rr.bewerkt = Date.now(); syncSetRes(curDate, rr); }
+    setRes(list); closeSheet();
+    toast('Reservering geannuleerd');
+  };
+  const kopie = sheet.querySelector('#fCopy');
+  if(kopie) kopie.onclick = ()=>{
+    openForm({ naam:r.naam, pax:r.pax, tijd:r.tijd, duur:r.duur, loc:r.loc, tafels:[], arr:r.arr, notitie:r.notitie, status:'res', walkin:false }, false);
+  };
+}
+document.getElementById('fabAdd').onclick = ()=>openForm(null,false);
+
+window.openStatusMenu = (id, ev)=>{
+  ev.stopPropagation();
+  const r = getRes().find(x=>x.id===id); if(!r) return;
+  const ov = document.createElement('div');
+  ov.className = 'stOv';
+  const menu = document.createElement('div');
+  menu.className = 'stMenu';
+  menu.innerHTML = Object.entries(STATUS).map(([k,s])=>
+    `<button data-k="${k}" class="${k===r.status?'on':''}"><span>${s.naam}</span><i style="background:${s.c}"></i></button>`).join('');
+  ov.appendChild(menu);
+  document.body.appendChild(ov);
+  const b = ev.target.closest('button').getBoundingClientRect();
+  menu.style.left = Math.max(8, Math.min(window.innerWidth-238, b.right-230))+'px';
+  menu.style.top = Math.max(8, Math.min(window.innerHeight - menu.offsetHeight - 8, b.bottom+6))+'px';
+  ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+  menu.querySelectorAll('button').forEach(bt=>{
+    bt.onclick = ()=>{
+      const list = getRes();
+      const rr = list.find(x=>x.id===id);
+      if(rr){ rr.status = bt.dataset.k; rr.bewerkt = Date.now(); syncSetRes(curDate, rr); }
+      ov.remove();
+      setRes(list);
+    };
+  });
+};
+
+/* ============ FILTER ============ */
+const filt = { begin:'', eind:'', zaal:'', status:'' };
+const filterbar = document.getElementById('filterbar');
+const btnFilter = document.getElementById('btnFilter');
+document.getElementById('fltZaal').innerHTML = '<option value="">Alle zalen</option>'+LOCS.map(l=>`<option>${l}</option>`).join('');
+document.getElementById('fltStatus').innerHTML = '<option value="">Alles</option><option value="actief">Alle actieve</option>'+Object.entries(STATUS).map(([k,s])=>`<option value="${k}">${s.naam}</option>`).join('');
+btnFilter.onclick = ()=>{ filterbar.hidden = !filterbar.hidden; };
+['fltBegin','fltEind','fltZaal','fltStatus'].forEach(id=>{
+  document.getElementById(id).onchange = (e)=>{
+    filt[{fltBegin:'begin',fltEind:'eind',fltZaal:'zaal',fltStatus:'status'}[id]] = e.target.value;
+    render();
+  };
+});
+document.getElementById('fltBegin').onclick = (e)=>openClock(e.target);
+document.getElementById('fltEind').onclick = (e)=>openClock(e.target);
+document.getElementById('fltReset').onclick = ()=>{
+  filt.begin=filt.eind=filt.zaal=filt.status='';
+  ['fltBegin','fltEind'].forEach(id=>document.getElementById(id).value='');
+  ['fltZaal','fltStatus'].forEach(id=>document.getElementById(id).value='');
+  render();
+};
+function filterActief(){ return !!(filt.begin||filt.eind||filt.zaal||filt.status); }
+function applyFilter(list){
+  return list.filter(r=>{
+    if(filt.zaal && r.loc!==filt.zaal) return false;
+    if(filt.status==='actief'){ if(INACTIVE.has(r.status)) return false; }
+    else if(filt.status && r.status!==filt.status) return false;
+    if(filt.begin && r.tijd < filt.begin) return false;
+    if(filt.eind && r.tijd > filt.eind) return false;
+    return true;
+  });
+}
+
+/* ============ DONKERE DROPDOWN (vervangt native select) ============ */
+function maakDropdown(sel){
+  if(!sel || sel.dataset.dd) return;
+  sel.dataset.dd = '1';
+  sel.style.display = 'none';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'ddBtn';
+  const dotHTML = (v)=>{
+    if(sel.id==='fStatus' && STATUS[v]) return `<i class="dot" style="background:${STATUS[v].c};margin:0 0 0 auto"></i>`;
+    if(sel.id==='fArr') return `<i class="dot" style="background:${arrKleur(v)};margin:0 0 0 auto"></i>`;
+    return '';
+  };
+  const upd = ()=>{
+    const o = sel.options[sel.selectedIndex];
+    btn.innerHTML = `<span>${esc(o ? o.text : '')}</span>${dotHTML(sel.value)}<span class="ddArr">&#9662;</span>`;
+  };
+  btn.onclick = ()=>{
+    const ov = document.createElement('div');
+    ov.className = 'stOv';
+    const menu = document.createElement('div');
+    menu.className = 'stMenu';
+    menu.innerHTML = [...sel.options].map(o=>
+      `<button data-v="${o.value}" class="${o.value===sel.value?'on':''}"><span>${esc(o.text)}</span>${dotHTML(o.value)?`<i style="background:${sel.id==='fStatus'?(STATUS[o.value]||{}).c:arrKleur(o.value)}"></i>`:''}</button>`).join('');
+    ov.appendChild(menu);
+    document.body.appendChild(ov);
+    const b = btn.getBoundingClientRect();
+    menu.style.width = Math.max(210, b.width)+'px';
+    menu.style.left = Math.max(8, Math.min(window.innerWidth - Math.max(210,b.width) - 8, b.left))+'px';
+    menu.style.top = Math.max(8, Math.min(window.innerHeight - menu.offsetHeight - 8, b.bottom + 4))+'px';
+    ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+    menu.querySelectorAll('button').forEach(bt=>{
+      bt.onclick = ()=>{
+        sel.value = bt.dataset.v;
+        sel.dispatchEvent(new Event('change'));
+        ov.remove();
+      };
+    });
+  };
+  sel.insertAdjacentElement('afterend', btn);
+  sel.addEventListener('change', upd);
+  upd();
+}
+
+/* ============ POPUP BIJ VELD VERANKEREN ============ */
+function verankerBijVeld(ov, box, veld){
+  ov.style.background = 'transparent';
+  ov.style.display = 'block';
+  box.style.position = 'fixed';
+  const r = veld.getBoundingClientRect();
+  const bw = box.offsetWidth, bh = box.offsetHeight;
+  let left = Math.max(8, Math.min(window.innerWidth - bw - 8, r.left - 60));
+  let top = r.bottom + 6;
+  if(top + bh > window.innerHeight - 8) top = Math.max(8, r.top - bh - 6);
+  box.style.left = left+'px';
+  box.style.top = top+'px';
+}
+
+/* ============ BEVESTIGINGSDIALOOG ============ */
+function vraag(msg, cb){
+  const ov = document.createElement('div');
+  ov.className = 'mcalOv';
+  ov.innerHTML = `<div class="vraagBox"><p>${msg}</p><div class="sheetBtns"><button class="btn ghost" id="vNee">Nee</button><button class="btn primary" id="vJa">Ja</button></div></div>`;
+  document.body.appendChild(ov);
+  ov.querySelector('#vNee').onclick = ()=>ov.remove();
+  ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+  ov.querySelector('#vJa').onclick = ()=>{ ov.remove(); cb(); };
+}
+
+/* ============ MINIKALENDER (datumveld) ============ */
+function fmtStamp(ts){
+  const d = new Date(ts);
+  const iso = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  const tijd = String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+  return (iso===todayStr() ? 'vandaag' : d.toLocaleDateString('nl-NL',{day:'numeric',month:'short'}))+', '+tijd;
+}
+function fmtLang(iso){
+  let s = new Date(iso+'T12:00:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
+  return s.charAt(0).toUpperCase()+s.slice(1);
+}
+function openMiniCal(input){
+  let sel = input.dataset.iso || todayStr();
+  let d = new Date(sel+'T12:00:00');
+  let y = d.getFullYear(), m = d.getMonth();
+  const today = todayStr();
+  const ov = document.createElement('div');
+  ov.className = 'mcalOv';
+  ov.innerHTML = '<div class="mcalBox"><div class="mcalHead"><button id="mcPrev">&#8249;</button><h3 id="mcTitle"></h3><button id="mcNext">&#8250;</button></div><div class="mcalGrid" id="mcGrid"></div></div>';
+  document.body.appendChild(ov);
+  verankerBijVeld(ov, ov.querySelector('.mcalBox'), input);
+  function draw(){
+    const first = new Date(y,m,1);
+    let naam = first.toLocaleDateString('nl-NL',{month:'long',year:'numeric'});
+    ov.querySelector('#mcTitle').textContent = naam.charAt(0).toUpperCase()+naam.slice(1);
+    const dagen = new Date(y,m+1,0).getDate();
+    const offset = (first.getDay()+6)%7;
+    let html = '';
+    ['M','D','W','D','V','Z','Z'].forEach(h=>html+=`<span class="mcHd">${h}</span>`);
+    for(let b=0;b<offset;b++) html += '<span></span>';
+    for(let dag=1;dag<=dagen;dag++){
+      const iso = y+'-'+String(m+1).padStart(2,'0')+'-'+String(dag).padStart(2,'0');
+      const cls = ['mcDay'];
+      if(iso===sel) cls.push('sel');
+      else if(iso===today) cls.push('today');
+      html += `<span class="${cls.join(' ')}" data-d="${iso}">${dag}</span>`;
+    }
+    const grid = ov.querySelector('#mcGrid');
+    grid.innerHTML = html;
+    grid.querySelectorAll('.mcDay').forEach(el=>{
+      el.onclick = ()=>{
+        input.dataset.iso = el.dataset.d;
+        input.value = fmtLang(el.dataset.d);
+        ov.remove();
+        input.dispatchEvent(new Event('change'));
+      };
+    });
+  }
+  ov.querySelector('#mcPrev').onclick = ()=>{ m--; if(m<0){m=11;y--;} draw(); };
+  ov.querySelector('#mcNext').onclick = ()=>{ m++; if(m>11){m=0;y++;} draw(); };
+  ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+  draw();
+}
+
+/* ============ KLOK TIJDKIEZER ============ */
+function openClock(input){
+  let [h,m] = (input.value||'19:30').split(':').map(n=>+n||0);
+  m = Math.round(m/5)*5 % 60;
+  let mode = 'h';
+  const pad = n=>String(n).padStart(2,'0');
+  const ov = document.createElement('div');
+  ov.className = 'clockOv';
+  ov.innerHTML = `
+    <div class="clockBox">
+      <div class="clockHead"><span id="ckH"></span>:<span id="ckM"></span></div>
+      <div class="clockDial" id="ckDial"></div>
+      <div class="clockBtns">
+        <button class="btn ghost" id="ckCancel">Annuleren</button>
+        <button class="btn primary" id="ckOk">OK</button>
+      </div>
+    </div>`;
+  document.body.appendChild(ov);
+  verankerBijVeld(ov, ov.querySelector('.clockBox'), input);
+  const dial = ov.querySelector('#ckDial'), hEl = ov.querySelector('#ckH'), mEl = ov.querySelector('#ckM');
+
+  function head(){
+    hEl.textContent = pad(h); mEl.textContent = pad(m);
+    hEl.classList.toggle('on', mode==='h'); mEl.classList.toggle('on', mode==='m');
+  }
+  function drawDial(){
+    dial.innerHTML = '<div class="ckHand" id="ckHand"></div><div class="ckDot"></div>';
+    const R = 132;
+    const addNum = (val, label, ang, r, sel, inner)=>{
+      const el = document.createElement('button');
+      el.className = 'ckNum'+(sel?' on':'')+(inner?' inner':'');
+      el.textContent = label;
+      const rad = ang*Math.PI/180;
+      el.style.left = (R + Math.cos(rad)*r)+'px';
+      el.style.top = (R + Math.sin(rad)*r)+'px';
+      dial.appendChild(el);
+    };
+    if(mode==='h'){
+      for(let i=0;i<24;i++){
+        const outer = i < 12;
+        addNum(i, i, (i%12)*30-90, outer ? R-26 : R-62, i===h, !outer);
+      }
+      hand((h%12)*30-90, h<12 ? R-26 : R-62);
+    } else {
+      for(let i=0;i<60;i+=5){
+        addNum(i, pad(i), (i/5)*30-90, R-26, i===m, false);
+      }
+      hand((m/5)*30-90, R-26);
+    }
+  }
+  function hand(ang, len){
+    const el = dial.querySelector('#ckHand');
+    el.style.width = (len-16)+'px';
+    el.style.transform = 'rotate('+ang+'deg)';
+  }
+  hEl.onclick = ()=>{ mode='h'; head(); drawDial(); };
+  mEl.onclick = ()=>{ mode='m'; head(); drawDial(); };
+
+  // Slepen en tikken op de wijzerplaat
+  function pick(e){
+    const rect = dial.getBoundingClientRect();
+    const dx = e.clientX - (rect.left + rect.width/2);
+    const dy = e.clientY - (rect.top + rect.height/2);
+    const dist = Math.hypot(dx,dy);
+    let ang = Math.atan2(dy,dx)*180/Math.PI + 90;
+    if(ang < 0) ang += 360;
+    if(mode==='h'){
+      const idx = Math.round(ang/30) % 12;
+      const inner = dist < 88;           // binnenring = 12-23
+      h = inner ? idx+12 : idx;
+    } else {
+      m = (Math.round(ang/30) % 12) * 5;
+    }
+    head(); drawDial();
+  }
+  let dragging = false;
+  dial.addEventListener('pointerdown', (e)=>{
+    e.preventDefault();
+    dragging = true;
+    dial.setPointerCapture(e.pointerId);
+    pick(e);
+  });
+  dial.addEventListener('pointermove', (e)=>{ if(dragging) pick(e); });
+  dial.addEventListener('pointerup', ()=>{
+    dragging = false;
+    if(mode==='h'){ mode='m'; head(); drawDial(); }
+  });
+
+  ov.querySelector('#ckCancel').onclick = ()=>ov.remove();
+  ov.onclick = (e)=>{ if(e.target===ov) ov.remove(); };
+  ov.querySelector('#ckOk').onclick = ()=>{
+    input.value = pad(h)+':'+pad(m);
+    ov.remove();
+    input.dispatchEvent(new Event('change'));
+  };
+  head(); drawDial();
+}
+
+/* ============ RENDER ============ */
+const content = document.getElementById('content');
+let dayConflicts = new Set();
+
+// Reserveringen die elkaar overlappen op dezelfde tafel
+function berekenConflicten(list){
+  const set = new Set();
+  const perTafel = {};
+  list.forEach(r=>{
+    if(INACTIVE.has(r.status)) return;
+    const s = tijdNaarMin(r.tijd), e = s+(r.duur||90);
+    getTafels(r).forEach(nr=>{
+      const key = r.loc+'|'+nr;
+      (perTafel[key]=perTafel[key]||[]).push({id:r.id, s, e});
+    });
+  });
+  Object.values(perTafel).forEach(arr=>{
+    for(let i=0;i<arr.length;i++){
+      for(let j=i+1;j<arr.length;j++){
+        if(arr[i].s < arr[j].e && arr[j].s < arr[i].e){ set.add(arr[i].id); set.add(arr[j].id); }
+      }
+    }
+  });
+  return set;
+}
+const locTabs = document.getElementById('locTabs');
+
+function esc(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function cardHTML(r, metTijd){
+  const st = STATUS[r.status]||STATUS.res;
+  const tfs = getTafels(r);
+  const dim = INACTIVE.has(r.status) ? 'opacity:.55' : '';
+  return `<div class="card" style="${dim}" onclick="openFormById('${r.id}')">
+    <div class="cpax">${r.pax}<small>p.</small></div>
+    <div class="cnaam">${esc(r.naam)}</div>
+    <div class="cmid">
+      <div><span class="chip" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>${r.walkin?'<span class="chip" style="background:#5ad0a5">Walk-in</span>':''}</div>
+      ${(metTijd||r.notitie)?`<div class="cnote">${metTijd?esc(r.tijd):''}${metTijd&&r.notitie?' &middot; ':''}${r.notitie?esc(r.notitie):''}</div>`:''}
+    </div>
+    <div class="ctafel"${dayConflicts.has(r.id)?' style="color:#e5304d"':''}>${tfs.length?tfs.map(esc).join(', '):'-'}<small>${esc(r.loc)}</small></div>
+    <button class="stBtn" style="background:${st.c}" onclick="openStatusMenu('${r.id}',event)">${st.naam.toUpperCase()}</button>
+  </div>`;
+}
+window.openFormById = (id)=>{ const r = getRes().find(x=>x.id===id); if(r) openForm(r,false); };
+
+function render(){
+  document.getElementById('dateLabel').textContent = fmtDate(curDate);
+  abonneerDatum();
+  dayConflicts = berekenConflicten(getRes());
+  const all = applyFilter(getRes());
+  btnFilter.classList.toggle('actief', filterActief());
+  document.getElementById('cRes').textContent = all.length;
+  document.getElementById('cGast').textContent = all.reduce((s,r)=>s+(+r.pax||0),0);
+  const tafelSet = new Set();
+  all.forEach(r=>getTafels(r).forEach(nr=>tafelSet.add(r.loc+'|'+nr)));
+  document.getElementById('cTaf').textContent = tafelSet.size;
+  drawer.querySelectorAll('nav button[data-view]').forEach(b=>b.classList.toggle('on', b.dataset.view===curView));
+  document.querySelectorAll('#sideRail button[data-view]').forEach(b=>b.classList.toggle('on', b.dataset.view===curView));
+
+  if(curView==='tafels') return renderTafels(all);
+  if(curView==='az') return renderAZ(all);
+  if(curView==='map') return renderMap(all);
+  return renderDag(all);
+}
+
+/* --- Dagoverzicht: gesorteerd op tijd --- */
+function renderDag(all){
+  locTabs.innerHTML = '';
+  const list = all.slice().sort((a,b)=> a.tijd.localeCompare(b.tijd) || a.naam.localeCompare(b.naam,'nl'));
+  if(!list.length){ content.innerHTML = '<div class="empty">Helaas, geen reserveringen :-(</div>'; return; }
+  let html = '', lastTijd = '';
+  list.forEach(r=>{
+    if(r.tijd !== lastTijd){ html += `<div class="sectionH">${esc(r.tijd)}</div>`; lastTijd = r.tijd; }
+    html += cardHTML(r);
+  });
+  content.innerHTML = html;
+}
+
+/* --- Tafels: tijdlijn zoals DISH, alle locaties onder elkaar --- */
+function tijdNaarMin(t){ const [h,m]=(t||'0:0').split(':').map(Number); return h*60+(m||0); }
+
+const SHIFTS = {
+  ochtend:{n:'Ochtend', s:6*60,  e:12*60},
+  middag: {n:'Middag',  s:12*60, e:18*60},
+  avond:  {n:'Avond',   s:18*60, e:27*60}
+};
+let tlShift = store.get('ct_shift','avond');
+let tlZoom = 1;
+
+function renderTafels(all){
+  const sh = SHIFTS[tlShift] || SHIFTS.avond;
+  locTabs.innerHTML =
+    Object.entries(SHIFTS).map(([k,v])=>`<button class="${k===tlShift?'on':''}" data-s="${k}">${v.n}</button>`).join('') +
+    `<span style="flex:1"></span>
+     <button data-z="out">&minus;</button>
+     <button data-z="reset">${Math.round(tlZoom*100)}%</button>
+     <button data-z="in">+</button>`;
+  locTabs.querySelectorAll('button[data-s]').forEach(b=>b.onclick=()=>{ tlShift=b.dataset.s; store.set('ct_shift',tlShift); render(); });
+  locTabs.querySelectorAll('button[data-z]').forEach(b=>b.onclick=()=>{
+    if(b.dataset.z==='in') tlZoom = Math.min(2, +(tlZoom+0.2).toFixed(1));
+    else if(b.dataset.z==='out') tlZoom = Math.max(0.6, +(tlZoom-0.2).toFixed(1));
+    else tlZoom = 1;
+    render();
+  });
+
+  // Avondshift loopt door na middernacht: tijden voor 06:00 tellen als volgende dag
+  const wrapMin = t => (tlShift==='avond' && t < 6*60) ? t+1440 : t;
+  const start = sh.s, end = sh.e;
+  const PXH = 150*tlZoom;
+  const px = min => ((min-start)/60)*PXH;
+  const totalW = px(end);
+
+  // Nu-lijn (alleen op vandaag en binnen het venster)
+  let nowX = -1;
+  if(curDate === todayStr()){
+    const nu = new Date();
+    const nm = wrapMin(nu.getHours()*60+nu.getMinutes());
+    if(nm >= start && nm <= end) nowX = px(nm);
+  }
+
+  // Uurmarkeringen
+  let hoursHTML = '';
+  for(let m=start; m<=end; m+=60){
+    hoursHTML += `<div class="tlHour" style="left:${px(m)}px">${String(Math.floor(m/60)%24).padStart(2,'0')}:00</div>`;
+  }
+  if(nowX >= 0) hoursHTML += `<div class="tlNowDot" style="left:${nowX}px"></div>`;
+
+  let rows = '';
+  LOCS.forEach(loc=>{
+    const tafels = parseTafels(tafelConfig[loc]||'');
+    if(!tafels.length) return;
+    rows += `<div class="tlLocRow">${esc(loc)}</div>`;
+    const byTafel = {};
+    all.filter(r=>r.loc===loc).forEach(r=>{ getTafels(r).forEach(nr=>{ (byTafel[nr]=byTafel[nr]||[]).push(r); }); });
+    tafels.forEach(t=>{
+      let blocks = '';
+      (byTafel[t.nr]||[]).forEach(r=>{
+        const eff = wrapMin(tijdNaarMin(r.tijd));
+        const dur = r.duur||90;
+        if(eff+dur <= start || eff >= end) return; // buiten deze shift
+        const st = STATUS[r.status]||STATUS.res;
+        const dim = INACTIVE.has(r.status);
+        const s = px(eff);
+        const w = Math.max(56, (dur/60)*PXH - 4);
+        blocks += `<div class="tlBlock ${r.status==='in'?'in':''}${dim?' no':''}" style="left:${s}px;width:${w}px;border-left-color:${st.c}" onclick="openFormById('${r.id}')">
+          <b>${r.pax}</b><span class="tlNaam">${esc(r.naam)}</span><span class="tlTag" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>${r.notitie?`<span class="tlNote">${esc(r.notitie)}</span>`:''}
+        </div>`;
+      });
+      rows += `<div class="tlRow">
+        <div class="tlLabel" onclick="nieuwOpTafel('${esc(loc)}','${esc(t.nr)}')">${esc(t.nr)}<sup>${t.cap??''}</sup></div>
+        <div class="tlTrack" style="width:${totalW}px">${gridHTML(start,end,px,nowX)}${blocks}</div>
+      </div>`;
+    });
+  });
+
+  const zonder = all.filter(r=>!getTafels(r).length);
+  let zonderHTML = '';
+  if(zonder.length){
+    zonderHTML = '<div class="sectionH">Zonder tafel</div>' + zonder.map(r=>cardHTML(r, true)).join('');
+  }
+
+  content.innerHTML = rows
+    ? `<div class="tlScroll"><div class="tlHead"><div class="tlLabel"></div><div class="tlHours" style="width:${totalW}px">${hoursHTML}</div></div>${rows}</div>${zonderHTML}`
+    : '<div class="empty">Geen tafels gevonden.</div>';
+}
+function gridHTML(start,end,px,nowX){
+  let g = '';
+  for(let m=start; m<=end; m+=15){
+    g += `<i class="tlGrid ${m%60===0?'':'q'}" style="left:${px(m)}px"></i>`;
+  }
+  if(nowX >= 0) g += `<i class="tlNow" style="left:${nowX}px"></i>`;
+  return g;
+}
+window.nieuwOpTafel = (loc, nr)=>{
+  openForm({ naam:'', pax:2, tijd:'19:30', duur:90, loc, tafels:[nr], arr:'Normaal', notitie:'', status:'res', walkin:false }, false);
+};
+
+/* --- Alfabetisch --- */
+function renderAZ(all){
+  locTabs.innerHTML = '';
+  const list = all.slice().sort((a,b)=>a.naam.localeCompare(b.naam,'nl',{sensitivity:'base'}));
+  if(!list.length){ content.innerHTML = '<div class="empty">Helaas, geen reserveringen :-(</div>'; return; }
+  let html = '', last = '';
+  list.forEach(r=>{
+    const L = (r.naam[0]||'#').toUpperCase();
+    if(L!==last){ html += `<div class="azLetter">${esc(L)}</div>`; last = L; }
+    html += cardHTML(r, true);
+  });
+  content.innerHTML = html;
+}
+
+/* --- Plattegrond: lijst + kaart + tijdschuif zoals DISH --- */
+let editMode = false;
+let mapZoom = 1;
+let mapUserZoom = false;
+let mapTijd = null;
+// Canvasformaat per locatie (verhouding overgenomen van DISH)
+const MAP_SIZE = {
+  'Theaterrestaurant':{w:1450,h:940},
+  'Le Cirque':{w:1150,h:780},
+  'Circusbar':{w:950,h:490}
+};
+// Vormen zoals in DISH: rond, breed, rest vierkant
+const TABLE_STYLE = {
+  'Circusbar':{ round:'all' },
+  'Le Cirque':{ round:['7','10','11','12','24','25','26','34','35','36'], wide:['27','40'] },
+  'Theaterrestaurant':{ round:['125','126','141','152'], wide:['149'] }
+};
+function shapeClass(loc, nr){
+  const s = TABLE_STYLE[loc]||{};
+  if(s.round==='all' || (s.round||[]).includes(nr)) return 'round';
+  if((s.wide||[]).includes(nr)) return 'wide';
+  return '';
+}
+
+function renderMap(all){
+  locTabs.innerHTML = '';
+  if(!LOCS.includes(curLoc)) curLoc = LOCS[0];
+  const tafels = parseTafels(tafelConfig[curLoc]||'');
+  if(mapTijd === null){
+    if(curDate === todayStr()){ const n = new Date(); mapTijd = n.getHours()*60 + n.getMinutes(); }
+    else mapTijd = 19*60+30;
+    mapTijd = Math.min(1620, Math.max(360, Math.round(mapTijd/15)*15));
+  }
+  const locRes = all.filter(r=>r.loc===curLoc)
+    .slice().sort((a,b)=> a.tijd.localeCompare(b.tijd) || a.naam.localeCompare(b.naam,'nl'));
+
+  let listHTML = '';
+  let lastT = '';
+  locRes.forEach(r=>{
+    if(r.tijd !== lastT){ listHTML += `<div class="sectionH">${esc(r.tijd)}</div>`; lastT = r.tijd; }
+    listHTML += cardHTML(r);
+  });
+  if(!listHTML) listHTML = '<div class="empty" style="padding:60px 10px">Helaas, geen reserveringen :-(</div>';
+
+  content.innerHTML = `
+    <div class="mapSplit">
+      <div class="mapLeft">
+        <div class="mapLocWrap"><select id="mapLocSel">${LOCS.map(l=>`<option ${l===curLoc?'selected':''}>${l}</option>`).join('')}</select></div>
+        <div class="mapList">${listHTML}</div>
+      </div>
+      <div class="mapMain">
+        <div class="mapBar">
+          <button class="btn ${editMode?'primary':'ghost'}" id="mEdit">${editMode?'Klaar':'Indeling bewerken'}</button>
+          ${editMode?'<button class="btn ghost" id="mAlign">Uitlijnen</button><button class="btn ghost" id="mReset">Standaard</button>':''}
+          <input type="range" id="mapSl" min="360" max="1620" step="15" value="${mapTijd}">
+          <span class="tijdBox" id="tijdBox">${minNaarTijd(mapTijd%1440)}</span>
+          <button class="btn ghost" id="mZoomOut">&minus;</button>
+          <button class="btn ghost" id="mZoomLbl">${Math.round(mapZoom*100)}%</button>
+          <button class="btn ghost" id="mZoomIn">+</button>
+        </div>
+        <div id="mapWrap" class="${editMode?'editMode':''}"><div id="mapSizer"><div id="mapCanvas"></div></div></div>
+        <div class="legend">
+          <span><i style="background:var(--panel2);border:1px solid var(--line)"></i>Vrij</span>
+          <span><i style="background:var(--accent2)"></i>Gereserveerd</span>
+          <span><i style="background:#3ecf8e"></i>Aan tafel</span>
+          <span style="margin-left:auto">Sleep om te schuiven</span>
+        </div>
+      </div>
+    </div>`;
+  const wrap = document.getElementById('mapWrap');
+  const sizer = document.getElementById('mapSizer');
+  const canvas = document.getElementById('mapCanvas');
+  const size = MAP_SIZE[curLoc] || {w:1000,h:700};
+  // Automatisch passend op de breedte (zoals DISH), verticaal scrollen mag
+  if(!mapUserZoom){
+    mapZoom = Math.max(0.25, Math.min(1.5, +((wrap.clientWidth-6)/size.w).toFixed(2)));
+    const lbl = document.getElementById('mZoomLbl');
+    if(lbl) lbl.textContent = Math.round(mapZoom*100)+'%';
+  }
+  sizer.style.width = (size.w*mapZoom)+'px';
+  sizer.style.height = (size.h*mapZoom)+'px';
+  canvas.style.width = size.w+'px';
+  canvas.style.height = size.h+'px';
+  canvas.style.transform = 'scale('+mapZoom+')';
+  canvas.style.transformOrigin = '0 0';
+  canvas.className = editMode ? 'editGrid' : '';
+
+  const lay = layout[curLoc] = layout[curLoc] || {};
+  // Positie: opgeslagen > standaard uit DISH > raster
+  const def = DEFAULT_LAYOUT[curLoc] || {};
+  const cols = Math.max(4, Math.ceil(Math.sqrt(tafels.length*1.4)));
+  tafels.forEach((t,i)=>{
+    if(!lay[t.nr]) lay[t.nr] = def[t.nr] ? {...def[t.nr]} : { x: 6 + (i%cols)*(88/Math.max(1,cols-1)), y: 5 + Math.floor(i/cols)*13 };
+  });
+
+  function paintTables(){
+    canvas.innerHTML = '';
+    // Bezetting op het gekozen tijdstip
+    const byTafel = {};
+    all.filter(r=>r.loc===curLoc).forEach(r=>{
+      const s = tijdNaarMin(r.tijd), e = s + (r.duur||90);
+      if(mapTijd >= s && mapTijd < e && !INACTIVE.has(r.status)){
+        getTafels(r).forEach(nr=>{ byTafel[nr] = r; });
+      }
+    });
+    tafels.forEach(t=>{
+      const el = document.createElement('div');
+      el.className = ('tbl '+shapeClass(curLoc,t.nr)).trim();
+      const r = byTafel[t.nr];
+      el.style.left = lay[t.nr].x+'%';
+      el.style.top = lay[t.nr].y+'%';
+      if(r){
+        el.classList.add(r.status==='in' ? 'in' : 'res');
+        el.innerHTML = `<span class="tnr2">${esc(t.nr)}</span><span class="tijdje">${esc(r.tijd)}-${minNaarTijd(tijdNaarMin(r.tijd)+(r.duur||90))}</span>`;
+        const s = document.createElement('small');
+        s.textContent = r.pax+' p. '+(r.naam.length>13 ? r.naam.slice(0,12)+'\u2026' : r.naam);
+        el.appendChild(s);
+      } else {
+        el.textContent = t.nr;
+      }
+      addChairs(el, t.cap, el.classList.contains('round'));
+      if(editMode){
+        el.style.borderStyle = 'dashed';
+        makeDraggable(el, t.nr, canvas, lay);
+      } else {
+        el.onclick = ()=>{
+          if(r) openForm(r,false);
+          else nieuwOpTafel(curLoc, t.nr);
+        };
+      }
+      canvas.appendChild(el);
+    });
+  }
+  paintTables();
+
+  // Startpositie: midden van de tafels in beeld
+  requestAnimationFrame(()=>{
+    const xs = tafels.map(t=>lay[t.nr].x), ys = tafels.map(t=>lay[t.nr].y);
+    if(xs.length){
+      const cx = (Math.min(...xs)+Math.max(...xs))/2/100*size.w*mapZoom;
+      const cy = (Math.min(...ys)+Math.max(...ys))/2/100*size.h*mapZoom;
+      wrap.scrollLeft = cx - wrap.clientWidth/2;
+      wrap.scrollTop = cy - wrap.clientHeight/2;
+    }
+  });
+
+  // Zaalkeuze
+  const mls = document.getElementById('mapLocSel');
+  maakDropdown(mls);
+  mls.onchange = ()=>{ curLoc = mls.value; store.set('ct_loc', curLoc); mapUserZoom = false; render(); };
+
+  // Tijdschuif
+  const sl = document.getElementById('mapSl');
+  const tijdBox = document.getElementById('tijdBox');
+  sl.oninput = ()=>{
+    mapTijd = +sl.value;
+    tijdBox.textContent = minNaarTijd(mapTijd%1440);
+    paintTables();
+  };
+
+  document.getElementById('mEdit').onclick = ()=>{
+    if(editMode){ store.set('ct_layout',layout); syncLayout(); }
+    editMode = !editMode; render();
+    if(!editMode) toast('Indeling opgeslagen');
+  };
+  const rst = document.getElementById('mReset');
+  if(rst) rst.onclick = ()=>{ delete layout[curLoc]; store.set('ct_layout',layout); syncLayout(); render(); };
+  const aln = document.getElementById('mAlign');
+  if(aln) aln.onclick = ()=>{ alignLayout(lay); store.set('ct_layout',layout); syncLayout(); render(); toast('Tafels uitgelijnd'); };
+  document.getElementById('mZoomIn').onclick = ()=>{ mapUserZoom = true; mapZoom = Math.min(2, +(mapZoom+0.15).toFixed(2)); render(); };
+  document.getElementById('mZoomOut').onclick = ()=>{ mapUserZoom = true; mapZoom = Math.max(0.25, +(mapZoom-0.15).toFixed(2)); render(); };
+  document.getElementById('mZoomLbl').onclick = ()=>{ mapUserZoom = false; render(); };
+}
+
+function addChairs(el, cap, isRound){
+  const n = Math.min(cap || (isRound ? 4 : 2), 8);
+  if(isRound){
+    for(let i=0;i<n;i++){
+      const a = (360/n)*i - 90;
+      const c = document.createElement('div');
+      c.className = 'chair';
+      c.style.left = '50%'; c.style.top = '50%';
+      c.style.transform = `translate(-50%,-50%) rotate(${a}deg) translateX(35px) rotate(90deg)`;
+      el.appendChild(c);
+    }
+    return;
+  }
+  // Vierkant/breed: eerst links en rechts, dan boven en onder, dan dubbelen
+  const spots = [
+    {left:'-12px', top:'50%', tf:'translateY(-50%) rotate(90deg)'},
+    {right:'-12px', top:'50%', tf:'translateY(-50%) rotate(90deg)'},
+    {left:'50%', top:'-11px', tf:'translateX(-50%)'},
+    {left:'50%', bottom:'-11px', tf:'translateX(-50%)'},
+    {left:'28%', top:'-10px', tf:'translateX(-50%)'},
+    {left:'72%', top:'-10px', tf:'translateX(-50%)'},
+    {left:'28%', bottom:'-10px', tf:'translateX(-50%)'},
+    {left:'72%', bottom:'-10px', tf:'translateX(-50%)'}
+  ];
+  for(let i=0;i<n;i++){
+    const sp = spots[i]; if(!sp) break;
+    const c = document.createElement('div');
+    c.className = 'chair';
+    Object.entries(sp).forEach(([k,v])=>{ if(k!=='tf') c.style[k]=v; });
+    c.style.transform = sp.tf;
+    el.appendChild(c);
+  }
+}
+
+// Tafels die bijna op een lijn staan exact gelijk zetten
+function alignLayout(lay){
+  ['x','y'].forEach(axis=>{
+    const vals = Object.keys(lay).map(k=>({k, v: lay[k][axis]})).sort((a,b)=>a.v-b.v);
+    let group = [];
+    const flush = ()=>{
+      if(group.length > 1){
+        const avg = group.reduce((s,g)=>s+g.v,0)/group.length;
+        group.forEach(g=>{ lay[g.k][axis] = +avg.toFixed(1); });
+      }
+      group = [];
+    };
+    vals.forEach(item=>{
+      if(!group.length || item.v - group[group.length-1].v <= 1.2) group.push(item);
+      else { flush(); group = [item]; }
+    });
+    flush();
+  });
+}
+
+function makeDraggable(el, tafel, canvas, lay){
+  el.addEventListener('pointerdown', (e)=>{
+    e.preventDefault();
+    el.setPointerCapture(e.pointerId);
+    const move = (ev)=>{
+      const rect = canvas.getBoundingClientRect();
+      let x = ((ev.clientX - rect.left)/rect.width)*100;
+      let y = ((ev.clientY - rect.top)/rect.height)*100;
+      x = Math.min(98, Math.max(2, x));
+      y = Math.min(98, Math.max(2, y));
+      // Magnetisch: klik vast op de lijn van andere tafels
+      for(const [k,v] of Object.entries(lay)){
+        if(k === tafel) continue;
+        if(Math.abs(x - v.x) < 0.9) x = v.x;
+        if(Math.abs(y - v.y) < 0.9) y = v.y;
+      }
+      lay[tafel] = {x:+x.toFixed(1), y:+y.toFixed(1)};
+      el.style.left = x+'%';
+      el.style.top = y+'%';
+    };
+    const up = ()=>{ el.removeEventListener('pointermove',move); el.removeEventListener('pointerup',up); };
+    el.addEventListener('pointermove',move);
+    el.addEventListener('pointerup',up);
+  });
+}
+
+/* --- Print --- */
+document.getElementById('btnPrint').onclick = ()=>window.print();
+
+function toast(msg){
+  const t = document.createElement('div');
+  t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(()=>t.remove(), 2200);
+}
+
+render();
+startSync();
+</script>
+</body>
+</html>
