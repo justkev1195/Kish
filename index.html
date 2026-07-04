@@ -664,12 +664,12 @@ function closeDrawer(){ drawer.classList.remove('open'); scrim.classList.remove(
 document.getElementById('btnMenu').onclick = openDrawer;
 scrim.onclick = closeDrawer;
 drawer.querySelectorAll('nav button[data-view]').forEach(b=>{
-  b.onclick = ()=>{ curView = b.dataset.view; store.set('ct_view',curView); if(curView==='map') mapUserZoom = false; closeDrawer(); render(); };
+  b.onclick = ()=>{ curView = b.dataset.view; store.set('ct_view',curView); if(curView==='map') mapUserZoom = false; if(curView==='tafels') tlZoom = 1.6; closeDrawer(); render(); };
 });
 
 /* ============ ICOONBALK (desktop) ============ */
 document.querySelectorAll('#sideRail button[data-view]').forEach(b=>{
-  b.onclick = ()=>{ curView = b.dataset.view; store.set('ct_view',curView); if(curView==='map') mapUserZoom = false; render(); };
+  b.onclick = ()=>{ curView = b.dataset.view; store.set('ct_view',curView); if(curView==='map') mapUserZoom = false; if(curView==='tafels') tlZoom = 1.6; render(); };
 });
 
 /* ============ EXPORT / IMPORT ============ */
@@ -1063,9 +1063,13 @@ function openPAImport(){
     ctImport(v);
   };
 }
+const MANAGER_PIN = '5555';
 document.getElementById('btnWisPA').onclick = ()=>{
   const pas = getRes().filter(r=>r.bron==='pa');
   if(!pas.length){ toast('Geen PA-reserveringen op deze dag'); return; }
+  const code = prompt('Managercode invoeren om te verwijderen:');
+  if(code === null) return;
+  if(code.trim() !== MANAGER_PIN){ toast('Onjuiste managercode'); return; }
   vraag('<b>'+pas.length+' PA-reserveringen</b> van '+fmtDate(curDate)+' verwijderen?<br><small style="color:var(--muted)">Handmatig toegevoegde reserveringen blijven staan.</small>', ()=>{
     pas.forEach(r=>syncDelRes(curDate, r.id));
     setRes(getRes().filter(r=>r.bron!=='pa'));
@@ -1700,7 +1704,7 @@ const SHIFTS = {
   avond:  {n:'Avond',   s:18*60, e:27*60}
 };
 let tlShift = store.get('ct_shift','avond');
-let tlZoom = +store.get('ct_tlzoom', 1) || 1;
+let tlZoom = 1.6;  // Standaard 160% zodat dranknotities goed leesbaar zijn
 
 function renderTafels(all){
   const sh = SHIFTS[tlShift] || SHIFTS.avond;
@@ -1712,10 +1716,9 @@ function renderTafels(all){
      <button data-z="in">+</button>`;
   locTabs.querySelectorAll('button[data-s]').forEach(b=>b.onclick=()=>{ tlShift=b.dataset.s; store.set('ct_shift',tlShift); render(); });
   locTabs.querySelectorAll('button[data-z]').forEach(b=>b.onclick=()=>{
-    if(b.dataset.z==='in') tlZoom = Math.min(2, +(tlZoom+0.2).toFixed(1));
+    if(b.dataset.z==='in') tlZoom = Math.min(2.4, +(tlZoom+0.2).toFixed(1));
     else if(b.dataset.z==='out') tlZoom = Math.max(0.4, +(tlZoom-0.2).toFixed(1));
-    else tlZoom = 1;
-    store.set('ct_tlzoom', tlZoom);
+    else tlZoom = 1.6;
     render();
   });
 
