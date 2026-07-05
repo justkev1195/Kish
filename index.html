@@ -2551,7 +2551,7 @@ function renderTafels(all){
         const s = px(eff);
         const w = Math.max(56, (dur/60)*PXH - 4);
         const kls = r.status==='in' ? 'in' : (r.status==='arr' ? 'arr' : (r.status==='nm' ? 'nm' : 'verwacht'));
-        const spanStijl = spanN > 1 ? `;height:${spanN*47-9}px;bottom:auto;z-index:6` : '';
+        const spanStijl = spanN > 1 ? `;height:calc(${spanN*100}% + ${spanN-1}px - 8px);bottom:auto;z-index:6` : '';
         blocks += `<div class="tlBlock ${kls}${dim?' no':''}${tlLock?'':' sleepbaar'}" data-rid="${r.id}" style="left:${s}px;width:${w}px;border-left-color:${st.c}${spanStijl}" onclick="openFormById('${r.id}')">
           <b>${r.pax}</b><span class="tlNaam">${esc(r.naam)}</span>${combiTags(r) || `<span class="tlTag" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>`}${isVerkocht(r)?'<span class="tlTag" style="background:#8b5cf6">Verkocht</span>':''}${r.notitie?`<span class="tlNote">${esc(r.notitie)}</span>`:''}${allergieTekst(r)?`<span class="tlTag" style="background:#e5304d">\u26a0 ${esc(allergieTekst(r))}</span>`:''}
         </div>`;
