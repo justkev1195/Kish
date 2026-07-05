@@ -1890,9 +1890,11 @@ function toonInstellingen(){
     <div class="instH">Instellingen</div>
     <div class="instSub">Beheer van zalen, tafels en managercodes.</div>
     <div class="instRow" id="rZalen"><b style="flex:1">Zalen &amp; Tafels</b><span class="instChev">&#8250;</span></div>
-    <div class="instRow" id="rManagers"><b style="flex:1">Managers</b><span class="instChev">&#8250;</span></div>`);
+    <div class="instRow" id="rManagers"><b style="flex:1">Managers</b><span class="instChev">&#8250;</span></div>
+    <div class="instRow" id="rVerkocht"><b style="flex:1">Verkocht vandaag</b><span class="instChev">&#8250;</span></div>`);
   pg.querySelector('#rZalen').onclick = instZalen;
   pg.querySelector('#rManagers').onclick = instManagers;
+  pg.querySelector('#rVerkocht').onclick = instVerkocht;
 }
 
 function instZalen(){
@@ -1981,6 +1983,45 @@ function instTafels(loc){
       toast('Tafel '+nr+' toegevoegd');
     };
   };
+}
+
+function instVerkocht(){
+  const alles = getRes().filter(r => isVerkocht(r) && !INACTIVE.has(r.status));
+  // Groeperen per show (begintijd)
+  const shows = {};
+  alles.forEach(r => { (shows[r.tijd || '?'] = shows[r.tijd || '?'] || []).push(r); });
+  const tijden = Object.keys(shows).sort((a,b) => tijdNaarMin(a) - tijdNaarMin(b));
+
+  const labelTelling = (lijst)=>{
+    const t = {};
+    lijst.forEach(r=>{
+      if(r.combi && Object.keys(r.combi).length){
+        Object.entries(r.combi).forEach(([k,n])=>{ t[k] = (t[k]||0) + (+n||0); });
+      } else {
+        t[r.arr || '?'] = (t[r.arr || '?']||0) + (+r.pax||0);
+      }
+    });
+    return Object.entries(t).map(([k,n])=>`<span class="chip" style="background:${arrKleur(k)}">${n}x ${esc(k)}</span>`).join('');
+  };
+
+  const totaalPax = alles.reduce((som,r)=>som+(+r.pax||0), 0);
+
+  const inhoud = tijden.length ? tijden.map(t=>{
+    const lijst = shows[t];
+    const pax = lijst.reduce((som,r)=>som+(+r.pax||0), 0);
+    return `<div class="instRow" style="cursor:default;flex-wrap:wrap">
+      <b style="width:70px">${esc(t)}</b>
+      <span style="flex:1;color:var(--muted)">${lijst.length} verkocht &middot; ${pax} personen</span>
+      <span style="display:flex;gap:5px;flex-wrap:wrap">${labelTelling(lijst)}</span>
+    </div>`;
+  }).join('') : '<div class="instSub" style="padding:10px 0">Vandaag nog niets als verkocht aangevinkt.</div>';
+
+  instPagina([{n:'Instellingen', ga:toonInstellingen},{n:'Verkocht vandaag', ga:instVerkocht}], `
+    <div class="instH">Verkocht &middot; ${esc(fmtDate(curDate))}</div>
+    <div class="instSub">Alles met het vinkje "Extra verkocht arrangement", gegroepeerd per show.</div>
+    <div class="instKopRij"><span style="width:70px">Show</span><span style="flex:1">Aantal</span><span>Arrangementen</span></div>
+    ${inhoud}
+    ${tijden.length ? `<div style="display:flex;gap:12px;padding:14px 4px 2px;font-weight:800"><span style="flex:1">Totaal</span><span>${alles.length} verkocht &middot; ${totaalPax} personen</span></div>` : ''}`);
 }
 
 function instManagers(){
