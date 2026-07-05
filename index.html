@@ -437,7 +437,8 @@ input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
 .btn.green{background:var(--green);color:#fff}
 
 /* Tijdlijn */
-.tlScroll{overflow-x:auto;margin:0;padding:0 0 8px;-webkit-overflow-scrolling:touch}
+.tlScroll{overflow-x:auto;margin:0;padding:0 0 8px;-webkit-overflow-scrolling:touch;position:relative}
+
 .tlHead{display:flex;position:sticky;top:0;background:var(--bg);z-index:9;width:max-content;min-width:100%}
 @media (max-width:999px){
   .tlHead{top:calc(56px + env(safe-area-inset-top))}
@@ -450,7 +451,7 @@ input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
 .tlRow.sleepDoel{background:rgba(34,192,138,.14)}
 .tlBlock.sleepbaar{touch-action:none;cursor:grab}
 .tlLocRow{position:sticky;left:0;max-width:100vw}
-.tlLabel{flex:0 0 62px;min-height:46px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:var(--bg);border-right:1px solid var(--line);position:sticky;left:0;z-index:8;gap:2px}
+.tlLabel{flex:0 0 62px;min-height:46px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:var(--bg);border-right:1px solid var(--line);position:sticky;left:0;z-index:8;gap:2px;box-shadow:0 -1px 0 0 var(--line)}
 .tlLabel sup{font-size:10px;color:var(--muted);font-weight:700;margin-top:-8px}
 .tlTrack{position:relative;flex:0 0 auto;min-height:46px}
 .tlRow:nth-child(even){background:rgba(255,255,255,.028)}
@@ -2552,7 +2553,7 @@ function renderTafels(all){
         const w = Math.max(56, (dur/60)*PXH - 4);
         const kls = r.status==='in' ? 'in' : (r.status==='arr' ? 'arr' : (r.status==='nm' ? 'nm' : 'verwacht'));
         const spanStijl = spanN > 1 ? `;bottom:auto;height:${spanN*47-9}px;z-index:6` : '';
-        blocks += `<div class="tlBlock ${kls}${dim?' no':''}${tlLock?'':' sleepbaar'}"${spanN>1?` data-span="${spanN}"`:''} data-rid="${r.id}" style="left:${s}px;width:${w}px;border-left-color:${st.c}${spanStijl}" onclick="openFormById('${r.id}')">
+        blocks += `<div class="tlBlock ${kls}${dim?' no':''}${tlLock?'':' sleepbaar'}" data-rid="${r.id}" style="left:${s}px;width:${w}px;border-left-color:${st.c}${spanStijl}" onclick="openFormById('${r.id}')">
           <b>${r.pax}</b><span class="tlNaam">${esc(r.naam)}</span>${combiTags(r) || `<span class="tlTag" style="background:${arrKleur(r.arr)}">${esc(r.arr)}</span>`}${isVerkocht(r)?'<span class="tlTag" style="background:#8b5cf6">Verkocht</span>':''}${r.notitie?`<span class="tlNote">${esc(r.notitie)}</span>`:''}${allergieTekst(r)?`<span class="tlTag" style="background:#e5304d">\u26a0 ${esc(allergieTekst(r))}</span>`:''}
         </div>`;
       });
@@ -2597,19 +2598,6 @@ function renderTafels(all){
     }
     window._tlScrollKey = sleutel;
 
-    // Gespannen blokken exact op de gemeten rijhoogtes zetten (geen gaatjes op welk apparaat dan ook)
-    nieuwSc.querySelectorAll('.tlBlock[data-span]').forEach(b=>{
-      const n = +b.dataset.span;
-      const eerste = b.closest('.tlRow');
-      if(!eerste) return;
-      let laatste = eerste;
-      for(let i=1; i<n; i++){
-        const volg = laatste.nextElementSibling;
-        if(volg && volg.classList.contains('tlRow')) laatste = volg;
-      }
-      const h = laatste.getBoundingClientRect().bottom - eerste.getBoundingClientRect().top;
-      b.style.height = Math.max(38, Math.round(h) - 9) + 'px';
-    });
   }
 
   // Slepen: blok verticaal naar een andere tafelrij trekken
