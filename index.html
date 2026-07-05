@@ -1385,8 +1385,40 @@ function minNaarTijd(min){
   return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0');
 }
 
+// Welke begintijd past nu het best? Eerst kijken naar bestaande reserveringen rond dit moment,
+// anders een logische tijd voor het dagdeel. Zo beland je niet per ongeluk op de avondshow.
+function slimmeStartTijd(){
+  const bestaand = getRes().filter(r => r.tijd && !INACTIVE.has(r.status));
+  const nu = new Date();
+  const nuMin = (curDate === todayStr()) ? nu.getHours()*60 + nu.getMinutes() : null;
+
+  if(bestaand.length){
+    // Tel hoe vaak elke begintijd voorkomt
+    const telling = {};
+    bestaand.forEach(r => { telling[r.tijd] = (telling[r.tijd]||0) + 1; });
+    const tijden = Object.keys(telling);
+    if(nuMin !== null){
+      // Tijd die nu bezig is of het eerst komt (tot 2 uur terug telt nog mee)
+      const kandidaten = tijden
+        .map(t => ({ t, m: tijdNaarMin(t), n: telling[t] }))
+        .filter(k => k.m >= nuMin - 120)
+        .sort((a,b) => (a.m - b.m) || (b.n - a.n));
+      if(kandidaten.length) return kandidaten[0].t;
+    }
+    // Anders de meest voorkomende tijd van de dag
+    return tijden.sort((a,b) => telling[b] - telling[a])[0];
+  }
+
+  // Geen reserveringen: kies op basis van de klok
+  if(nuMin !== null){
+    if(nuMin < 12*60) return '11:00';
+    if(nuMin < 17*60) return '14:00';
+  }
+  return '19:30';
+}
+
 function openForm(existing, walkin){
-  const r = existing || { naam: walkin?'Walk-in':'', pax:2, tijd:'19:30', duur:90, loc:curLoc==='__alles'?'Theaterrestaurant':curLoc, tafels:[], arr:'Normaal', notitie:'', status: walkin?'in':'res', walkin:!!walkin };
+  const r = existing || { naam: walkin?'Walk-in':'', pax:2, tijd:slimmeStartTijd(), duur:90, loc:curLoc==='__alles'?'Theaterrestaurant':curLoc, tafels:[], arr:'Normaal', notitie:'', status: walkin?'in':'res', walkin:!!walkin };
   const eind = minNaarTijd(tijdNaarMin(r.tijd)+(r.duur||90));
   let selTafels = new Set(getTafels(r));
   const paxBtn = n=>`<button class="paxBtn ${r.pax===n?'on':''}" data-p="${n}">${n}</button>`;
@@ -2561,7 +2593,7 @@ function gridHTML(start,end,px,nowX){
   return g;
 }
 window.nieuwOpTafel = (loc, nr)=>{
-  openForm({ naam:'', pax:2, tijd:'19:30', duur:90, loc, tafels:[nr], arr:'Normaal', notitie:'', status:'res', walkin:false }, false);
+  openForm({ naam:'', pax:2, tijd:slimmeStartTijd(), duur:90, loc, tafels:[nr], arr:'Normaal', notitie:'', status:'res', walkin:false }, false);
 };
 
 /* --- Alfabetisch --- */
