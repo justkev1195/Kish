@@ -1560,6 +1560,50 @@ function minNaarTijd(min){
   return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0');
 }
 
+// Welke tafels staan fysiek naast elkaar en mogen gecombineerd worden (volgorde = de rij zoals ze staan)
+const KOPPEL_GROEPEN = {
+  'Theaterrestaurant': [
+    ['101','102','103','104','105'],
+    ['106'], ['107'],
+    ['108','109'],
+    ['110','111'],
+    ['112','113'],
+    ['114','115'],
+    ['116','117','124'],
+    ['118','119'],
+    ['120','121'],
+    ['122','123'],
+    ['125'], ['126'],
+    ['127','128'],
+    ['129','130','131'],
+    ['132','133','134'],
+    ['135','136','137'],
+    ['138','139','140'],
+    ['141'], ['142'],
+    ['143','144'],
+    ['145','146'],
+    ['147','150'],
+    ['148','149'],
+    ['151'], ['152']
+  ],
+  'Le Cirque': [
+    ['1','2'],
+    ['3','4'],
+    ['5','6'],
+    ['7'], ['8'], ['9'], ['10'], ['11'], ['12'], ['13'],
+    ['14','15'],
+    ['16','17'],
+    ['18','19','20'],
+    ['21','22','23'],
+    ['24'], ['25'], ['26'], ['27'],
+    ['28','29'],
+    ['30','31','32','33'],
+    ['34'], ['35'], ['36'],
+    ['37','38','39'],
+    ['40']
+  ]
+};
+
 // Welke begintijd past nu het best? Eerst kijken naar bestaande reserveringen rond dit moment,
 // anders een logische tijd voor het dagdeel. Zo beland je niet per ongeluk op de avondshow.
 function slimmeStartTijd(){
@@ -1732,16 +1776,33 @@ function openForm(existing, walkin){
     const past = vrij.filter(t=>(t.cap||2) >= paxN)
       .sort((a,b)=>((a.cap||2)-(b.cap||2)) || ((+a.nr||0)-(+b.nr||0)));
     if(past.length) return [past[0].nr];
+    const vrijMap = {};
+    vrij.forEach(t=>{ vrijMap[String(t.nr)] = t.cap || 2; });
     let beste = null;
-    for(let i=0; i<vrij.length; i++){
-      let som = 0; const groep = [];
-      for(let j=i; j<vrij.length; j++){
-        if(groep.length && Math.abs((+vrij[j].nr) - (+groep[groep.length-1].nr)) !== 1) break;
-        groep.push(vrij[j]); som += (vrij[j].cap||2);
-        if(som >= paxN){ if(!beste || groep.length < beste.length) beste = groep.slice(); break; }
+    const bekijk = (reeks)=>{
+      // Aaneengesloten vrije stukjes binnen deze reeks proberen
+      for(let i=0; i<reeks.length; i++){
+        let som = 0; const groep = [];
+        for(let j=i; j<reeks.length; j++){
+          if(!(reeks[j] in vrijMap)) break; // bezette tafel breekt de keten
+          groep.push(reeks[j]); som += vrijMap[reeks[j]];
+          if(som >= paxN){
+            if(!beste || groep.length < beste.groep.length || (groep.length === beste.groep.length && som < beste.som)){
+              beste = { groep: groep.slice(), som };
+            }
+            break;
+          }
+        }
       }
+    };
+    const groepen = KOPPEL_GROEPEN[locSel.value];
+    if(groepen){
+      groepen.forEach(bekijk);
+    } else {
+      // Geen koppelgroepen bekend voor deze zaal: terugvallen op opeenvolgende nummers
+      bekijk(vrij.map(t=>String(t.nr)));
     }
-    return beste ? beste.map(t=>t.nr) : [];
+    return beste ? beste.groep : [];
   }
   function updateTafelBtn(){
     const conf = conflictSet();
