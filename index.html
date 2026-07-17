@@ -171,7 +171,7 @@ body.themaHu #brand::after{content:' \1F1ED\1F1FA'}
 body.themaHu #sideRail button.on{border-left-color:#477050}
 body.themaHu #sideRail button.on svg,body.themaHu #sideRail button.on{color:#6dc493}
 
-.drankMenuBtn{background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--accent2);font-size:12px;font-weight:700;padding:5px 10px;min-height:auto}
+.drankMenuBtn{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,var(--accent),color-mix(in srgb,var(--accent) 78%,#000));border:1px solid color-mix(in srgb,var(--accent) 60%,#000);border-radius:999px;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.01em;padding:7px 14px;min-height:auto;box-shadow:0 2px 6px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.15);transition:transform .08s,box-shadow .12s,filter .12s}.drankMenuBtn:active{transform:scale(.96);filter:brightness(.92)}
 #drankOv{position:fixed;inset:0;z-index:220;background:var(--bg);display:flex;flex-direction:column;animation:kishFade .18s ease-out}
 .drankKop{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;border-bottom:1px solid var(--line);background:var(--panel)}
 .drankKop b{font-size:16px}
@@ -189,7 +189,7 @@ body.themaHu #sideRail button.on svg,body.themaHu #sideRail button.on{color:#6dc
 .dkTelBadge{position:absolute;top:-8px;right:-8px;background:var(--accent);color:#fff;border-radius:999px;min-width:27px;height:27px;padding:0 4px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.45)}
 .dkMin{position:absolute;top:-8px;left:-8px;background:#7f1d1d;color:#fecaca;border:1px solid #b91c1c;border-radius:999px;width:27px;height:27px;font-size:16px;font-weight:800;line-height:1;min-height:auto;padding:0}
 .drankVoet{padding:12px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:600;line-height:1.5}
-#bezigBar{background:#7a5b12;color:#ffe9b8;border:1px solid #a97f1d;border-radius:10px;padding:9px 13px;font-size:12.5px;font-weight:700;margin:4px 0 10px;animation:kishFade .2s ease-out}
+#bezigBar,#tafelBar{background:#7a5b12;color:#ffe9b8;border:1px solid #a97f1d;border-radius:10px;padding:9px 13px;font-size:12.5px;font-weight:700;margin:4px 0 10px;animation:kishFade .2s ease-out}
 #loginOv{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px}
 .loginBox{width:min(360px,92vw);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 24px;text-align:center}
 .loginBox .loginLogo{width:56px;height:56px;border-radius:14px;background:var(--accent);color:#fff;font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
@@ -345,7 +345,7 @@ body.themaHu #sideRail button.on svg,body.themaHu #sideRail button.on{color:#6dc
 .tafelPop label.tRow{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:14px;margin:0;text-transform:none;letter-spacing:0;color:var(--txt);font-weight:600}
 .tafelPop label.tRow:last-child{border-bottom:none}
 .tafelPop label.tRow.conflict b, .tafelPop label.tRow.conflict span{color:#e5304d}
-.tafelPop label.tRow.conflict input{accent-color:#e5304d}
+.tafelPop label.tRow.conflict input{accent-color:#e5304d}.tRow.geclaimd{opacity:.45;pointer-events:none}.tRow.geclaimd span{color:#f0b429}
 .tafelPop input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent);border:none;padding:0}
 
 /* Ticket scanner */
@@ -374,11 +374,11 @@ body.themaHu #sideRail button.on svg,body.themaHu #sideRail button.on{color:#6dc
 
 /* Statusmenu */
 .stOv{position:fixed;inset:0;z-index:96}
-.stMenu{position:fixed;width:230px;max-height:64vh;overflow-y:auto;background:#262a35;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.55)}
-.stMenu button{display:flex;align-items:center;width:100%;padding:12px 16px;font-size:14px;font-weight:600;border-bottom:1px solid var(--line);text-align:left}
-.stMenu button:last-child{border-bottom:none}
-.stMenu button.on{background:var(--panel2)}
-.stMenu button:active{background:var(--panel2)}
+.stMenu{position:fixed;width:230px;max-height:64vh;overflow-y:auto;background:#232733;border:1px solid #3a4050;border-radius:14px;padding:6px;box-shadow:0 14px 40px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.4)}
+.stMenu button{display:flex;align-items:center;width:100%;padding:11px 13px;font-size:14px;font-weight:600;text-align:left;border-radius:9px;margin:1px 0;transition:background .1s}
+.stMenu button:hover{background:rgba(255,255,255,.05)}
+.stMenu button.on{background:color-mix(in srgb,var(--accent) 16%,transparent);box-shadow:inset 3px 0 0 var(--accent);color:#fff}
+.stMenu button:active{background:rgba(255,255,255,.09)}
 .stMenu button i{margin-left:auto;width:11px;height:11px;border-radius:50%}
 
 .vraagBox{background:#2b2f3b;border-radius:14px;padding:20px 18px;width:300px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
@@ -447,9 +447,9 @@ body.themaHu #sideRail button.on svg,body.themaHu #sideRail button.on{color:#6dc
 @media (min-width:700px){
   #sheetWrap #sheet{transform:translateX(103%)}
 }
-#sheet{position:absolute;left:0;right:0;bottom:0;background:var(--panel);border-radius:18px 18px 0 0;padding:18px 20px 30px;max-height:88vh;overflow-y:auto}
+#sheet{position:absolute;left:0;right:0;bottom:0;background:var(--panel);border-radius:18px 18px 0 0;padding:18px 20px 30px;max-height:88vh;max-height:92dvh;overflow-y:auto}
 @media (min-width:700px){
-  #sheet{left:auto;top:0;right:0;bottom:0;width:420px;max-height:none;border-radius:0;border-left:1px solid var(--line)}
+  #sheet{left:auto;top:0;right:0;bottom:0;width:420px;height:100%;max-height:none;border-radius:0;border-left:1px solid var(--line)}
 }
 .tafelPickBtn{width:100%;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:11px 12px;font-size:15px}
 .tafelList{max-height:230px;overflow-y:auto;border:1px solid var(--line);border-radius:8px;margin-top:6px;background:var(--panel2)}
@@ -503,7 +503,7 @@ input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent)}
 .tlLocRow{position:sticky;left:0;padding:16px 6px 8px;font-size:14px;font-weight:800;width:max-content}
 .tlRow{display:flex;border-top:1px solid var(--line);width:max-content;min-width:100%}
 #offlineBar{position:fixed;left:50%;transform:translateX(-50%);top:calc(64px + env(safe-area-inset-top));z-index:85;background:#7f1d1d;color:#fecaca;border:1px solid #b91c1c;padding:10px 18px;border-radius:12px;font-size:12.5px;font-weight:700;box-shadow:0 8px 26px rgba(0,0,0,.5);text-align:center;max-width:min(480px,92vw);line-height:1.45}
-.tlNu{position:absolute;top:0;width:2px;background:#e5304d;z-index:4;pointer-events:none;box-shadow:0 0 6px rgba(229,48,77,.5)}
+.tlNu{position:absolute;top:0;width:2px;background:#e5304d;z-index:4;pointer-events:none;box-shadow:0 0 6px rgba(229,48,77,.5)}.tlNu::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#e5304d}
 .tlNu::before{content:'';position:absolute;top:0;left:-4px;width:10px;height:10px;border-radius:50%;background:#e5304d}
 .tlRow.sleepDoel{background:rgba(34,192,138,.14)}
 .tlBlock.sleepbaar{touch-action:none;cursor:grab}
@@ -1154,6 +1154,7 @@ function startSync(){
         if(v) store.set('ct_pins', v);
       });
       db.ref('.info/connected').on('value', sn=>{
+        window._verbonden = !!sn.val();
         syncStatus(sn.val() ? '#22c08a' : '#e5304d');
         toonOffline(!sn.val());
       });
@@ -1172,6 +1173,7 @@ function abonneerDatum(){
   syncResRef.on('value', snap=>{
     window._syncKlaarVoor = window._syncKlaarVoor || {};
     window._syncKlaarVoor[vasteDatum] = true;
+    window._laatsteSyncTs = Date.now();
     store.set('ct_res_'+vasteDatum, Object.values(snap.val() || {}));
     if(vasteDatum === curDate && !sheetWrap.classList.contains('open')) render();
   });
@@ -1741,6 +1743,69 @@ function stopBezig(){
   if(window._bezigStop){ try{ window._bezigStop(); }catch(e){} window._bezigStop = null; }
 }
 
+// ===== Tafelclaims: voorkomt dat twee collega's tegelijk dezelfde tafel bijverkopen =====
+function tafelClaimKey(loc, nr){ return (String(loc)+'__'+String(nr)).replace(/[.#$\[\]\/]/g,'-'); }
+function meldTafelBezig(loc, tafels){
+  if(typeof db === 'undefined' || !db) return;
+  const basis = db.ref(syncPad + '/bezigTafel/' + curDate);
+  window._mijnTafelClaims = window._mijnTafelClaims || {};
+  const gewenst = {};
+  [...tafels].forEach(nr => gewenst[tafelClaimKey(loc, nr)] = nr);
+  Object.keys(window._mijnTafelClaims).forEach(k=>{
+    if(!(k in gewenst)){
+      const c = window._mijnTafelClaims[k];
+      c.ref.remove().catch(()=>{});
+      c.ref.onDisconnect().cancel();
+      delete window._mijnTafelClaims[k];
+    }
+  });
+  Object.entries(gewenst).forEach(([k, nr])=>{
+    if(!window._mijnTafelClaims[k]){
+      const ref = basis.child(k).child(APPARAAT_ID);
+      ref.set({ t: Date.now() }).catch(()=>{});
+      ref.onDisconnect().remove();
+      window._mijnTafelClaims[k] = { ref, nr };
+    }
+  });
+  window._tafelClaimSelectie = { loc, tafels: [...tafels] };
+  if(!window._tafelClaimStop){
+    const luister = basis.on('value', sn=>{
+      window._tafelClaims = sn.val() || {};
+      toonTafelClaimWaarschuwing();
+    });
+    window._tafelClaimStop = ()=>{
+      basis.off('value', luister);
+      Object.values(window._mijnTafelClaims || {}).forEach(c=>{ c.ref.remove().catch(()=>{}); c.ref.onDisconnect().cancel(); });
+      window._mijnTafelClaims = {};
+      window._tafelClaimSelectie = null;
+      window._tafelClaimStop = null;
+    };
+  }
+  toonTafelClaimWaarschuwing();
+}
+function andereTafelClaim(loc, nr){
+  const v = (window._tafelClaims || {})[tafelClaimKey(loc, nr)] || {};
+  return Object.entries(v).some(([app, d]) => app !== APPARAAT_ID && d && Date.now() - (d.t||0) < 10*60000);
+}
+function toonTafelClaimWaarschuwing(){
+  const sel = window._tafelClaimSelectie;
+  let bar = sheet.querySelector('#tafelBar');
+  const druk = sel ? sel.tafels.filter(nr => andereTafelClaim(sel.loc, nr)) : [];
+  if(druk.length && sheetWrap.classList.contains('open')){
+    if(!bar){
+      bar = document.createElement('div');
+      bar.id = 'tafelBar';
+      const kop = sheet.querySelector('.sheetHead');
+      if(kop) kop.insertAdjacentElement('afterend', bar); else sheet.prepend(bar);
+    }
+    bar.innerHTML = '\u26A0\uFE0F Een collega is nu ook een reservering op tafel ' + druk.map(esc).join(', ') + ' aan het maken. Overleg even!';
+  } else if(bar) bar.remove();
+}
+function stopTafelBezig(){
+  if(window._tafelClaimStop){ try{ window._tafelClaimStop(); }catch(e){} }
+  const b = sheet.querySelector('#tafelBar'); if(b) b.remove();
+}
+
 // ===== Drankjesmenu: kassastijl, grote tegels, resultaat wordt gewone tekst in het drankveld =====
 // Ingebakken drankfoto's: geen losse bestanden nodig, werkt direct en offline
 const DRANK_FOTOS = {
@@ -1834,7 +1899,7 @@ const DRANK_MENU = [
     {n:'Spa Blauw', e:'\u{1F4A7}', v:'fles', c:'#1d6fd1'}, {n:'Spa Rood', e:'\u{1FAE7}', v:'fles', c:'#d13d3d'}, {n:'Appelsap', e:'\u{1F34E}', v:'glas', c:'#e8b83a'}, {n:'Jus d\u2019Orange', v:'glas', c:'#f08c1a'},
     {n:'Chocomel', e:'\u{1F36B}', v:'fles', c:'#6b4226'}, {n:'Fristi', e:'\u{1F353}', v:'fles', c:'#d64f8e'}, {n:'Capri-Sun', e:'\u{1F9C3}', v:'fles', c:'#f2b21e'}
   ]},
-  { cat:'Warm', items:[
+  { cat:'Koffie/Thee', items:[
     {kop:'Koffie'},
     {n:'Koffie', e:'\u2615', v:'kop', c:'#5b3a26'}, {n:'Cappuccino', e:'\u2615', v:'kop', c:'#8a5a3b', c2:'#f2e6d8'}, {n:'Espresso', e:'\u2615', v:'kop', c:'#3f2a1d'}, {n:'Latte', e:'\u2615', v:'kop', c:'#b98d63', c2:'#f2e6d8'}, {n:'Warme Choco', e:'\u{1F36B}', v:'kop', c:'#6b4226', c2:'#fff3e0'},
     {kop:'Thee'},
@@ -1900,7 +1965,7 @@ function openDrankMenu(veld, naWijzig){
     <div class="drankKop">
       <button type="button" class="btn ghost" id="dkTerug">&#8249; Terug</button>
       <b>Drankjes kiezen</b>
-      <button type="button" class="btn primary" id="dkKlaar">Overnemen</button>
+      <button type="button" class="btn primary" id="dkKlaar">Drankkeuze noteren</button>
     </div>
     <div class="drankTabs">${DRANK_MENU.map((c,i)=>`<button type="button" data-c="${i}" class="${i===0?'on':''}">${esc(c.cat)}</button>`).join('')}</div>
     <div class="drankGrid" id="dkGrid"></div>
@@ -1967,6 +2032,7 @@ function openDrankMenu(veld, naWijzig){
 function closeSheet(){
   sheetWrap.classList.remove('open');
   stopBezig();
+  stopTafelBezig();
   document.querySelectorAll('.tbl.samen').forEach(x=>x.classList.remove('samen'));
 }
 function sheetBgTik(){
@@ -2113,7 +2179,7 @@ function openForm(existing, walkin){
       <div style="flex:1"><label>Tafel</label><button type="button" class="tafelPickBtn" id="fTafelBtn"></button><div class="overboekt" id="tafelWarn">Tafel is overgeboekt</div></div>
     </div>
     <label>Naam</label><input id="fNaam" value="${esc(r.naam)}" autocomplete="off">
-    <label style="display:flex;align-items:center;justify-content:space-between">Drankkeuze gasten <button type="button" id="fDrankMenu" class="drankMenuBtn">\u{1F9FE} Kies via menu</button></label><textarea id="fNot" rows="4">${esc(r.notitie)}</textarea>
+    <label style="display:flex;align-items:center;justify-content:space-between">Drankkeuze gasten <button type="button" id="fDrankMenu" class="drankMenuBtn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14l-1.5 9.5a4 4 0 0 1-4 3.5h-3a4 4 0 0 1-4-3.5L5 3z"/><path d="M8.5 21h7M12 16v5"/></svg>Kies via menu</button></label><textarea id="fNot" rows="4">${esc(r.notitie)}</textarea>
     <div class="row2">
       <div><label>Status</label><select id="fStatus">${(['res','arr','nm','no'].includes(r.status)?['res','arr','nm','no']:[r.status,'res','arr','nm','no']).map(k=>`<option value="${k}" ${k===r.status?'selected':''}>${(STATUS[k]||STATUS.res).naam}</option>`).join('')}</select></div>
       <div><label>Label</label><select id="fArr">${ARRS.map(a=>`<option ${a.n===r.arr?'selected':''}>${a.n}</option>`).join('')}</select></div>
@@ -2239,7 +2305,7 @@ function openForm(existing, walkin){
   function autoTafel(){
     const paxN = Math.max(1, +paxInput.value || 1);
     const conf = conflictSet();
-    const vrij = tafelsVoor(locSel.value).filter(t=>!conf.has(t.nr));
+    const vrij = tafelsVoor(locSel.value).filter(t=>!conf.has(t.nr) && !andereTafelClaim(locSel.value, t.nr));
     const past = vrij.filter(t=>(t.cap||2) >= paxN)
       .sort((a,b)=>((a.cap||2)-(b.cap||2)) || ((+a.nr||0)-(+b.nr||0)));
     if(past.length) return [past[0].nr];
@@ -2272,6 +2338,8 @@ function openForm(existing, walkin){
     return beste ? beste.groep : [];
   }
   function updateTafelBtn(){
+    // claim de gekozen tafels (of de tafel die automatisch gepakt gaat worden) voor collega's zichtbaar
+    meldTafelBezig(locSel.value, selTafels.size ? selTafels : autoTafel());
     const conf = conflictSet();
     const dubbel = [...selTafels].some(nr=>conf.has(nr));
     if(selTafels.size){
@@ -2295,9 +2363,10 @@ function openForm(existing, walkin){
     ov.className = 'stOv';
     const pop = document.createElement('div');
     pop.className = 'tafelPop';
+    const claim = nr => !selTafels.has(nr) && andereTafelClaim(locSel.value, nr);
     pop.innerHTML = `<label class="tRow"><input type="checkbox" id="tafAuto" ${selTafels.size?'':'checked'}><b style="min-width:auto">Automatisch</b></label>` +
       tafelsVoor(locSel.value).map(t=>`
-      <label class="tRow ${conf.has(t.nr)?'conflict':''}"><input type="checkbox" value="${t.nr}" ${selTafels.has(t.nr)?'checked':''}><b>${t.nr}</b><span>${t.cap ? t.cap+' zitplaatsen' : ''}${conf.has(t.nr)?' &middot; bezet':''}</span></label>`).join('');
+      <label class="tRow ${conf.has(t.nr)?'conflict':''} ${claim(t.nr)?'geclaimd':''}"><input type="checkbox" value="${t.nr}" ${selTafels.has(t.nr)?'checked':''} ${claim(t.nr)?'disabled':''}><b>${t.nr}</b><span>${t.cap ? t.cap+' zitplaatsen' : ''}${conf.has(t.nr)?' &middot; bezet':''}${claim(t.nr)?' &middot; \u{1F512} collega is bezig':''}</span></label>`).join('');
     ov.appendChild(pop);
     document.body.appendChild(ov);
     const b = tafelBtn.getBoundingClientRect();
@@ -2421,7 +2490,9 @@ function openForm(existing, walkin){
       toast('Opgeslagen op '+fmtDate(datum));
     }
     };
+    const geclaimd = tfs.filter(nr => andereTafelClaim(locSel.value, nr));
     if(dubbel.length) vraag('Tafel '+dubbel.join(', ')+' is al bezet in dit tijdslot. Toch opslaan?', doorgaan);
+    else if(geclaimd.length) vraag('Let op: een collega is nu ook een reservering aan het maken op tafel '+geclaimd.join(', ')+'. Toch opslaan?', doorgaan);
     else doorgaan();
   };
   const del = sheet.querySelector('#fDel');
@@ -3418,7 +3489,6 @@ function renderTafels(all){
   for(let m=start; m<=end; m+=60){
     hoursHTML += `<div class="tlHour" style="left:${px(m)}px">${String(Math.floor(m/60)%24).padStart(2,'0')}:00</div>`;
   }
-  if(nowX >= 0) hoursHTML += `<div class="tlNowDot" style="left:${nowX}px"></div>`;
 
   let rows = '';
   (filt.zaal ? [filt.zaal] : LOCS).forEach(loc=>{
@@ -3571,7 +3641,6 @@ function gridHTML(start,end,px,nowX){
   for(let m=start; m<=end; m+=15){
     g += `<i class="tlGrid ${m%60===0?'':'q'}" style="left:${px(m)}px"></i>`;
   }
-  if(nowX >= 0) g += `<i class="tlNow" style="left:${nowX}px"></i>`;
   return g;
 }
 window.nieuwOpTafel = (loc, nr)=>{
@@ -3887,6 +3956,7 @@ function toast(msg, soort){
         db.ref(syncPad + '/res/' + k.slice(7)).remove().catch(()=>{});
         db.ref(syncPad + '/backup/' + k.slice(7)).remove().catch(()=>{});
         db.ref(syncPad + '/bezig/' + k.slice(7)).remove().catch(()=>{});
+        db.ref(syncPad + '/bezigTafel/' + k.slice(7)).remove().catch(()=>{});
       }
     });
   }catch(e){}
@@ -3921,19 +3991,32 @@ function autoNietGemeld(){
   const nu = new Date();
   const nuMin = nu.getHours()*60 + nu.getMinutes();
   let gewijzigd = false;
-  // Veiligheid: alleen draaien als dit apparaat de actuele stand al binnen heeft,
-  // anders kan een net geopend apparaat met verouderde data de sync overschrijven
-  if(typeof db !== 'undefined' && db && !(window._syncKlaarVoor && window._syncKlaarVoor[vandaag])) return;
+  const metDb = typeof db !== 'undefined' && db;
+  // Veiligheid 1: alleen draaien als dit apparaat de actuele stand binnen heeft
+  if(metDb && !(window._syncKlaarVoor && window._syncKlaarVoor[vandaag])) return;
+  // Veiligheid 2: alleen met verse data. Een iPad die net wakker wordt wacht
+  // eerst tot de verbinding er is en de sync opnieuw is binnengekomen
+  if(metDb && (!window._verbonden || !window._laatsteSyncTs || Date.now() - window._laatsteSyncTs > 3*60000)) return;
   lijst.forEach(r=>{
     if(r.status !== 'res' || r.autoNm || !r.tijd) return;
     if(nuMin >= tijdNaarMin(r.tijd) + 15){
-      r.status = 'nm';
-      r.autoNm = true;   // eenmalig: zet een medewerker hem terug op Verwacht, dan blijft dat zo
-      r.bewerkt = Date.now();
-      gewijzigd = true;
-      // Alleen de statusvelden syncen, nooit het hele record: notities blijven zo altijd staan
-      if(typeof db !== 'undefined' && db && r.id){
-        db.ref(syncPad + '/res/' + vandaag + '/' + r.id).update({ status:'nm', autoNm:true, bewerkt:r.bewerkt }).catch(()=>{});
+      if(metDb && r.id){
+        // Veiligheid 3: transactie. Alleen doorzetten als de gast OP DE SERVER
+        // nog op Verwacht staat. Heeft een collega hem al gemeld, dan gebeurt er niets.
+        db.ref(syncPad + '/res/' + vandaag + '/' + r.id + '/status')
+          .transaction(cur => (cur === null || cur === 'res') ? 'nm' : undefined)
+          .then(uitkomst => {
+            if(uitkomst && uitkomst.committed){
+              db.ref(syncPad + '/res/' + vandaag + '/' + r.id).update({ autoNm:true, bewerkt:Date.now() }).catch(()=>{});
+            }
+          }).catch(()=>{});
+        // lokaal niets aanpassen: de sync-listener brengt de uitkomst vanzelf binnen
+      } else {
+        // offline of zonder database: lokaal zoals voorheen
+        r.status = 'nm';
+        r.autoNm = true;
+        r.bewerkt = Date.now();
+        gewijzigd = true;
       }
     }
   });
