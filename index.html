@@ -2193,6 +2193,7 @@ function openForm(existing, walkin){
     </div>
     <label>Naam</label><input id="fNaam" value="${esc(r.naam)}" autocomplete="off">
     <label style="display:flex;align-items:center;justify-content:space-between">Drankkeuze gasten <button type="button" id="fDrankMenu" class="drankMenuBtn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14l-1.5 9.5a4 4 0 0 1-4 3.5h-3a4 4 0 0 1-4-3.5L5 3z"/><path d="M8.5 21h7M12 16v5"/></svg>Kies via menu</button></label><textarea id="fNot" rows="4">${esc(r.notitie)}</textarea>
+    <label class="vkRow"><span class="vkTxt"><i class="vkDot"></i>Extra verkocht arrangement</span><input type="checkbox" id="fVerkocht" ${r.verkocht?'checked':''}><span class="vkSwitch"></span></label>
     <div class="row2">
       <div><label>Status</label><select id="fStatus">${(['res','arr','nm','no'].includes(r.status)?['res','arr','nm','no']:[r.status,'res','arr','nm','no']).map(k=>`<option value="${k}" ${k===r.status?'selected':''}>${(STATUS[k]||STATUS.res).naam}</option>`).join('')}</select></div>
       <div><label>Label</label><select id="fArr">${ARRS.map(a=>`<option ${a.n===r.arr?'selected':''}>${a.n}</option>`).join('')}</select></div>
@@ -2205,7 +2206,6 @@ function openForm(existing, walkin){
     <button type="button" class="tafelPickBtn" id="fAllBtn"></button>
     <label>Bijzonderheden</label>
     <button type="button" class="tafelPickBtn" id="fBijzBtn"></button>
-    <label class="vkRow"><span class="vkTxt"><i class="vkDot"></i>Extra verkocht arrangement</span><input type="checkbox" id="fVerkocht" ${r.verkocht?'checked':''}><span class="vkSwitch"></span></label>
     ${(existing&&existing.id)?`
     <div class="formFoot">
       <button type="button" class="btn danger wide" id="fDel">Definitief verwijderen</button>
