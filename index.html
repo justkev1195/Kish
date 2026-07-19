@@ -73,7 +73,7 @@ label{font-size:12px;color:var(--muted);display:block;margin:12px 0 5px;font-wei
 #dateLabel{text-align:center;font-size:19px;font-weight:700;color:#fff;padding:0 4px;min-width:120px}
 #btnPrev,#btnNext{color:#fff;font-size:24px;width:40px;height:40px;line-height:1;border-radius:10px;display:flex;align-items:center;justify-content:center}
 #btnPrev:active,#btnNext:active{background:rgba(0,0,0,.18)}
-#dateNav{flex:1;display:flex;align-items:center;justify-content:center}
+#dateNav{position:absolute;left:50%;transform:translateX(-50%);top:env(safe-area-inset-top,0px);bottom:0;display:flex;align-items:center;justify-content:center}#btnScan{margin-left:auto}
 #dateInput{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
 
 #syncDot{display:none;width:9px;height:9px;border-radius:50%;background:#777;margin:0 2px;flex:0 0 auto;align-self:center}
